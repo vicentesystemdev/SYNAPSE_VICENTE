@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Historial de Intentos - Synapse Evaluación lógico-matemática</title>
-    <meta property="og:title" content="Historial de Intentos - Synapse Evaluación lógico-matemática" />
+    <title>Historial de Intentos - INTELECTA</title>
+    <meta property="og:title" content="Historial de Intentos - INTELECTA" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="utf-8" />
     <meta property="twitter:card" content="summary_large_image" />
@@ -74,12 +74,12 @@
               <div class="navigation-container">
                 <a href="{{ route('dashboard') }}">
                   <div
-                    aria-label="Unifranz Synapse Homepage"
+                    aria-label="Unifranz INTELECTA Homepage"
                     class="navigation-logo"
                   >
                     <span class="navigation-logo-left">unifranz</span>
                     <span class="navigation-logo-divider"></span>
-                    <span class="navigation-logo-right">synapse</span>
+                    <span class="navigation-logo-right">intelecta</span>
                   </div>
                 </a>
                 <div class="navigation-links">
@@ -462,7 +462,7 @@
             <div class="header-brand">
               <span class="brand-left">unifranz</span>
               <span class="brand-separator"></span>
-              <span class="brand-right">synapse</span>
+              <span class="brand-right">intelecta</span>
             </div>
             <button
               id="menu-toggle"

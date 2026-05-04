@@ -86,10 +86,10 @@
             <nav id="navigation-unifranz" class="navigation-unifranz">
                 <div class="navigation-container">
                     <a href="{{ route('dashboard') }}">
-                        <div aria-label="Unifranz Synapse Homepage" class="navigation-logo">
+                        <div aria-label="Unifranz INTELECTA Homepage" class="navigation-logo">
                             <span class="navigation-logo-left">unifranz</span>
                             <span class="navigation-logo-divider"></span>
-                            <span class="navigation-logo-right">synapse</span>
+                            <span class="navigation-logo-right">intelecta</span>
                         </div>
                     </a>
                     <div class="navigation-links">
@@ -312,9 +312,9 @@
             <h2 class="section-title glitch" data-text="Sobre el Proyecto">
                 Sobre el Proyecto
             </h2>
-            <h3>Qué es Synapse Evaluación lógico-matemática</h3>
+            <h3>Qué es INTELECTA</h3>
 <p>
-    Una plataforma de evaluación adaptativa orientada a estudiantes de ciberseguridad.
+    Una plataforma de evaluación adaptativa orientada a estudiantes de evaluación matemática.
 </p>
 <h3>Enfoque</h3>
 <p>

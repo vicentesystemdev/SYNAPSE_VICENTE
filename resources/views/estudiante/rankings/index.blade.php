@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Ranking General - Synapse Evaluación lógico-matemática</title>
+    <title>Ranking General - INTELECTA</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="{{ asset('css/estudiante_dashbord/style.css') }}" />
@@ -17,12 +17,12 @@
         <div class="navigation-container">
             <a href="{{ route('dashboard') }}">
                 <div
-                    aria-label="Unifranz Synapse Homepage"
+                    aria-label="Unifranz INTELECTA Homepage"
                     class="navigation-logo"
                 >
                     <span class="navigation-logo-left">unifranz</span>
                     <span class="navigation-logo-divider"></span>
-                    <span class="navigation-logo-right">synapse</span>
+                    <span class="navigation-logo-right">intelecta</span>
                 </div>
             </a>
             <div class="navigation-links">

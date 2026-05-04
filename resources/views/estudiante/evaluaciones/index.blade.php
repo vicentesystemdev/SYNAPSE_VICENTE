@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Synapse Evaluación lógico-matemática — La Evolución de las Evaluaciones en Ciberseguridad</title>
-    <meta property="og:title" content="Synapse Evaluación lógico-matemática — La Evolución de las Evaluaciones en Ciberseguridad" />
+    <title>INTELECTA — La Evolución de las Evaluaciones en Evaluación Matemática</title>
+    <meta property="og:title" content="INTELECTA — La Evolución de las Evaluaciones en Evaluación Matemática" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="utf-8" />
     <meta property="twitter:card" content="summary_large_image" />
@@ -74,12 +74,12 @@
               <div class="navigation-container">
                 <a href="{{ route('dashboard') }}">
                   <div
-                    aria-label="Unifranz Synapse Homepage"
+                    aria-label="Unifranz INTELECTA Homepage"
                     class="navigation-logo"
                   >
                     <span class="navigation-logo-left">unifranz</span>
                     <span class="navigation-logo-divider"></span>
-                    <span class="navigation-logo-right">synapse</span>
+                    <span class="navigation-logo-right">intelecta</span>
                   </div>
                 </a>
                 <div class="navigation-links">
@@ -462,7 +462,7 @@
             <div class="header-brand">
               <span class="brand-left">unifranz</span>
               <span class="brand-separator"></span>
-              <span class="brand-right">synapse</span>
+              <span class="brand-right">intelecta</span>
             </div>
             <button
               id="menu-toggle"
@@ -586,7 +586,7 @@ $nivelForens = $nivelesPorCategoria['FORENS'] ?? 'medio';
         <!-- Texto -->
         <div class="space-y-4">
           <p class="text-xs font-semibold tracking-[0.35em] text-indigo-300 uppercase">
-            Synapse Evaluación lógico-matemática
+            INTELECTA
           </p>
 
           <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-white">
@@ -595,7 +595,7 @@ $nivelForens = $nivelesPorCategoria['FORENS'] ?? 'medio';
 
           <p class="text-sm md:text-base text-slate-300 max-w-md">
             Activa la <span class="font-semibold text-indigo-200">ruta adaptativa recomendada</span>:
-            Synapse analiza tu desempeño, elige área, ajusta dificultad
+            INTELECTA analiza tu desempeño, elige área, ajusta dificultad
             y te envía directo al siguiente ejercicio ideal para ti.
           </p>
 

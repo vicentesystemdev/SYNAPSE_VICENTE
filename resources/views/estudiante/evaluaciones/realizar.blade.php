@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Synapse Evaluación lógico-matemática — La Evolución de las Evaluaciones en Ciberseguridad</title>
-    <meta property="og:title" content="Synapse Evaluación lógico-matemática — La Evolución de las Evaluaciones en Ciberseguridad" />
+    <title>INTELECTA — La Evolución de las Evaluaciones en Evaluación Matemática</title>
+    <meta property="og:title" content="INTELECTA — La Evolución de las Evaluaciones en Evaluación Matemática" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="utf-8" />
     <meta property="twitter:card" content="summary_large_image" />
@@ -74,12 +74,12 @@
               <div class="navigation-container">
                 <a href="{{ route('dashboard') }}">
                   <div
-                    aria-label="Unifranz Synapse Homepage"
+                    aria-label="Unifranz INTELECTA Homepage"
                     class="navigation-logo"
                   >
                     <span class="navigation-logo-left">unifranz</span>
                     <span class="navigation-logo-divider"></span>
-                    <span class="navigation-logo-right">synapse</span>
+                    <span class="navigation-logo-right">intelecta</span>
                   </div>
                 </a>
                 <div class="navigation-links">
@@ -462,7 +462,7 @@
             <div class="header-brand">
               <span class="brand-left">unifranz</span>
               <span class="brand-separator"></span>
-              <span class="brand-right">synapse</span>
+              <span class="brand-right">intelecta</span>
             </div>
             <button
               id="menu-toggle"
@@ -700,7 +700,7 @@
                   value="{{ old('respuesta') }}" />
 
               <p class="text-[11px] font-mono text-slate-500">
-                Formato requerido: <span class="text-slate-300">synapse{md5}</span>
+                Formato requerido: <span class="text-slate-300">respuesta_correcta</span>
               </p>
             </div>
 

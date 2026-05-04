@@ -86,10 +86,10 @@
             <nav id="navigation-unifranz" class="navigation-unifranz">
                 <div class="navigation-container">
                     <a href="{{ route('dashboard') }}">
-                        <div aria-label="Unifranz Synapse Homepage" class="navigation-logo">
+                        <div aria-label="Unifranz INTELECTA Homepage" class="navigation-logo">
                             <span class="navigation-logo-left">unifranz</span>
                             <span class="navigation-logo-divider"></span>
-                            <span class="navigation-logo-right">synapse</span>
+                            <span class="navigation-logo-right">intelecta</span>
                         </div>
                     </a>
                     <div class="navigation-links">
@@ -318,7 +318,7 @@
 </p>
 <h3>Cómo Funciona la Nivel de dificultad</h3>
 <p>
-    Synapse Evaluación lógico-matemática no asigna dificultad estática.
+    INTELECTA no asigna dificultad estática.
 </p>
 <ul>
     <li>Tu desempeño modifica tu nivel en tiempo real.</li>

@@ -2,7 +2,7 @@
     <li class="nav-item">
         <a href="{{ route('admin.dashboard') }}" class="nav-link {{ request()->routeIs('admin.dashboard') ? 'active' : '' }}">
             <i class="nav-icon fas fa-tachometer-alt"></i>
-            <p>Dashboard global</p>
+            <p>Dashboard</p>
         </a>
     </li>
 
@@ -28,47 +28,35 @@
     <li class="nav-item">
         <a href="{{ route('admin.roles.index') }}" class="nav-link {{ request()->routeIs('admin.roles.*') ? 'active' : '' }}">
             <i class="nav-icon fas fa-id-card"></i>
-            <p>Roles del sistema</p>
+            <p>Roles y Permisos</p>
         </a>
     </li>
 
-    <li class="nav-header">RETOS</li>
+    <li class="nav-header">EVALUACIONES</li>
     <li class="nav-item">
         <a href="{{ route('evaluaciones.index') }}" class="nav-link {{ request()->routeIs('evaluaciones.*') ? 'active' : '' }}">
-            <i class="nav-icon fas fa-respuesta"></i>
-            <p>Evaluaciones</p>
+            <i class="nav-icon fas fa-clipboard-check"></i>
+            <p>Gestionar Evaluaciones</p>
         </a>
-    </li>
-    <!--<li class="nav-item">
-        <a href="{{ route('admin.plantillas.index') }}" class="nav-link {{ request()->routeIs('admin.plantillas.*') ? 'active' : '' }}">
-            <i class="nav-icon fas fa-layer-group"></i>
-            <p>Plantillas</p>
-        </a>-->
     </li>
     <li class="nav-item">
         <a href="{{ route('admin.intentos.index') }}" class="nav-link {{ request()->routeIs('admin.intentos.*') ? 'active' : '' }}">
-            <i class="nav-icon fas fa-history"></i>
-            <p>Intentos</p>
+            <i class="nav-icon fas fa-pen-alt"></i>
+            <p>Resultados de Estudiantes</p>
         </a>
     </li>
 
-    <li class="nav-header">REPORTES</li>
+    <li class="nav-header">REPORTES Y ANÁLISIS</li>
     <li class="nav-item">
         <a href="{{ route('rankings.index') }}" class="nav-link {{ request()->routeIs('rankings.index') ? 'active' : '' }}">
             <i class="nav-icon fas fa-trophy"></i>
-            <p>Rankings</p>
+            <p>Ranking Académico</p>
         </a>
     </li>
     <li class="nav-item">
         <a href="{{ route('admin.reportes_irt.index') }}" class="nav-link {{ request()->routeIs('admin.reportes_irt.*') ? 'active' : '' }}">
             <i class="nav-icon fas fa-chart-line"></i>
-            <p>Reportes IRT</p>
-        </a>
-    </li>
-    <!--<li class="nav-item">
-        <a href="{{ route('admin.exportaciones.index') }}" class="nav-link {{ request()->routeIs('admin.exportaciones.*') ? 'active' : '' }}">
-            <i class="nav-icon fas fa-file-export"></i>
-            <p>Exportaciones</p>-->
+            <p>Reportes de Desempeño</p>
         </a>
     </li>
     <li class="nav-item">

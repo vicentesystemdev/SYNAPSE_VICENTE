@@ -4,7 +4,7 @@
 
 @section('content_header')
     <h1 class="m-0 text-dark">
-        <i class="fas fa-fw fa-tachometer-alt text-orange-600"></i> DASHBOARD DEL DOCENTE
+        <i class="fas fa-fw fa-tachometer-alt" style="color:#3b5bdb"></i> PANEL DEL DOCENTE — INTELECTA
     </h1>
 @stop
 
@@ -20,7 +20,7 @@
                 <div class="card bg-gradient-dark custom-gradient-bg border-0 shadow-lg"> {{-- Clase custom-gradient-bg para el color --}}
                     <div class="card-header border-0 d-flex justify-content-between align-items-center">
                         <h3 class="card-title text-white">
-                            <i class="fas fa-chart-pie mr-2 text-orange-400"></i> Visión General del Sistema Synapse Evaluación lógico-matemática
+                            <i class="fas fa-chart-pie mr-2" style="color:#748ffc"></i> Resumen Académico — INTELECTA
                         </h3>
                         <div class="card-tools">
                             <span class="badge badge-warning custom-badge-warning text-dark">{{ $periodoActual->nombre_per ?? 'Sin período' }}</span>
@@ -341,16 +341,16 @@
     <style>
         /* Variables de color de tu proyecto (actualizadas a la nueva paleta) */
         :root {
-            --color-black: #000000;
-            --color-dark-gray: #1a1a1a; /* Fondo principal */
-            --color-light-gray: #f5f5f5; /* Fondo de tarjetas */
+            --color-black: #1e2a45;
+            --color-dark-gray: #2d3f6b;
+            --color-light-gray: #f0f4ff;
             --color-white: #ffffff;
-            --color-orange-primary: #FF5722;
-            --color-orange-hover: #FF6B35;
-            --color-orange-light: #FF8A3D;
-            --color-border-subtle: #e0e0e0;
-            --color-text-dark: rgb(221, 59, 19); /* Este color no es legible para texto principal, debería ser #333333 o #000000 */
-            --color-text-light: #f0f0f0;
+            --color-orange-primary: #3b5bdb;
+            --color-orange-hover: #2f4ac2;
+            --color-orange-light: #748ffc;
+            --color-border-subtle: #dee2e6;
+            --color-text-dark: #212529;
+            --color-text-light: #f8f9fa;
             --font-family-primary: 'Source Sans Pro', sans-serif;
         }
 

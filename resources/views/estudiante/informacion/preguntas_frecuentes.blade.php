@@ -86,10 +86,10 @@
             <nav id="navigation-unifranz" class="navigation-unifranz">
                 <div class="navigation-container">
                     <a href="{{ route('dashboard') }}">
-                        <div aria-label="Unifranz Synapse Homepage" class="navigation-logo">
+                        <div aria-label="Unifranz INTELECTA Homepage" class="navigation-logo">
                             <span class="navigation-logo-left">unifranz</span>
                             <span class="navigation-logo-divider"></span>
-                            <span class="navigation-logo-right">synapse</span>
+                            <span class="navigation-logo-right">intelecta</span>
                         </div>
                     </a>
                     <div class="navigation-links">
@@ -312,9 +312,9 @@
             <h2 class="section-title glitch" data-text="Preguntas Frecuentes">
                 Preguntas Frecuentes
             </h2>
-            <h3>¿Qué es Synapse Evaluación lógico-matemática?</h3>
+            <h3>¿Qué es INTELECTA?</h3>
 <p>
-    Un sistema adaptativo de evaluación en ciberseguridad.
+    Un sistema adaptativo de evaluación en evaluación matemática.
 </p>
 <h3>¿Puedo repetir un reto?</h3>
 <p>
@@ -342,7 +342,7 @@
 </p>
 <h3>¿Cómo funciona la respuesta?</h3>
 <p>
-    Siempre en el formato: <code>synapse{md5}</code>.
+    Siempre en el formato: <code>respuesta_correcta</code>.
 </p>
         </section>
     </main>

@@ -86,10 +86,10 @@
             <nav id="navigation-unifranz" class="navigation-unifranz">
                 <div class="navigation-container">
                     <a href="{{ route('dashboard') }}">
-                        <div aria-label="Unifranz Synapse Homepage" class="navigation-logo">
+                        <div aria-label="Unifranz INTELECTA Homepage" class="navigation-logo">
                             <span class="navigation-logo-left">unifranz</span>
                             <span class="navigation-logo-divider"></span>
-                            <span class="navigation-logo-right">synapse</span>
+                            <span class="navigation-logo-right">intelecta</span>
                         </div>
                     </a>
                     <div class="navigation-links">
@@ -311,7 +311,7 @@
                 Documentación
             </h2>
             <p>
-    Synapse Evaluación lógico-matemática es una plataforma de evaluación adaptativa diseñada para medir competencias en ciberseguridad mediante ejercicios prácticos. El sistema integra técnicas modernas como IRT 2PL, cadenas de Markov y análisis de rendimiento para ajustar automáticamente la dificultad.
+    INTELECTA es una plataforma de evaluación adaptativa diseñada para medir competencias en evaluación matemática mediante ejercicios prácticos. El sistema integra técnicas modernas como IRT 2PL, cadenas de Markov y análisis de rendimiento para ajustar automáticamente la dificultad.
 </p>
 <h3>Arquitectura del Sistema</h3>
 <ul>
@@ -347,7 +347,7 @@
     Todas las soluciones utilizan:
 </p>
 <p>
-    <code>synapse{md5}</code>
+    <code>respuesta_correcta</code>
 </p>
         </section>
     </main>

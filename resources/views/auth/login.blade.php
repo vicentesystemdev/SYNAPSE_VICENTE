@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Synapse</title>
+    <title>INTELECTA — Iniciar Sesión</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
@@ -16,13 +16,13 @@
 }
 
 :root {
-    --color-primary:rgb(255, 119, 0);
-    --color-secondary: rgb(246, 121, 19);
-    --color-background: #e9dfd2;
-    --color-background-from:rgb(22, 22, 22);
-    --color-text-primary:rgb(255, 255, 255);
-    --color-text-secondary: #656565;
-    --color-border: #CDCDCD;
+    --color-primary: #3b5bdb;
+    --color-secondary: #2f4ac2;
+    --color-background: #eef2ff;
+    --color-background-from: #1e2a45;
+    --color-text-primary: rgb(255, 255, 255);
+    --color-text-secondary: #adb5bd;
+    --color-border: #748ffc;
     --color-button-text: #FFFFFF;
     --color-icon-google: #DB4437;
     --color-icon-facebook: #4267B2;
@@ -381,8 +381,9 @@ form button:hover {
 
         <div class="sidebar" id="sidebar">
             <div class="sign" id="btn-Sign-In">
-                <img src="https://e7.pngegg.com/pngimages/779/61/png-clipart-logo-idea-cute-eagle-leaf-logo.png" alt="Sign In"/>
-                <span>Synapse Evaluación lógico-matemática</span>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Telecom_ParisTech.svg/1200px-Telecom_ParisTech.svg.png" alt="INTELECTA" style="width:2.5rem;filter:brightness(10)"/>
+                <span style="font-weight:800; font-size:1rem; letter-spacing:2px;">INTELECTA</span>
+                <span style="font-size:0.7rem; opacity:0.8;">Evaluación Lógico-Matemática</span>
             </div>
         </div>
     </div>

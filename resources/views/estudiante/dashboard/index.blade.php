@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Synapse Evaluación lógico-matemática — La Evolución de las Evaluaciones en Ciberseguridad</title>
-    <meta property="og:title" content="Synapse Evaluación lógico-matemática — La Evolución de las Evaluaciones en Ciberseguridad" />
+    <title>INTELECTA — Plataforma de Evaluación Lógico-Matemática</title>
+    <meta property="og:title" content="INTELECTA — Plataforma de Evaluación Lógico-Matemática" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="utf-8" />
     <meta property="twitter:card" content="summary_large_image" />
@@ -73,12 +73,12 @@
               <div class="navigation-container">
                 <a href="{{ route('dashboard') }}">
                   <div
-                    aria-label="Unifranz Synapse Homepage"
+                    aria-label="Unifranz INTELECTA Homepage"
                     class="navigation-logo"
                   >
                     <span class="navigation-logo-left">unifranz</span>
                     <span class="navigation-logo-divider"></span>
-                    <span class="navigation-logo-right">synapse</span>
+                    <span class="navigation-logo-right">intelecta</span>
                   </div>
                 </a>
                 <div class="navigation-links">
@@ -461,7 +461,7 @@
             <div class="header-brand">
               <span class="brand-left">unifranz</span>
               <span class="brand-separator"></span>
-              <span class="brand-right">synapse</span>
+              <span class="brand-right">intelecta</span>
             </div>
             <button
               id="menu-toggle"
@@ -561,13 +561,13 @@
               <div class="hero-card">
                 <div class="hero-left">
                   <h1 class="home-hero-title hero-title">
-                    Synapse Evaluación lógico-matemática — La Evolución de las Evaluaciones en Ciberseguridad
+                    INTELECTA — Plataforma de Evaluación Lógico-Matemática
                   </h1>
                   <p class="home-hero-subtitle hero-subtitle">
-                    Retos prácticos que se adaptan a tu nivel. Pruebas personalizadas que miden habilidad real, no solo puntuación.
+                    Bienvenido a INTELECTA, plataforma de evaluación lógico-matemática orientada al análisis del desempeño académico.
                   </p>
                   <p class="hero-body">
-                    Entra a Pruebas Personalizadas → pon a prueba tu habilidad ahora.
+                    Resuelve ejercicios de álgebra, cálculo básico, lógica matemática y razonamiento numérico.
                   </p>
                   @if(isset($proximaEvaluacion) && $proximaEvaluacion)
                       <a href="{{ route('evaluaciones.show', $proximaEvaluacion->id_eval) }}" class="cta-pulse btn btn-primary btn-lg">
@@ -645,9 +645,9 @@
             class="feature-carousel section-spacing"
           >
             <div class="carousel-header">
-              <h2 class="section-title">Cursos Destacados</h2>
+              <h2 class="section-title">Áreas de Evaluación</h2>
               <p class="section-subtitle">
-                Sumérgete en las cuatro disciplinas clave que forman el corazón de las competiciones Evaluación lógico-matemática. Cada área está diseñada para explorar un conjunto de habilidades utilizado por analistas, pentesters y profesionales del sector.
+                Explora las cuatro disciplinas clave que forman el corazón de INTELECTA. Cada área está diseñada para medir tu capacidad de análisis, razonamiento y resolución de problemas matemáticos.
               </p>
             </div>
             <div role="list" class="coverflow">
@@ -674,9 +674,9 @@
                     ></path>
                   </svg>
                 </div>
-                  <h3 id="card-html5" class="card-title">WEB</h3>
+                  <h3 id="card-html5" class="card-title">ÁLGEBRA</h3>
                 <p class="card-body">
-                    Descubre rutas expuestas, parámetros inseguros y técnicas de inspección. Reto práctico para aprender a identificar y explotar fallos web comunes.
+                    Resuelve ecuaciones, sistemas lineales y problemas de funciones. Evalúa tu capacidad para manipular expresiones y encontrar valores desconocidos.
                 </p>
               </article>
               </a>
@@ -699,9 +699,9 @@
                     ></path>
                   </svg>
                 </div>
-                  <h3 id="card-css3" class="card-title">CRYPTO</h3>
+                  <h3 id="card-css3" class="card-title">CÁLCULO BÁSICO</h3>
                 <p class="card-body">
-                    Ejercicios prácticos con transformaciones y cifrados clásicos: base64, hex, Vigenère, XOR. Aprende a identificar patrones y escribir scripts cortos.
+                    Practica derivadas, límites e integrales simples. Mide tu comprensión del análisis matemático a nivel preuniversitario.
                 </p>
               </article>
               </a>
@@ -728,9 +728,9 @@
                     ></path>
                   </svg>
                 </div>
-                  <h3 id="card-php" class="card-title">STEGO</h3>
+                  <h3 id="card-php" class="card-title">LÓGICA MATEMÁTICA</h3>
                 <p class="card-body">
-                    Analiza imágenes y archivos en busca de información oculta (EXIF, LSB, capas). Prácticas diseñadas para entrenar observación y herramientas básicas.
+                    Trabaja con proposiciones, tablas de verdad y conectivos lógicos. Ejercita tu capacidad de razonamiento formal y deductivo.
                 </p>
               </article>
               </a>
@@ -757,9 +757,9 @@
                     ></path>
                   </svg>
                 </div>
-                  <h3 id="card-python" class="card-title">FORENS</h3>
+                  <h3 id="card-python" class="card-title">RAZONAMIENTO NUMÉRICO</h3>
                 <p class="card-body">
-                    Reconstruye eventos con logs y PCAPs pequeños. Practica carving, análisis de streams y extracción de artefactos reales.
+                    Secuencias, proporciones, porcentajes y problemas de lógica numérica. Desarrolla tu agilidad mental con problemas de nivel universitario.
                 </p>
               </article>
               </a>
@@ -781,13 +781,11 @@
           >
             <div class="section-container">
               <div class="section-header">
-                <h2 class="section-title">¿Qué es un Evaluación lógico-matemática?</h2>
+                <h2 class="section-title">¿Qué es INTELECTA?</h2>
                 <p class="section-subtitle">
-                  Un Evaluación lógico-matemática (Evaluación lógico-matemática) es un formato internacional de ejercicios de ciberseguridad donde el participante debe encontrar una respuesta oculta, demostrando su capacidad técnica. En Synapse Evaluación lógico-matemática, cada respuesta utiliza el estándar:
+                  INTELECTA es una plataforma de evaluación adaptativa que mide el desempeño lógico-matemático de los estudiantes a través de ejercicios de álgebra, cálculo básico, lógica matemática y razonamiento numérico.
 
-                  synapse{md5}
-
-                  Estos desafíos te permiten desarrollar pensamiento crítico, análisis profundo y resolución real de problemas en contextos que simulan escenarios profesionales.
+                  Consulta tus resultados, progreso y posición académica según tu desempeño en cada área.
                 </p>
               </div>
               <div class="overview-backplate">
@@ -849,7 +847,7 @@
                       <span class="card-label">02</span>
                       <h3 id="overview-crypto" class="card-title">Progreso en Evaluación lógico-matemática</h3>
                       <p class="card-body">
-                        Tu nivel se estima científicamente (IRT 2PL, Markov, EMA). Synapse traduce tu rendimiento en recomendaciones para que avances con sentido.
+                        Tu nivel se estima científicamente (IRT 2PL, Markov, EMA). INTELECTA traduce tu rendimiento en recomendaciones para que avances con sentido.
                       </p>
                     </div>
                   </article>
@@ -917,7 +915,7 @@
                     <div class="card-content">
                       <span class="card-label">04</span>
                       <h3 id="overview-esteg" class="card-title">
-                        ¿Qué es Synapse Evaluación lógico-matemática?
+                        ¿Qué es INTELECTA?
                       </h3>
                       <p class="card-body">
                         Plataforma de evaluación formativa basada en pruebas reales. Aprende haciendo y mejora con rutas personalizadas por área.
@@ -972,7 +970,7 @@
                     <span class="lead-meta">Misión del sistema</span>
                     <h3 class="lead-title">Empoderar a estudiantes para enfrentar ejercicios reales del mundo digital.</h3>
                     <p class="lead-body">
-                      Synapse Evaluación lógico-matemática transforma conocimiento en habilidad práctica. Aquí se aprende probando: fallas, refuerzos y progreso medible. Únete: resuelve pruebas reales, mejora tu perfil y compite con propósito.
+                      INTELECTA transforma conocimiento en habilidad práctica. Aquí se aprende probando: fallas, refuerzos y progreso medible. Únete: resuelve pruebas reales, mejora tu perfil y compite con propósito.
                     </p>
                     <p class="lead-body">
                       Aprender no es recordar: es poder reproducir la solución bajo presión. Atrévete, falla, refuerza, mejora.
@@ -1015,7 +1013,7 @@
                         Integridad garantizada
                     </h3>
                     <p class="update-body">
-                        La plataforma está construida bajo principios de seguridad aplicados en entornos reales. Cada ejercicio pasa por auditorías internas y pruebas automatizadas que garantizan autenticidad, integridad y protección de los datos. Implementamos prácticas modernas adoptadas por equipos profesionales de ciberseguridad en Bolivia y Latinoamérica.
+                        La plataforma está construida bajo principios de seguridad aplicados en entornos reales. Cada ejercicio pasa por auditorías internas y pruebas automatizadas que garantizan autenticidad, integridad y protección de los datos. Implementamos prácticas modernas adoptadas por equipos profesionales de evaluación matemática en Bolivia y Latinoamérica.
                     </p>
                     </div>
                   </article>
@@ -1047,7 +1045,7 @@
                         Rutas inteligentes que evolucionan contigo
                     </h3>
                     <p class="card-body">
-                        Synapse Evaluación lógico-matemática no solo mide resultados: interpreta tu proceso. Cada intento, acierto o error alimenta el motor adaptativo. El sistema construye rutas personalizadas para reforzar debilidades, potenciar fortalezas y preparar al estudiante para escenarios reales de análisis web, forense, stego y criptografía.
+                        INTELECTA no solo mide resultados: interpreta tu proceso. Cada intento, acierto o error alimenta el motor adaptativo. El sistema construye rutas personalizadas para reforzar debilidades, potenciar fortalezas y preparar al estudiante para escenarios reales de análisis web, forense, stego y criptografía.
                     </p>
                     </div>
                   </article>
@@ -1126,7 +1124,7 @@
                         Formación continua con expertos
                       </h3>
                     <p class="update-body">
-                        Accede a talleres, sesiones virtuales y actividades guiadas por especialistas en ciberseguridad. Explora técnicas modernas utilizadas por analistas profesionales, participa en mini-competencias y descubre nuevas herramientas que complementan tu desarrollo técnico.
+                        Accede a talleres, sesiones virtuales y actividades guiadas por especialistas en evaluación matemática. Explora técnicas modernas utilizadas por evaluadores profesionales, participa en mini-competencias y descubre nuevas herramientas que complementan tu desarrollo técnico.
                     </p>
                     </div>
                   </article>
@@ -1158,7 +1156,7 @@
                       </svg>
                       <span>COMUNIDAD</span>
                     </span>
-                      <h3 class="update-title">Construyamos juntos una cultura de ciberseguridad</h3>
+                      <h3 class="update-title">Construyamos juntos una cultura de evaluación matemática</h3>
                     <p class="card-body">
                         Únete a una red creciente de estudiantes, docentes y entusiastas de la seguridad informática. Comparte soluciones, desarrolla pensamiento crítico y colabora en ejercicios semanales que valoran ingenio, creatividad y buenas prácticas.
                     </p>
@@ -1192,7 +1190,7 @@
                         Tecnología que evoluciona contigo
                     </h3>
                     <p class="card-body">
-                        Synapse Evaluación lógico-matemática integra visualizaciones claras de progreso, métricas en tiempo real, paneles interactivos y una arquitectura diseñada para acompañar cada fase de tu aprendizaje. La plataforma crece con nuevas funciones, nuevos ejercicios y herramientas que fortalecen las competencias técnicas del usuario.
+                        INTELECTA integra visualizaciones claras de progreso, métricas en tiempo real, paneles interactivos y una arquitectura diseñada para acompañar cada fase de tu aprendizaje. La plataforma crece con nuevas funciones, nuevos ejercicios y herramientas que fortalecen las competencias técnicas del usuario.
                     </p>
                     </div>
                   </article>

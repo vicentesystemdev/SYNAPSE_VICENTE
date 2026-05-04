@@ -3,22 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Synapse Evaluación lógico-matemática MVP - @yield('title', 'Menú Principal')</title>
+    <title>INTELECTA MVP - @yield('title', 'Menú Principal')</title>
     <!-- Opcional: Carga de una fuente moderna como Inter desde Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
         /* Variables de Color */
         :root {
-            --color-body-bg: #F9FAFB; /* Gris muy claro para el fondo general */
-            --color-main-bg: #FFFFFF; /* Blanco para el contenedor principal de contenido */
-            --color-header-footer-bg: #111827; /* Negro para Header y Footer */
-            --color-text-main: #1F2937; /* Gris oscuro / Casi negro para texto principal */
-            --color-text-on-dark: #FFFFFF; /* Blanco para texto sobre fondos oscuros */
-            --color-text-on-dark-light: #E5E7EB; /* Gris claro para texto secundario sobre fondos oscuros */
-            --color-accent: #F97316; /* Naranja brillante para acentos y CTAs */
-            --color-accent-hover: #EA580C; /* Naranja un poco más oscuro para hover */
-            --color-border-subtle: #E5E7EB; /* Borde sutil para tarjetas y separadores */
-            --color-text-muted: #6B7280; /* Gris para texto menos prominente */
+            --color-body-bg: #F0F4FF;
+            --color-main-bg: #FFFFFF;
+            --color-header-footer-bg: #1e2a45;
+            --color-text-main: #1F2937;
+            --color-text-on-dark: #FFFFFF;
+            --color-text-on-dark-light: #adb5bd;
+            --color-accent: #3b5bdb;
+            --color-accent-hover: #2f4ac2;
+            --color-border-subtle: #dee2e6;
+            --color-text-muted: #6B7280;
         }
 
         body {
@@ -446,12 +446,12 @@
     <header class="header">
         <div class="container-main">
             <div class="header-content">
-                <a href="{{ route('dashboard') }}" class="header-logo">SYNAPSE</a>
+                <a href="{{ route('dashboard') }}" class="header-logo">INTELECTA</a>
                 <nav class="header-nav">
                     <ul>
                         <li><a href="{{ route('dashboard') }}">Inicio</a></li>
                         @if (Route::has('evaluaciones.index'))
-                            <li><a href="{{ route('evaluaciones.index') }}">Explorar Retos</a></li>
+                            <li><a href="{{ route('evaluaciones.index') }}">Explorar Ejercicios</a></li>
                         @endif
                         @if (Route::has('rankings.index'))
                             <li><a href="{{ route('rankings.index') }}">Ranking</a></li>
@@ -513,8 +513,8 @@
         <div class="container-main">
             <div class="footer-content">
                 <div class="footer-left">
-                    <a href="{{ route('dashboard') }}" class="footer-logo">SYNAPSE</a>
-                    <p class="mb-0">© {{ date('Y') }} Synapse Evaluación lógico-matemática MVP. Todos los derechos reservados.</p>
+                    <a href="{{ route('dashboard') }}" class="footer-logo">INTELECTA</a>
+                    <p class="mb-0">© {{ date('Y') }} INTELECTA — Plataforma de Evaluación Lógico-Matemática. Todos los derechos reservados.</p>
                 </div>
                 <div class="footer-right">
                     <ul>

@@ -204,7 +204,7 @@
                       </ul>
                     </div>
                     <div class="footer-nav-column">
-                      <h3 class="footer-nav-title">Synapse Evaluación lógico-matemática</h3>
+                      <h3 class="footer-nav-title">INTELECTA</h3>
                       <ul class="footer-nav-list">
                         <li class="footer-nav-item">
                           <a href="{{ route('estudiante.informacion.sobre_proyecto') }}">
@@ -304,7 +304,7 @@
                 <div class="footer-bottom">
                   <div class="footer-bottom-content">
                     <p class="footer-copyright">
-                      © 2025 Unifranz Synapse. Todos los derechos reservados.
+                      © 2025 Unifranz INTELECTA. Todos los derechos reservados.
                     </p>
                     <div class="footer-legal-links">
                       <a href="#">

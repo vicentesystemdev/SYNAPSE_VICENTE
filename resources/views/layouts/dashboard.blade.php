@@ -22,23 +22,26 @@
     @yield('css')
     <style>
             :root {
-                /* Colores del Estudiante Dashboard */
-                --color-primary: #ff8c2b;
-                --color-primary-dark: #e67e22;
-                --color-accent: #ffd36b;
-                --color-surface: #0c0b12;
-                --color-on-surface: #f2f6fb;
-                --color-border: rgba(143, 153, 166, 0.18);
-                
-                /* Mapeo a variables existentes para compatibilidad */
-                --neon-blue: var(--color-primary);
-                --neon-purple: var(--color-accent);
-                --neon-white: var(--color-on-surface);
-                --dark-bg: var(--color-surface);
-                --light-bg: rgba(255, 255, 255, 0.05);
-                --emerald-green: #50C878;
+                /* Paleta INTELECTA — Académica */
+                --color-primary: #3b5bdb;         /* Índigo principal */
+                --color-primary-dark: #2f4ac2;
+                --color-primary-light: #748ffc;
+                --color-secondary: #4dabf7;       /* Celeste */
+                --color-accent: #51cf66;          /* Verde éxito */
+                --color-surface: #f8f9fa;         /* Fondo gris claro */
+                --color-surface-dark: #1e2a45;   /* Sidebar oscuro */
+                --color-on-surface: #212529;
+                --color-on-surface-light: #495057;
+                --color-border: rgba(59, 91, 219, 0.18);
 
-                --neon-glow: 0 0 10px rgba(255, 140, 43, 0.3);
+                /* Compatibilidad hacia atrás */
+                --neon-blue: var(--color-primary);
+                --neon-purple: var(--color-primary-light);
+                --neon-white: #f8f9fa;
+                --dark-bg: var(--color-surface-dark);
+                --light-bg: rgba(59, 91, 219, 0.06);
+                --emerald-green: var(--color-accent);
+                --neon-glow: 0 0 10px rgba(59, 91, 219, 0.25);
             }
 
             /* General Body and Wrapper Styling */
@@ -63,7 +66,7 @@
             }
 
             .wrapper {
-                background-color: rgba(12, 11, 18, 0.85); /* Overlay oscuro sobre el video */
+                background-color: var(--color-surface);
                 min-height: 100vh;
             }
 
@@ -72,10 +75,9 @@
             /* Main Sidebar - Glassmorphism */
             /* Main Sidebar - Glassmorphism */
             .main-sidebar {
-                background-color: rgba(12, 11, 18, 0.85) !important; /* Darker background for legibility */
-                backdrop-filter: blur(5px);
-                box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-                border-right: 1px solid var(--color-border);
+                background-color: var(--color-surface-dark) !important;
+                box-shadow: 2px 0 12px rgba(0,0,0,0.18);
+                border-right: 1px solid rgba(59,91,219,0.15);
             }
             
             .content-wrapper {
@@ -158,9 +160,9 @@
 
             /* Navbar (Top) styling */
             .main-header.navbar {
-                background-color: var(--dark-bg); /* Fondo oscuro para la navbar */
-                border-bottom: 1px solid var(--neon-blue);
-                box-shadow: 0 0 20px rgba(0, 229, 255, 0.5); /* De tu header de ejemplo */
+                background-color: var(--color-surface-dark);
+                border-bottom: 2px solid var(--color-primary);
+                box-shadow: 0 2px 8px rgba(59, 91, 219, 0.2);
             }
             .main-header .nav-link {
                 color: var(--neon-white); /* Texto neón blanco para navbar items */
@@ -279,20 +281,18 @@
 
             /* Content Header */
             .content-header h1 {
-                color: var(--neon-blue);
-                font-weight: 600;
-                text-shadow: 0 0 10px var(--neon-white), 0 0 20px var(--neon-blue), 0 0 30px var(--neon-purple); /* Animación de brillo neón */
-                animation: neon-glow 1.5s ease-in-out infinite alternate;
+                color: var(--color-primary);
+                font-weight: 700;
+                letter-spacing: 0.5px;
             }
 
             /* Footer */
             .main-footer {
-                background-color: var(--dark-bg);
-                border-top: 2px solid var(--neon-purple); /* Borde neón púrpura */
-                color: var(--neon-white);
-                padding: 25px;
-                font-size: 1em;
-                box-shadow: 0 -5px 15px rgba(174, 0, 255, 0.3); /* Sombra neón púrpura */
+                background-color: var(--color-surface-dark);
+                border-top: 2px solid var(--color-primary);
+                color: #adb5bd;
+                padding: 15px 25px;
+                font-size: 0.9em;
             }
             .main-footer strong {
                 color: var(--neon-white);
@@ -391,7 +391,7 @@
             }
         </style>
 </head>
-<body class="hold-transition sidebar-mini layout-fixed dark-mode">
+<body class="hold-transition sidebar-mini layout-fixed">
     <video autoplay muted loop id="background-video" class="background-video">
         <source src="{{ asset('images/Fondo2.mp4') }}" type="video/mp4">
     </video>
@@ -470,7 +470,7 @@
     <aside class="main-sidebar elevation-4">
         <!-- Brand Logo -->
         <a href="/" class="brand-link">
-            <span class="brand-text --emerald-green">SYNAPSE Evaluación lógico-matemática</span>
+            <span class="brand-text" style="font-weight:800; letter-spacing:1px; color:#748ffc;">INTELECTA</span>
         </a>
 
         <!-- Sidebar -->
@@ -512,7 +512,7 @@
     <!-- Main Footer -->
     <footer class="main-footer">
         <!-- Default to the left -->
-        <strong>Copyright &copy; 2025 - BY JARVIS.</strong> All rights reserved.
+        <strong>INTELECTA &copy; {{ date('Y') }}</strong> — Plataforma de Evaluación Lógico-Matemática.
     </footer>
 </div>
 <!-- ./wrapper -->
