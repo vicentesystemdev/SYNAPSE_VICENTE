@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>INTELECTA — La Evolución de las Evaluaciones en Evaluación Matemática</title>
-    <meta property="og:title" content="INTELECTA — La Evolución de las Evaluaciones en Evaluación Matemática" />
+    <title>INTELECTA — Áreas de Evaluación Lógico-Matemática</title>
+    <meta property="og:title" content="INTELECTA — Áreas de Evaluación Lógico-Matemática" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="utf-8" />
     <meta property="twitter:card" content="summary_large_image" />
@@ -560,11 +560,11 @@ $nivelLabels = [
 // Asegurar que existe el array de niveles (por si no se pasó desde el controlador)
 $nivelesPorCategoria = $nivelesPorCategoria ?? [];
 
-// Calcular niveles para cada área (evitar problemas de sintaxis)
-$nivelWeb = $nivelesPorCategoria['WEB'] ?? 'medio';
-$nivelCrypto = $nivelesPorCategoria['CRYPTO'] ?? 'medio';
-$nivelStego = $nivelesPorCategoria['STEGO'] ?? 'medio';
-$nivelForens = $nivelesPorCategoria['FORENS'] ?? 'medio';
+// Variables de nivel por área matemática (usando códigos reales de la BD)
+$nivelAlgebra   = $nivelesPorCategoria['ALGEBRA'] ?? 'medio';
+$nivelCalculo   = $nivelesPorCategoria['CALCULO'] ?? 'medio';
+$nivelLogica    = $nivelesPorCategoria['LOGICA']  ?? 'medio';
+$nivelRazon     = $nivelesPorCategoria['RAZON']   ?? 'medio';
 @endphp
 
 <div class="w-full bg-slate-950 text-slate-100 px-4 py-12 md:px-6">
@@ -590,13 +590,13 @@ $nivelForens = $nivelesPorCategoria['FORENS'] ?? 'medio';
           </p>
 
           <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-white">
-            Practica como en un torneo Evaluación lógico-matemática real.
+            Resuelve ejercicios de álgebra, cálculo y lógica matemática.
           </h1>
 
           <p class="text-sm md:text-base text-slate-300 max-w-md">
             Activa la <span class="font-semibold text-indigo-200">ruta adaptativa recomendada</span>:
-            INTELECTA analiza tu desempeño, elige área, ajusta dificultad
-            y te envía directo al siguiente ejercicio ideal para ti.
+            INTELECTA analiza tu desempeño, elige el área que necesitas reforzar,
+            ajusta la dificultad y te envía al siguiente ejercicio ideal para ti.
           </p>
 
           <div class="flex flex-col gap-3 pt-2 sm:flex-row sm:items-center">
@@ -645,23 +645,21 @@ $nivelForens = $nivelesPorCategoria['FORENS'] ?? 'medio';
     <!-- SECCIÓN CATEGORÍAS -->
     <section class="space-y-4">
       <div class="text-center md:text-left">
-        <h2 class="text-2xl font-bold text-white">Practicar por área</h2>
+        <h2 class="text-2xl font-bold text-white">Áreas de Evaluación Matemática</h2>
         <p class="text-sm text-slate-400 max-w-xl">
-          Enfócate en el tipo de ejercicio que quieras mejorar. La dificultad seguirá siendo adaptativa dentro de cada área.
+          Elige el área que quieres practicar. El motor adaptativo IRT ajustará la dificultad
+          según tu nivel real dentro de cada disciplina matemática.
         </p>
       </div>
 
       <!-- GRID DE CATEGORÍAS -->
       <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
 
-        <!-- WEB -->
+        {{-- TARJETA: ÁLGEBRA --}}
         <article
           class="group overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/50 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-indigo-500/70 hover:shadow-2xl hover:shadow-indigo-500/30">
-          <div class="relative h-40 w-full overflow-hidden">
-            <img
-              src="{{ asset('images/categorias/web.jpeg') }}"
-              alt="Retos web"
-              class="h-full w-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
+          <div class="relative h-40 w-full overflow-hidden bg-gradient-to-br from-indigo-900/60 to-slate-900 flex items-center justify-center">
+            <span class="text-6xl select-none">&#x1D465;</span>
             <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent"></div>
           </div>
 
@@ -670,19 +668,19 @@ $nivelForens = $nivelesPorCategoria['FORENS'] ?? 'medio';
               Área
             </span>
 
-            <h3 class="text-lg font-semibold text-white tracking-tight">WEB</h3>
+            <h3 class="text-lg font-semibold text-white tracking-tight">ÁLGEBRA</h3>
 
             <p class="text-sm text-slate-400">
-              Vulnerabilidades de aplicaciones web: autenticación, inyección, sesiones y lógica de negocio.
+              Ecuaciones, sistemas lineales, factorización, logaritmos y expresiones algebraicas. Desarrolla el razonamiento simbólico.
             </p>
 
             <span
-              class="inline-block text-[11px] font-medium px-2 py-1 {{ $nivelLabels[$nivelWeb]['color'] }} rounded">
-              Nivel actual: {{ $nivelLabels[$nivelWeb]['text'] }}
+              class="inline-block text-[11px] font-medium px-2 py-1 {{ $nivelLabels[$nivelAlgebra]['color'] }} rounded">
+              Nivel actual: {{ $nivelLabels[$nivelAlgebra]['text'] }}
             </span>
 
             <div class="flex justify-end pt-2">
-              <a href="{{ route('estudiante.evaluaciones.por_categoria', 'web') }}"
+              <a href="{{ route('estudiante.evaluaciones.por_categoria', 'ALGEBRA') }}"
                 class="inline-flex justify-center rounded-lg bg-indigo-500 px-4 py-2 text-xs font-semibold text-white shadow hover:bg-indigo-400 hover:shadow-indigo-400/60 active:scale-[0.97] transition-all duration-300 ease-out">
                 Practicar
               </a>
@@ -690,14 +688,11 @@ $nivelForens = $nivelesPorCategoria['FORENS'] ?? 'medio';
           </div>
         </article>
 
-        <!-- CRYPTO -->
+        {{-- TARJETA: CÁLCULO BÁSICO --}}
         <article
-          class="group overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/50 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-indigo-500/70 hover:shadow-2xl hover:shadow-indigo-500/30">
-          <div class="relative h-40 w-full overflow-hidden">
-            <img
-              src="{{ asset('images/categorias/crypto.jpg') }}"
-              alt="Retos de criptografía"
-              class="h-full w-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
+          class="group overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/50 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-cyan-500/70 hover:shadow-2xl hover:shadow-cyan-500/30">
+          <div class="relative h-40 w-full overflow-hidden bg-gradient-to-br from-cyan-900/60 to-slate-900 flex items-center justify-center">
+            <span class="text-6xl select-none">&#x222B;</span>
             <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent"></div>
           </div>
 
@@ -706,34 +701,31 @@ $nivelForens = $nivelesPorCategoria['FORENS'] ?? 'medio';
               Área
             </span>
 
-            <h3 class="text-lg font-semibold text-white tracking-tight">CRYPTO</h3>
+            <h3 class="text-lg font-semibold text-white tracking-tight">CÁLCULO BÁSICO</h3>
 
             <p class="text-sm text-slate-400">
-              Desafíos de cifrados, hashes, claves y análisis criptográfico aplicado a escenarios Evaluación lógico-matemática.
+              Límites, derivadas, integrales y optimización. Mide tu comprensión del análisis matemático a nivel preuniversitario.
             </p>
 
             <span
-              class="inline-block text-[11px] font-medium px-2 py-1 {{ $nivelLabels[$nivelCrypto]['color'] }} rounded">
-              Nivel actual: {{ $nivelLabels[$nivelCrypto]['text'] }}
+              class="inline-block text-[11px] font-medium px-2 py-1 {{ $nivelLabels[$nivelCalculo]['color'] }} rounded">
+              Nivel actual: {{ $nivelLabels[$nivelCalculo]['text'] }}
             </span>
 
             <div class="flex justify-end pt-2">
-              <a href="{{ route('estudiante.evaluaciones.por_categoria', 'crypto') }}"
-                class="inline-flex justify-center rounded-lg bg-indigo-500 px-4 py-2 text-xs font-semibold text-white shadow hover:bg-indigo-400 hover:shadow-indigo-400/60 active:scale-[0.97] transition-all duration-300 ease-out">
+              <a href="{{ route('estudiante.evaluaciones.por_categoria', 'CALCULO') }}"
+                class="inline-flex justify-center rounded-lg bg-cyan-500 px-4 py-2 text-xs font-semibold text-white shadow hover:bg-cyan-400 hover:shadow-cyan-400/60 active:scale-[0.97] transition-all duration-300 ease-out">
                 Practicar
               </a>
             </div>
           </div>
         </article>
 
-        <!-- STEGO -->
+        {{-- TARJETA: LÓGICA MATEMÁTICA --}}
         <article
-          class="group overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/50 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-indigo-500/70 hover:shadow-2xl hover:shadow-indigo-500/30">
-          <div class="relative h-40 w-full overflow-hidden">
-            <img
-              src="{{ asset('images/categorias/stego.jpg') }}"
-              alt="Retos de esteganografía"
-              class="h-full w-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
+          class="group overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/50 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-violet-500/70 hover:shadow-2xl hover:shadow-violet-500/30">
+          <div class="relative h-40 w-full overflow-hidden bg-gradient-to-br from-violet-900/60 to-slate-900 flex items-center justify-center">
+            <span class="text-6xl select-none">&#x2227;</span>
             <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent"></div>
           </div>
 
@@ -742,34 +734,31 @@ $nivelForens = $nivelesPorCategoria['FORENS'] ?? 'medio';
               Área
             </span>
 
-            <h3 class="text-lg font-semibold text-white tracking-tight">STEGO</h3>
+            <h3 class="text-lg font-semibold text-white tracking-tight">LÓGICA MATEMÁTICA</h3>
 
             <p class="text-sm text-slate-400">
-              Mensajes ocultos en imágenes, audio y archivos. Aprende a detectarlos y extraer la respuesta.
+              Proposiciones, tablas de verdad, conectivos lógicos, conjuntos y razonamiento deductivo formal.
             </p>
 
             <span
-              class="inline-block text-[11px] font-medium px-2 py-1 {{ $nivelLabels[$nivelStego]['color'] }} rounded">
-              Nivel actual: {{ $nivelLabels[$nivelStego]['text'] }}
+              class="inline-block text-[11px] font-medium px-2 py-1 {{ $nivelLabels[$nivelLogica]['color'] }} rounded">
+              Nivel actual: {{ $nivelLabels[$nivelLogica]['text'] }}
             </span>
 
             <div class="flex justify-end pt-2">
-              <a href="{{ route('estudiante.evaluaciones.por_categoria', 'stego') }}"
-                class="inline-flex justify-center rounded-lg bg-indigo-500 px-4 py-2 text-xs font-semibold text-white shadow hover:bg-indigo-400 hover:shadow-indigo-400/60 active:scale-[0.97] transition-all duration-300 ease-out">
+              <a href="{{ route('estudiante.evaluaciones.por_categoria', 'LOGICA') }}"
+                class="inline-flex justify-center rounded-lg bg-violet-500 px-4 py-2 text-xs font-semibold text-white shadow hover:bg-violet-400 hover:shadow-violet-400/60 active:scale-[0.97] transition-all duration-300 ease-out">
                 Practicar
               </a>
             </div>
           </div>
         </article>
 
-        <!-- FORENS -->
+        {{-- TARJETA: RAZONAMIENTO NUMÉRICO --}}
         <article
-          class="group overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/50 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-indigo-500/70 hover:shadow-2xl hover:shadow-indigo-500/30">
-          <div class="relative h-40 w-full overflow-hidden">
-            <img
-              src="{{ asset('images/categorias/forens.jpg') }}"
-              alt="Retos forense"
-              class="h-full w-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
+          class="group overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/50 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-emerald-500/70 hover:shadow-2xl hover:shadow-emerald-500/30">
+          <div class="relative h-40 w-full overflow-hidden bg-gradient-to-br from-emerald-900/60 to-slate-900 flex items-center justify-center">
+            <span class="text-6xl select-none">&#x1D45F;</span>
             <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent"></div>
           </div>
 
@@ -778,25 +767,26 @@ $nivelForens = $nivelesPorCategoria['FORENS'] ?? 'medio';
               Área
             </span>
 
-            <h3 class="text-lg font-semibold text-white tracking-tight">FORENS</h3>
+            <h3 class="text-lg font-semibold text-white tracking-tight">RAZONAMIENTO NUMÉRICO</h3>
 
             <p class="text-sm text-slate-400">
-              Análisis de discos, capturas de red y metadatos para reconstruir qué ocurrió y encontrar la respuesta.
+              Sucesiones, proporciones, porcentajes, regla de tres e interés. Agiliza tu pensamiento cuantitativo.
             </p>
 
             <span
-              class="inline-block text-[11px] font-medium px-2 py-1 {{ $nivelLabels[$nivelForens]['color'] }} rounded">
-              Nivel actual: {{ $nivelLabels[$nivelForens]['text'] }}
+              class="inline-block text-[11px] font-medium px-2 py-1 {{ $nivelLabels[$nivelRazon]['color'] }} rounded">
+              Nivel actual: {{ $nivelLabels[$nivelRazon]['text'] }}
             </span>
 
             <div class="flex justify-end pt-2">
-              <a href="{{ route('estudiante.evaluaciones.por_categoria', 'forens') }}"
-                class="inline-flex justify-center rounded-lg bg-indigo-500 px-4 py-2 text-xs font-semibold text-white shadow hover:bg-indigo-400 hover:shadow-indigo-400/60 active:scale-[0.97] transition-all duration-300 ease-out">
+              <a href="{{ route('estudiante.evaluaciones.por_categoria', 'RAZON') }}"
+                class="inline-flex justify-center rounded-lg bg-emerald-500 px-4 py-2 text-xs font-semibold text-white shadow hover:bg-emerald-400 hover:shadow-emerald-400/60 active:scale-[0.97] transition-all duration-300 ease-out">
                 Practicar
               </a>
             </div>
           </div>
         </article>
+
 
       </div>
     </section>

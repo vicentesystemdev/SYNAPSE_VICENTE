@@ -3,7 +3,7 @@
 @section('title', 'Dashboard del Docente')
 
 @section('content_header')
-    <h1 class="m-0 text-dark">
+    <h1 class="m-0 text-white">
         <i class="fas fa-fw fa-tachometer-alt" style="color:#3b5bdb"></i> PANEL DEL DOCENTE — INTELECTA
     </h1>
 @stop
@@ -17,24 +17,24 @@
         {{-- Sección de Bienvenida y Resumen General --}}
         <div class="row mb-4">
             <div class="col-12">
-                <div class="card bg-gradient-dark custom-gradient-bg border-0 shadow-lg"> {{-- Clase custom-gradient-bg para el color --}}
-                    <div class="card-header border-0 d-flex justify-content-between align-items-center">
-                        <h3 class="card-title text-white">
+                <div style="background: linear-gradient(135deg, #1e2a45 0%, #2d3a5e 50%, #1e2a45 100%); border: 1px solid rgba(59,91,219,0.4); border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.4);">
+                    <div style="padding: 1rem 1.5rem; border-bottom: 1px solid rgba(59,91,219,0.25); display: flex; justify-content: space-between; align-items: center;">
+                        <h3 style="color: #ffffff !important; font-weight: 700; margin: 0; font-size: 1.1rem;">
                             <i class="fas fa-chart-pie mr-2" style="color:#748ffc"></i> Resumen Académico — INTELECTA
                         </h3>
-                        <div class="card-tools">
-                            <span class="badge badge-warning custom-badge-warning text-dark">{{ $periodoActual->nombre_per ?? 'Sin período' }}</span>
-                        </div>
+                        <span style="background: #3b5bdb; color: #fff; padding: 3px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 600;">
+                            {{ $periodoActual->nombre_per ?? 'Sin período' }}
+                        </span>
                     </div>
-                    <div class="card-body">
-                        <p class="text-white-50">
+                    <div style="padding: 1.25rem 1.5rem;">
+                        <p style="color: rgba(255,255,255,0.8) !important; margin-bottom: 1.25rem; font-size: 0.95rem; line-height: 1.6;">
                             Supervisa el rendimiento de tus estudiantes, gestiona evaluaciones y analiza el progreso. Accede a todas las herramientas desde el menú lateral.
                         </p>
-                        <div class="mt-4">
-                            <a href="{{ route('docente.estudiantes.create') }}" class="btn btn-primary custom-btn-orange-outline mr-2">
+                        <div>
+                            <a href="{{ route('docente.estudiantes.create') }}" class="btn mr-2" style="background:#3b5bdb; border:none; color:#fff; font-weight:600; border-radius:8px;">
                                 <i class="fas fa-user-plus mr-2"></i> Crear Nuevo Estudiante
                             </a>
-                            <a href="{{ route('evaluaciones.create') }}" class="btn btn-info custom-btn-teal">
+                            <a href="{{ route('evaluaciones.create') }}" class="btn" style="background:#1971c2; border:1px solid #4dabf7; color:#fff; font-weight:600; border-radius:8px;">
                                 <i class="fas fa-plus-square mr-2"></i> Crear Nueva Evaluación
                             </a>
                         </div>
@@ -349,16 +349,16 @@
             --color-orange-hover: #2f4ac2;
             --color-orange-light: #748ffc;
             --color-border-subtle: #dee2e6;
-            --color-text-dark: #212529;
+            --color-text-white: #212529;
             --color-text-light: #f8f9fa;
             --font-family-primary: 'Source Sans Pro', sans-serif;
         }
 
         /* ****** IMPORTANTE: CORREGIR EL COLOR DEL TEXTO PRINCIPAL ****** */
-        /* La variable --color-text-dark debería ser un gris oscuro o negro para el contraste */
+        /* La variable --color-text-white debería ser un gris oscuro o negro para el contraste */
         /* Si rgb(221, 59, 19) es el color del texto de los párrafos, es un naranja muy brillante. */
-        /* Sugiero cambiar --color-text-dark a un gris oscuro o negro: */
-        /* --color-text-dark: #333333; */
+        /* Sugiero cambiar --color-text-white a un gris oscuro o negro: */
+        /* --color-text-white: #333333; */
 
         /* Puedes revisar los estilos de AdminLTE para small-box y cards */
         /* Asegurarte de que .text-white-50 y otros textos se vean bien con los nuevos fondos */
@@ -392,46 +392,46 @@
         /* Tarjetas (cards) */
         .card {
             background-color: var(--color-white);
-            color: var(--color-text-dark); /* Texto oscuro en tarjetas blancas */
+            color: var(--color-text-white); /* Texto oscuro en tarjetas blancas */
             border: 1px solid var(--color-border-subtle);
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
         }
         .card-header {
             background-color: var(--color-light-gray);
-            color: var(--color-text-dark);
+            color: var(--color-text-white);
             border-bottom: 1px solid var(--color-border-subtle);
         }
         .card-title {
-            color: var(--color-text-dark);
+            color: var(--color-text-white);
         }
         .card-title i {
             color: var(--color-orange-primary); /* Iconos de tarjeta naranjas */
         }
         .card-body p {
-            color: var(--color-text-dark); /* Párrafos en cards, texto oscuro */
+            color: var(--color-text-white); /* Párrafos en cards, texto oscuro */
         }
         .custom-card-dark { /* Redefinir para el nuevo tema */
             background-color: var(--color-white) !important;
-            color: var(--color-text-dark) !important;
+            color: var(--color-text-white) !important;
             border: 1px solid var(--color-border-subtle);
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
         }
         .custom-card-dark .card-header {
             background-color: var(--color-light-gray) !important;
-            color: var(--color-text-dark) !important;
+            color: var(--color-text-white) !important;
             border-bottom: 1px solid var(--color-border-subtle) !important;
         }
         .custom-card-dark .table {
-            color: var(--color-text-dark) !important;
+            color: var(--color-text-white) !important;
         }
         .custom-card-dark .table-striped tbody tr:nth-of-type(odd) {
             background-color: rgba(0, 0, 0, 0.03) !important;
         }
         .text-white { /* Asegurar que el texto que usa text-white se ajuste */
-            color: var(--color-text-dark) !important;
+            color: var(--color-text-white) !important;
         }
         .text-white-50 { /* Asegurar que el texto que usa text-white-50 se ajuste */
-            color: var(--color-text-dark) !important;
+            color: var(--color-text-white) !important;
         }
         .text-orange-400, .text-orange-600, .text-orange-300 { /* Mantener el naranja para acentos */
             color: var(--color-orange-primary) !important;

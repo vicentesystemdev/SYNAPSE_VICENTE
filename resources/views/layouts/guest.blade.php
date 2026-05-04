@@ -13,16 +13,27 @@
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+        <style>
+            .sm\:max-w-md label {
+                color: #e2e8f0 !important;
+            }
+            .sm\:max-w-md .text-gray-600 {
+                color: #cbd5e1 !important;
+            }
+        </style>
     </head>
     <body class="font-sans text-gray-900 antialiased">
-        <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
+        <video autoplay loop muted playsinline id="video-background" style="position: fixed; right: 0; bottom: 0; min-width: 100%; min-height: 100%; width: auto; height: auto; z-index: -100;">
+            <source src="/images/Fondo2.mp4" type="video/mp4">
+        </video>
+        <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0" style="background-color: rgba(238, 242, 255, 0.4);">
             <div>
                 <a href="/">
-                    <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
+                    <x-application-logo class="w-20 h-20 fill-current text-indigo-600" style="filter: drop-shadow(0 0 10px rgba(59, 91, 219, 0.3));" />
                 </a>
             </div>
 
-            <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg">
+            <div class="w-full sm:max-w-md mt-6 px-6 py-4 shadow-xl overflow-hidden sm:rounded-lg" style="background-color: #1e2a45; border: 1px solid rgba(116, 143, 252, 0.4); color: white;">
                 {{ $slot }}
             </div>
         </div>

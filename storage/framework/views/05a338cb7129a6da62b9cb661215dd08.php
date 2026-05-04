@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Restablecer Contraseña</title>
+    <title>INTELECTA — Iniciar Sesión</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+       @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 * {
     margin: 0;
@@ -37,6 +36,7 @@ body {
     width: 100%;
     height: 100vh;
     background-color: var(--color-background);
+    background-position: center;
 }
 
 /* Estilos para el video de fondo */
@@ -61,7 +61,6 @@ body {
     border-radius: 5px;
 }
 
-
 .forms-container {
     height: 100%;
     background-color: var(--color-background-from);
@@ -74,12 +73,6 @@ body {
 
 .forms.active {
     transform: translateY(-50%);
-}
-
-.alert-danger {
-    color: #e3342f;
-    font-size: 0.8rem;
-    margin-top: 0.25rem;
 }
 
 form {
@@ -98,7 +91,7 @@ form h2 {
 form p {
     font-size: 0.85rem;
     font-weight: 500;
-    color: var(--color-text-secondary);
+    color: var(--color-text-primary);
     margin-top: 2rem; 
     margin-bottom: 1.8rem;
 }
@@ -114,7 +107,6 @@ form p a {
     flex-direction: column;
     gap: 0.5rem;
     margin-bottom: 1.2rem;
-    color: var(--color-text-secondary);
 }
 
 .input-container input {
@@ -224,7 +216,7 @@ form .btn-register {
 
 
 .sidebar span {
-    color: var(--color-text-secondary);
+    color: var(--color-text-primary);
     font-size: 0.8rem;
 }
 
@@ -251,11 +243,7 @@ form .btn-register {
     60% { transform: translateY(0); }
 }
 
-#sign-In{
-    overflow:hidden;
-    overflow-y: scroll;
-    height: 550px;
-}
+
 
 
 /* Contenedor con el input + ícono de ojo */
@@ -288,7 +276,9 @@ form .btn-register {
     display: flex;
     align-items: center;
 }
-
+.letra{
+    color: var(--color-text-primary);
+}
 /* Cuando hay error en el campo */
 .password-verify input.input-error {
     border: 2px solid #dc3545;
@@ -308,19 +298,17 @@ form .btn-register {
     margin-top: 5px;
 }
 
-/* Estilos para los requisitos de contraseña */
-.invalid-requirement {
-    color: #dc3545; /* Rojo */
-    list-style: none; /* Quita viñetas */
+.remember-me input[type="checkbox"] {
+    width: auto;
+    margin: 0;
 }
 
-.valid-requirement {
-    color: #28a745; /* Verde */
-    list-style: none; /* Quita viñetas */
+.remember-me label {
+    cursor: pointer;
 }
 
 form button:hover {
-    background-color: rgb(255, 153, 0);
+    background-color:rgb(255, 153, 0);
 }
 
 .banner {
@@ -389,111 +377,69 @@ form button:hover {
     background: linear-gradient(90deg, transparent, #748ffc, transparent);
     border-radius: 2px;
 }
-
-.input-container .forget {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-/* Nuevos estilos para el campo de correo electrónico */
-.email-input-wrapper-style {
-    display: flex;
-    align-items: center;
-    padding: 0.7rem;
-    border: 2px solid var(--color-border);
-    border-radius: 0.4rem;
-    overflow: hidden;
-    width: 100%; /* Asegura que ocupe todo el ancho disponible en su contenedor */
-}
-
-.email-input-wrapper-style:focus-within {
-    border-color: var(--color-primary);
-}
-
-.email-input-wrapper-style input {
-    flex-grow: 1;
-    border: none;
-    outline: none;
-    font-size: 0.9rem;
-    padding: 0;
-}
-
-.email-prefix-suffix-style {
-    color: var(--color-text-secondary);
-    white-space: nowrap;
-    padding: 0 0.2rem; /* Pequeño padding para separar del input */
-}
     </style>
+    
 </head>
 <body>
-<video autoplay loop muted playsinline id="video-background">
+    <video autoplay loop muted playsinline id="video-background">
         <source src="/images/Fondo2.mp4" type="video/mp4">
     </video>
     <div class="container" id="container">
         <div class="forms-container">
-            <form method="POST" action="{{ route('password.store') }}" id="sign-In">
-        @csrf
-                
-                <h2>Restablecer Contraseña</h2>
+            <form method="POST" action="<?php echo e(route('login')); ?>" id="sign-In">
+        <?php echo csrf_field(); ?>
 
-        <!-- Password Reset Token -->
-        <input type="hidden" name="token" value="{{ $request->route('token') }}">
+                <h2>Iniciar Sesión</h2>
 
-        <!-- Email Address -->
                 <div class="input-container">
-                    <label for="email">Correo Electrónico:</label>
-                    <input type="email" id="email" name="email" value="{{ old('email', $request->email) }}" placeholder="Ingrese su correo electrónico" required autofocus>
-                    @error('email')
-                        <div class="alert-danger">{{ $message }}</div>
-                    @enderror
-        </div>
+                    <label for="email" class= "letra">Correo Institucional:</label>
+                    <input type="email" id="email" name="email" value="<?php echo e(old('email')); ?>" placeholder="Ingrese su correo institucional" required autofocus>
+                    <?php $__errorArgs = ['email'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                        <div class="alert-danger"><?php echo e($message); ?></div>
+                    <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                </div>
 
-        <!-- Password -->
                 <div class="input-container">
                     <div class="forget">
-                        <label for="password">Nueva Contraseña</label>
+                        <label for="password" class= "letra">Contraseña:</label>
+                        <a href="<?php echo e(route('password.request')); ?>">¿Olvidaste tu contraseña?</a>
                     </div>
+
                     <div class="password-verify">
-                        <input type="password" id="password" name="password" placeholder="Ingresa tu nueva contraseña" required>
+                        <input id="password" name="password" type="password" placeholder="Ingresa tu contraseña" required>
                         <span id="ojoPassword" class="ojo-password">
                             <i id="iconoPassword" class="fa fa-eye"></i>
                         </span>
                     </div>
-                    @error('password')
-                        <div class="alert-danger">{{ $message }}</div>
-                    @enderror
-                    <div id="passwordRequirements" style="font-size: 0.8rem; margin-top: 5px;">
-                        <ul>
-                            <li id="passLength" class="invalid-requirement">Mínimo 8 caracteres</li>
-                            <li id="passUppercase" class="invalid-requirement">Al menos una mayúscula</li>
-                            <li id="passLowercase" class="invalid-requirement">Al menos una minúscula</li>
-                            <li id="passNumber" class="invalid-requirement">Al menos un número</li>
-                        </ul>
-                    </div>
+                    <?php $__errorArgs = ['password'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                        <div class="alert-danger"><?php echo e($message); ?></div>
+                    <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                    <small id="errorPassword" class="error-message" style="display: none;">La contraseña debe tener mínimo 8 caracteres.</small>
         </div>
 
-        <!-- Confirm Password -->
-                <div class="input-container">
-                    <div class="forget">
-                        <label for="password_confirmation">Confirmar Nueva Contraseña</label>
-                    </div>
-                    <div class="password-verify">
-                        <input type="password" id="password_confirmation" name="password_confirmation" placeholder="Confirma tu nueva contraseña" required>
-                        <span id="ojoPasswordConfirm" class="ojo-password">
-                            <i id="iconoPasswordConfirm" class="fa fa-eye"></i>
-                        </span>
-                    </div>
-                    @error('password_confirmation')
-                        <div class="alert-danger">{{ $message }}</div>
-                    @enderror
-                    <small id="errorPasswordConfirm" class="error-message" style="display: none;">Las contraseñas no coinciden.</small>
+                <div class="remember-me">
+                    <input id="remember_me" type="checkbox" name="remember">
+                    <label for="remember_me" class="letra">Recordarme</label>
                 </div>
 
-                <button type="submit" class="btn-register">RESTABLECER CONTRASEÑA</button>
+                <button type="submit">ACCEDER</button>
 
-                <div class="line-width-text">
-                    <p><a href="{{ route('login') }}">Volver al Inicio de Sesión</a></p>
+                <div class="line-width-text" >
+                    <p>¿No tienes cuenta? <a href="<?php echo e(route('register')); ?>">Regístrate aquí</a></p>
                 </div>
             </form>
         </div>
@@ -548,123 +494,20 @@ form button:hover {
             }
         });
 
-        // Funcionalidad para mostrar/ocultar confirmación de contraseña
-        document.getElementById('ojoPasswordConfirm').addEventListener('click', function() {
-            const passwordInput = document.getElementById('password_confirmation');
-            const iconoPassword = document.getElementById('iconoPasswordConfirm');
+        // Validación de contraseña
+        document.getElementById('password').addEventListener('input', function() {
+            const password = this.value;
+            const errorMessage = document.getElementById('errorPassword');
             
-            if (passwordInput.type === 'password') {
-                passwordInput.type = 'text';
-                iconoPassword.classList.remove('fa-eye');
-                iconoPassword.classList.add('fa-eye-slash');
-            } else {
-                passwordInput.type = 'password';
-                iconoPassword.classList.remove('fa-eye-slash');
-                iconoPassword.classList.add('fa-eye');
-            }
-        });
-
-        const passwordInput = document.getElementById('password');
-        const passLength = document.getElementById('passLength');
-        const passUppercase = document.getElementById('passUppercase');
-        const passLowercase = document.getElementById('passLowercase');
-        const passNumber = document.getElementById('passNumber');
-
-        function validatePassword() {
-            const passwordValue = passwordInput.value;
-            let isValid = true;
-
-            // Validar longitud
-            if (passwordValue.length >= 8) {
-                passLength.classList.remove('invalid-requirement');
-                passLength.classList.add('valid-requirement');
-            } else {
-                passLength.classList.remove('valid-requirement');
-                passLength.classList.add('invalid-requirement');
-                isValid = false;
-            }
-
-            // Validar mayúscula
-            if (/[A-Z]/.test(passwordValue)) {
-                passUppercase.classList.remove('invalid-requirement');
-                passUppercase.classList.add('valid-requirement');
-            } else {
-                passUppercase.classList.remove('valid-requirement');
-                passUppercase.classList.add('invalid-requirement');
-                isValid = false;
-            }
-
-            // Validar minúscula
-            if (/[a-z]/.test(passwordValue)) {
-                passLowercase.classList.remove('invalid-requirement');
-                passLowercase.classList.add('valid-requirement');
-            } else {
-                passLowercase.classList.remove('valid-requirement');
-                passLowercase.classList.add('invalid-requirement');
-                isValid = false;
-            }
-
-            // Validar número
-            if (/[0-9]/.test(passwordValue)) {
-                passNumber.classList.remove('invalid-requirement');
-                passNumber.classList.add('valid-requirement');
-            } else {
-                passNumber.classList.remove('invalid-requirement');
-                passNumber.classList.add('invalid-requirement');
-                isValid = false;
-            }
-
-            // Si no es válido, añadir la clase de error al input, sino removerla
-            if (!isValid) {
-                passwordInput.classList.add('input-error');
-            } else {
-                passwordInput.classList.remove('input-error');
-            }
-
-            return isValid;
-        }
-
-        passwordInput.addEventListener('input', function() {
-            validatePassword();
-            validatePasswordMatch();
-        });
-        passwordInput.addEventListener('blur', validatePassword);
-
-        document.getElementById('password_confirmation').addEventListener('input', function() {
-            validatePasswordMatch();
-        });
-
-        function validatePasswordMatch() {
-            // Primero valida la contraseña principal
-            const isPasswordValid = validatePassword();
-            const password = document.getElementById('password').value;
-            const confirmPassword = document.getElementById('password_confirmation').value;
-            const errorMessage = document.getElementById('errorPasswordConfirm');
-            const confirmInput = document.getElementById('password_confirmation');
-            
-            if (!isPasswordValid) { // Si la primera contraseña no es válida, la confirmación tampoco puede serlo
-                errorMessage.style.display = 'none';
-                confirmInput.classList.remove('input-error');
-                return false;
-            }
-
-            if (confirmPassword.length > 0 && password !== confirmPassword) {
-                errorMessage.textContent = 'Las contraseñas no coinciden.';
+            if (password.length > 0 && password.length < 8) {
                 errorMessage.style.display = 'block';
-                confirmInput.classList.add('input-error');
-                return false;
+                this.classList.add('input-error');
             } else {
                 errorMessage.style.display = 'none';
-                confirmInput.classList.remove('input-error');
-                return true;
-            }
-        }
-
-        document.querySelector('form').addEventListener('submit', function(event) {
-            if (!validatePassword() || !validatePasswordMatch()) {
-                event.preventDefault();
+                this.classList.remove('input-error');
             }
         });
     </script>
 </body>
 </html>
+<?php /**PATH C:\laragon\www\synapse\resources\views/auth/login.blade.php ENDPATH**/ ?>

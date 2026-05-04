@@ -315,12 +315,67 @@ form button:hover {
     display: flex;
     align-items: center;
     justify-content: center;
+    background: linear-gradient(160deg, #1a2744 0%, #2d3f6e 50%, #1a2744 100%);
+    position: relative;
+    overflow: hidden;
 }
-
-.banner img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.banner-math-symbols {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    opacity: 0.08;
+    font-size: 2rem;
+    color: #748ffc;
+    font-family: 'Georgia', serif;
+    user-select: none;
+    line-height: 1.4;
+    word-break: break-all;
+}
+.banner-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 1.5rem;
+    text-align: center;
+}
+.banner-logo-icon {
+    width: 52px;
+    height: 52px;
+    background: linear-gradient(135deg, #3b5bdb, #748ffc);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 20px rgba(59,91,219,0.5);
+    margin-bottom: 0.25rem;
+}
+.banner-title {
+    color: #ffffff;
+    font-size: 1.4rem;
+    font-weight: 800;
+    letter-spacing: 3px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+.banner-subtitle {
+    color: rgba(255,255,255,0.75);
+    font-size: 0.72rem;
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+.banner-divider {
+    width: 40px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #748ffc, transparent);
+    border-radius: 2px;
 }
     </style>
     
@@ -376,14 +431,34 @@ form button:hover {
         </div>
 
         <div class="banner">
-         <img src="/images/bbn2.png" alt="logo_login"/>
+            <!-- Fondo con símbolos matemáticos -->
+            <div class="banner-math-symbols" aria-hidden="true">
+                Σ ∫ √ π Δ α β θ λ μ ∞ ≤ ≥ ≠ ± × ÷ ∈ ⊂ ∩ ∪ ∀ ∃ ax²+bx+c f'(x) lim ∇ ⊥ ≡ Σ ∫ √ π Δ α β
+            </div>
+            <!-- Contenido del banner -->
+            <div class="banner-content">
+                <div class="banner-logo-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 19V5l8 7 8-7v14"/>
+                        <path d="M12 12v7"/>
+                    </svg>
+                </div>
+                <div class="banner-divider"></div>
+                <span class="banner-title">INTELECTA</span>
+                <span class="banner-subtitle">Evaluación Lógico-Matemática</span>
+            </div>
         </div>
 
         <div class="sidebar" id="sidebar">
             <div class="sign" id="btn-Sign-In">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Telecom_ParisTech.svg/1200px-Telecom_ParisTech.svg.png" alt="INTELECTA" style="width:2.5rem;filter:brightness(10)"/>
-                <span style="font-weight:800; font-size:1rem; letter-spacing:2px;">INTELECTA</span>
-                <span style="font-size:0.7rem; opacity:0.8;">Evaluación Lógico-Matemática</span>
+                <!-- Ícono SVG matemático inline - sin dependencias externas -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#748ffc" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="filter: drop-shadow(0 0 6px rgba(116,143,252,0.6));">
+                    <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                    <path d="M2 17l10 5 10-5"/>
+                    <path d="M2 12l10 5 10-5"/>
+                </svg>
+                <span style="font-weight:800; font-size:1rem; letter-spacing:2px; color:#ffffff;">INTELECTA</span>
+                <span style="font-size:0.65rem; opacity:0.75; color:#a5b4fc; text-align:center; line-height:1.3;">Evaluación<br>Lógico-Matemática</span>
             </div>
         </div>
     </div>

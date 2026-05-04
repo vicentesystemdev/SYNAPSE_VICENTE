@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Restablecer Contraseña</title>
+    <title>Registro de Usuario</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
     <style>
@@ -432,37 +432,93 @@ form button:hover {
     </video>
     <div class="container" id="container">
         <div class="forms-container">
-            <form method="POST" action="{{ route('password.store') }}" id="sign-In">
-        @csrf
+            <form method="POST" action="<?php echo e(route('register')); ?>" id="sign-In">
+                <?php echo csrf_field(); ?>
                 
-                <h2>Restablecer Contraseña</h2>
+                <h2>Registro de Usuario</h2>
+                <p>¿Ya estás registrado? <a href="<?php echo e(route('login')); ?>" id="link-sign-up">Iniciar Sesión</a></p>
 
-        <!-- Password Reset Token -->
-        <input type="hidden" name="token" value="{{ $request->route('token') }}">
-
-        <!-- Email Address -->
                 <div class="input-container">
-                    <label for="email">Correo Electrónico:</label>
-                    <input type="email" id="email" name="email" value="{{ old('email', $request->email) }}" placeholder="Ingrese su correo electrónico" required autofocus>
-                    @error('email')
-                        <div class="alert-danger">{{ $message }}</div>
-                    @enderror
-        </div>
+                    <label for="name">Nombre(s) Completo:</label>
+                    <input type="text" id="name" name="name" value="<?php echo e(old('name')); ?>" oninput="this.value = this.value.toUpperCase().replace(/[^A-ZÑ ]/g, '');" required>
+                    <?php $__errorArgs = ['name'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?> 
+                        <div class="alert-danger"><?php echo e($message); ?></div> 
+                    <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                </div>
 
-        <!-- Password -->
+                <div class="input-container">
+                    <label for="app_usu">Apellido Paterno:</label>
+                    <input type="text" id="app_usu" name="app_usu" value="<?php echo e(old('app_usu')); ?>" oninput="this.value = this.value.toUpperCase().replace(/[^A-ZÑ ]/g, '');" required>
+                    <?php $__errorArgs = ['app_usu'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?> 
+                        <div class="alert-danger"><?php echo e($message); ?></div> 
+                    <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                </div>
+
+                <div class="input-container">
+                    <label for="apm_usu">Apellido Materno:</label>
+                    <input type="text" id="apm_usu" name="apm_usu" value="<?php echo e(old('apm_usu')); ?>" oninput="this.value = this.value.toUpperCase().replace(/[^A-ZÑ ]/g, '');" required>
+                    <?php $__errorArgs = ['apm_usu'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?> 
+                        <div class="alert-danger"><?php echo e($message); ?></div> 
+                    <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                </div>
+
+                <div class="input-container">
+                    <label for="email">Correo Institucional:</label>
+                    <input type="email" id="email" name="email" value="<?php echo e(old('email')); ?>" placeholder="Ingrese su correo institucional" required>
+                    <?php $__errorArgs = ['email'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?> 
+                        <div class="alert-danger"><?php echo e($message); ?></div> 
+                    <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                    <small id="errorEmail" class="error-message" style="display: none;"></small>
+                </div>
+
                 <div class="input-container">
                     <div class="forget">
-                        <label for="password">Nueva Contraseña</label>
+                        <label for="password">Contraseña</label>
                     </div>
                     <div class="password-verify">
-                        <input type="password" id="password" name="password" placeholder="Ingresa tu nueva contraseña" required>
+                        <input type="password" id="password" name="password" placeholder="Ingresa tu contraseña" required>
                         <span id="ojoPassword" class="ojo-password">
                             <i id="iconoPassword" class="fa fa-eye"></i>
                         </span>
                     </div>
-                    @error('password')
-                        <div class="alert-danger">{{ $message }}</div>
-                    @enderror
+                    <?php $__errorArgs = ['password'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?> 
+                        <div class="alert-danger"><?php echo e($message); ?></div> 
+                    <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
                     <div id="passwordRequirements" style="font-size: 0.8rem; margin-top: 5px;">
                         <ul>
                             <li id="passLength" class="invalid-requirement">Mínimo 8 caracteres</li>
@@ -471,30 +527,33 @@ form button:hover {
                             <li id="passNumber" class="invalid-requirement">Al menos un número</li>
                         </ul>
                     </div>
-        </div>
+                </div>
 
-        <!-- Confirm Password -->
                 <div class="input-container">
                     <div class="forget">
-                        <label for="password_confirmation">Confirmar Nueva Contraseña</label>
+                        <label for="password_confirmation">Confirmar Contraseña</label>
                     </div>
                     <div class="password-verify">
-                        <input type="password" id="password_confirmation" name="password_confirmation" placeholder="Confirma tu nueva contraseña" required>
+                        <input type="password" id="password_confirmation" name="password_confirmation" placeholder="Confirma tu contraseña" required>
                         <span id="ojoPasswordConfirm" class="ojo-password">
                             <i id="iconoPasswordConfirm" class="fa fa-eye"></i>
                         </span>
                     </div>
-                    @error('password_confirmation')
-                        <div class="alert-danger">{{ $message }}</div>
-                    @enderror
+                    <?php $__errorArgs = ['password_confirmation'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?> 
+                        <div class="alert-danger"><?php echo e($message); ?></div> 
+                    <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
                     <small id="errorPasswordConfirm" class="error-message" style="display: none;">Las contraseñas no coinciden.</small>
                 </div>
+                <input type="hidden" name="COD_ROL" value="3">
 
-                <button type="submit" class="btn-register">RESTABLECER CONTRASEÑA</button>
-
-                <div class="line-width-text">
-                    <p><a href="{{ route('login') }}">Volver al Inicio de Sesión</a></p>
-                </div>
+                <button type="submit" class="btn-register">REGISTRARSE</button>
             </form>
         </div>
 
@@ -563,6 +622,33 @@ form button:hover {
                 iconoPassword.classList.add('fa-eye');
             }
         });
+
+        const emailInput = document.getElementById('email');
+        const errorEmailMessage = document.getElementById('errorEmail');
+
+        function validateEmail() {
+            const emailValue = emailInput.value;
+            let errorMessage = '';
+
+            if (!emailValue.startsWith('lpze.')) {
+                errorMessage = 'El correo electrónico debe comenzar con "lpze."';
+            } else if (!emailValue.endsWith('@unifranz.edu.bo')) {
+                errorMessage = 'El correo electrónico debe terminar con "@unifranz.edu.bo"';
+            }
+
+            if (errorMessage) {
+                errorEmailMessage.textContent = errorMessage;
+                errorEmailMessage.style.display = 'block';
+                emailInput.classList.add('input-error');
+            } else {
+                errorEmailMessage.style.display = 'none';
+                emailInput.classList.remove('input-error');
+            }
+            return !errorMessage;
+        }
+
+        emailInput.addEventListener('input', validateEmail);
+        emailInput.addEventListener('blur', validateEmail);
 
         const passwordInput = document.getElementById('password');
         const passLength = document.getElementById('passLength');
@@ -661,10 +747,10 @@ form button:hover {
         }
 
         document.querySelector('form').addEventListener('submit', function(event) {
-            if (!validatePassword() || !validatePasswordMatch()) {
+            if (!validateEmail() || !validatePassword() || !validatePasswordMatch()) {
                 event.preventDefault();
             }
         });
     </script>
 </body>
-</html>
+</html><?php /**PATH C:\laragon\www\synapse\resources\views/auth/register.blade.php ENDPATH**/ ?>

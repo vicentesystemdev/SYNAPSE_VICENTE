@@ -617,7 +617,7 @@
             <span class="h-2.5 w-2.5 rounded-full bg-amber-400/80"></span>
             <span class="h-2.5 w-2.5 rounded-full bg-emerald-400/80"></span>
           </div>
-          <p class="font-mono text-[11px] text-emerald-300">/ctf/ingreso_flag</p>
+          <p class="font-mono text-[11px] text-blue-400">/intelecta/enviar_respuesta</p>
         </div>
 
         <div class="relative px-5 py-6 space-y-6 md:px-7">
@@ -661,26 +661,32 @@
                 <a href="{{ asset('storage/' . $evaluacion->archivo_adjunto) }}" target="_blank" 
                    class="inline-flex items-center gap-2 rounded-lg bg-emerald-500/10 px-4 py-2 text-xs font-medium text-emerald-400 hover:bg-emerald-500/20 transition border border-emerald-500/20">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-                    Descargar Recurso del Reto
+                    Descargar Recurso del Ejercicio
                 </a>
             </div>
             @endif
           </div>
 
-          <p class="font-mono text-xs text-emerald-300">
-            &gt; ingresa tu respuesta con formato <span class="text-emerald-200">synapse{...}</span>
+          <p class="font-mono text-xs text-blue-300">
+            &gt; Ingresa tu respuesta al ejercicio
             <span class="animate-pulse">_</span>
           </p>
 
             @if (session('mensaje'))
-                <div class="rounded-lg border {{ session('status') === 'correcta' ? 'border-emerald-500/40 bg-emerald-500/10 text-emerald-300' : 'border-rose-500/40 bg-rose-500/10 text-rose-300' }} px-4 py-2 text-xs font-mono">
+                <div class="rounded-lg border {{ session('status') === 'correcta' ? 'border-emerald-500/40 bg-emerald-500/10 text-emerald-300' : 'border-rose-500/40 bg-rose-500/10 text-rose-300' }} px-4 py-3 text-sm font-semibold flex items-center gap-2">
+                    @if(session('status') === 'correcta')
+                        <span>&#10003;</span>
+                    @else
+                        <span>&#10007;</span>
+                    @endif
                     {{ session('mensaje') }}
                 </div>
             @endif
 
             @if ($errors->any())
-                <div class="rounded-lg border border-rose-500/50 bg-rose-500/10 px-4 py-2 text-xs text-rose-200 font-mono">
-                    {{ $errors->first('respuesta') }}
+                <div class="rounded-lg border border-rose-500/50 bg-rose-500/10 px-4 py-3 text-sm text-rose-200 font-semibold flex items-center gap-2">
+                    <span>&#10007;</span>
+                    {{ $errors->first('flag') ?: $errors->first() }}
                 </div>
             @endif
 
@@ -694,13 +700,14 @@
             <div class="space-y-2">
               <input
                 type="text"
-                name="respuesta"
-                placeholder="synapse{...}"
-                  class="w-full rounded-xl border border-slate-700 bg-slate-900 px-4 py-3 font-mono text-sm text-slate-200 placeholder-slate-500 shadow-inner focus:border-emerald-400 focus:ring-emerald-400/30 focus:outline-none transition"
-                  value="{{ old('respuesta') }}" />
+                name="flag"
+                id="flag-input"
+                placeholder="Escribe tu respuesta aquí..."
+                  class="w-full rounded-xl border {{ $errors->has('flag') ? 'border-rose-500' : 'border-slate-700' }} bg-slate-900 px-4 py-3 font-mono text-sm text-slate-200 placeholder-slate-500 shadow-inner focus:border-blue-400 focus:ring-blue-400/30 focus:outline-none transition"
+                  value="{{ old('flag') }}" autofocus />
 
               <p class="text-[11px] font-mono text-slate-500">
-                Formato requerido: <span class="text-slate-300">respuesta_correcta</span>
+                Escribe el resultado o valor correcto para este ejercicio.
               </p>
             </div>
 
@@ -716,7 +723,7 @@
           @endphp
           @if($intentosCount < 5)
             <div class="mt-4 pt-4 border-t border-slate-800 text-center">
-                <p class="text-[10px] text-slate-500 mb-2">MODO CALIBRACIÓN</p>
+                <p class="text-[10px] text-slate-500 mb-2">MODO DIAGNÓSTICO INICIAL</p>
                 <form action="{{ route('estudiante.calibracion.skip') }}" method="POST">
                     @csrf
                     <input type="hidden" name="evaluacion_id" value="{{ $evaluacion->id_eval }}">
@@ -783,18 +790,18 @@
 
           <ul class="space-y-2 text-xs text-slate-400">
             <li class="flex items-start gap-2">
-              <span class="h-1.5 w-1.5 rounded-full bg-emerald-400 mt-1"></span>
-              Revisa patrones repetitivos o cadenas inusuales en los recursos.
+              <span class="h-1.5 w-1.5 rounded-full bg-blue-400 mt-1"></span>
+              Lee con atención el enunciado antes de responder.
             </li>
 
             <li class="flex items-start gap-2">
-              <span class="h-1.5 w-1.5 rounded-full bg-emerald-400 mt-1"></span>
-              Usa herramientas como strings, binwalk o Wireshark si aplica.
+              <span class="h-1.5 w-1.5 rounded-full bg-blue-400 mt-1"></span>
+              Simplifica la expresión paso a paso si es necesario.
             </li>
 
             <li class="flex items-start gap-2">
-              <span class="h-1.5 w-1.5 rounded-full bg-emerald-400 mt-1"></span>
-              La respuesta siempre empieza con synapse{...}.
+              <span class="h-1.5 w-1.5 rounded-full bg-blue-400 mt-1"></span>
+              Escribe solo el valor numérico o la expresión simplificada como respuesta.
             </li>
           </ul>
         </div>

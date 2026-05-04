@@ -1,25 +1,25 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="<?php echo e(str_replace('_', '-', app()->getLocale())); ?>">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>@yield('title', 'Dashboard')</title>
+    <title><?php echo $__env->yieldContent('title', 'Dashboard'); ?></title>
 
     <!-- Vite / TailwindCSS - AGREGAR ESTO -->
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <?php echo app('Illuminate\Foundation\Vite')(['resources/css/app.css', 'resources/js/app.js']); ?>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="{{ asset('vendor/fontawesome-free/css/all.min.css') }}">
+    <link rel="stylesheet" href="<?php echo e(asset('vendor/fontawesome-free/css/all.min.css')); ?>">
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- Theme style -->
-    <link rel="stylesheet" href="{{ asset('vendor/adminlte/dist/css/adminlte.min.css') }}">
+    <link rel="stylesheet" href="<?php echo e(asset('vendor/adminlte/dist/css/adminlte.min.css')); ?>">
     <!-- SweetAlert2 (asegúrate de que esté configurado en config/adminlte.php si necesitas las traducciones/plugins) -->
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-bootstrap-4/bootstrap-4.css">
     
-    @yield('css')
+    <?php echo $__env->yieldContent('css'); ?>
     <style>
             :root {
                 /* Paleta INTELECTA — Académica */
@@ -454,19 +454,19 @@
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
     <video autoplay muted loop id="background-video" class="background-video">
-        <source src="{{ asset('images/Fondo2.mp4') }}" type="video/mp4">
+        <source src="<?php echo e(asset('images/Fondo2.mp4')); ?>" type="video/mp4">
     </video>
 
 <div class="wrapper">
 
     <!-- Navbar -->
-    <nav class="main-header navbar navbar-expand {{ config('adminlte.classes_topnav', 'navbar-white navbar-light') }}">
+    <nav class="main-header navbar navbar-expand <?php echo e(config('adminlte.classes_topnav', 'navbar-white navbar-light')); ?>">
         <!-- Left navbar links -->
         <ul class="navbar-nav">
             <li class="nav-item">
                 <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
             </li>
-            {{-- Puedes añadir más items aquí si quieres que la barra superior los tenga --}}
+            
         </ul>
 
         <!-- Right navbar links -->
@@ -483,7 +483,7 @@
                             </g>
                         </svg>
                      </div>
-                     <span class="d-none d-md-inline" style="font-weight: 600; font-family: 'Rajdhani', sans-serif; letter-spacing: 0.5px;">{{ Auth::user()->name ?? 'Guest' }}</span>
+                     <span class="d-none d-md-inline" style="font-weight: 600; font-family: 'Rajdhani', sans-serif; letter-spacing: 0.5px;"><?php echo e(Auth::user()->name ?? 'Guest'); ?></span>
                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" style="opacity: 0.7;">
                         <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m6 9l6 6l6-6"></path>
                      </svg>
@@ -491,15 +491,15 @@
                 
                 <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right custom-dropdown-content">
                     <div class="dropdown-header-custom">
-                         <p class="user-name">{{ Auth::user()->name ?? 'Guest' }}</p>
-                         @if(Auth::user())
-                            <p class="user-email">{{ Auth::user()->email }}</p>
-                         @endif
+                         <p class="user-name"><?php echo e(Auth::user()->name ?? 'Guest'); ?></p>
+                         <?php if(Auth::user()): ?>
+                            <p class="user-email"><?php echo e(Auth::user()->email); ?></p>
+                         <?php endif; ?>
                     </div>
                     
                     <div class="dropdown-divider-custom"></div>
                     
-                    <a href="{{ route('profile.edit') }}" class="dropdown-item-custom">
+                    <a href="<?php echo e(route('profile.edit')); ?>" class="dropdown-item-custom">
                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
                             <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
                                 <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
@@ -509,8 +509,8 @@
                         <span>Perfil</span>
                     </a>
                     
-                    <form method="POST" action="{{ route('logout') }}">
-                        @csrf
+                    <form method="POST" action="<?php echo e(route('logout')); ?>">
+                        <?php echo csrf_field(); ?>
                         <a href="#" onclick="event.preventDefault(); this.closest('form').submit();" class="dropdown-item-custom logout-item">
                             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
                                 <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
@@ -538,8 +538,8 @@
         <div class="sidebar">
             <nav class="mt-2">
                 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-                    {{-- Aquí es donde se inyectará el menú específico de cada dashboard --}}
-                    @yield('sidebar_menu')
+                    
+                    <?php echo $__env->yieldContent('sidebar_menu'); ?>
                 </ul>
             </nav>
         </div>
@@ -553,7 +553,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0" style="color:#ffffff !important; text-shadow: 0 1px 4px rgba(0,0,0,0.5);">@yield('content_header')</h1>
+                        <h1 class="m-0" style="color:#ffffff !important; text-shadow: 0 1px 4px rgba(0,0,0,0.5);"><?php echo $__env->yieldContent('content_header'); ?></h1>
                     </div>
                 </div>
             </div>
@@ -563,7 +563,7 @@
         <!-- Main content -->
         <div class="content">
             <div class="container-fluid">
-                @yield('content')
+                <?php echo $__env->yieldContent('content'); ?>
             </div>
         </div>
         <!-- /.content -->
@@ -573,21 +573,22 @@
     <!-- Main Footer -->
     <footer class="main-footer">
         <!-- Default to the left -->
-        <strong>INTELECTA &copy; {{ date('Y') }}</strong> — Plataforma de Evaluación Lógico-Matemática.
+        <strong>INTELECTA &copy; <?php echo e(date('Y')); ?></strong> — Plataforma de Evaluación Lógico-Matemática.
     </footer>
 </div>
 <!-- ./wrapper -->
 
 <!-- REQUIRED SCRIPTS -->
 <!-- jQuery -->
-<script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
+<script src="<?php echo e(asset('vendor/jquery/jquery.min.js')); ?>"></script>
 <!-- Bootstrap 4 -->
-<script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+<script src="<?php echo e(asset('vendor/bootstrap/js/bootstrap.bundle.min.js')); ?>"></script>
 <!-- AdminLTE App -->
-<script src="{{ asset('vendor/adminlte/dist/js/adminlte.min.js') }}"></script>
+<script src="<?php echo e(asset('vendor/adminlte/dist/js/adminlte.min.js')); ?>"></script>
 <!-- SweetAlert2 -->
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-@yield('js')
+<?php echo $__env->yieldContent('js'); ?>
 </body>
 </html>
+<?php /**PATH C:\laragon\www\synapse\resources\views/layouts/dashboard.blade.php ENDPATH**/ ?>

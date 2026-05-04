@@ -1,20 +1,20 @@
-@extends('layouts.dashboard')
 
-@section('title', 'Dashboard del Administrador')
 
-@section('content_header')
+<?php $__env->startSection('title', 'Dashboard del Administrador'); ?>
+
+<?php $__env->startSection('content_header'); ?>
     <h1 class="m-0 text-white">
             <i class="fas fa-fw fa-tachometer-alt" style="color:#3b5bdb"></i> PANEL DE ADMINISTRACIÓN — INTELECTA
     </h1>
-@stop
+<?php $__env->stopSection(); ?>
 
-@section('sidebar_menu')
-    @include('layouts.partials.sidebar_admin')
-@stop
+<?php $__env->startSection('sidebar_menu'); ?>
+    <?php echo $__env->make('layouts.partials.sidebar_admin', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+<?php $__env->stopSection(); ?>
 
-@section('content')
+<?php $__env->startSection('content'); ?>
     <div class="container-fluid">
-        {{-- Sección de Bienvenida y Resumen General --}}
+        
         <div class="row mb-4">
             <div class="col-12">
                 <div style="background: linear-gradient(135deg, #1e2a45 0%, #2d3a5e 50%, #1e2a45 100%); border: 1px solid rgba(59,91,219,0.4); border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.4);">
@@ -23,7 +23,8 @@
                             <i class="fas fa-chart-pie mr-2" style="color:#748ffc"></i> Visión General del Sistema INTELECTA
                         </h3>
                         <span style="background: #3b5bdb; color: #fff; padding: 3px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 600;">
-                            {{ $periodoActual->nombre_per ?? 'Sin período' }}
+                            <?php echo e($periodoActual->nombre_per ?? 'Sin período'); ?>
+
                         </span>
                     </div>
                     <div style="padding: 1.25rem 1.5rem;">
@@ -31,10 +32,10 @@
                             Supervisa el rendimiento global, gestiona usuarios y contenido, y asegura la integridad de la plataforma. Accede a todas las herramientas de gestión desde el menú lateral.
                         </p>
                         <div>
-                            <a href="{{ route('admin.admins.create') }}" class="btn btn-primary mr-2" style="background:#3b5bdb; border:none; color:#fff; font-weight:600; border-radius:8px;">
+                            <a href="<?php echo e(route('admin.admins.create')); ?>" class="btn btn-primary mr-2" style="background:#3b5bdb; border:none; color:#fff; font-weight:600; border-radius:8px;">
                                 <i class="fas fa-user-plus mr-2"></i> Crear Nuevo Administrador
                             </a>
-                            <a href="{{ route('evaluaciones.create') }}" class="btn" style="background:#1971c2; border:1px solid #4dabf7; color:#fff; font-weight:600; border-radius:8px;">
+                            <a href="<?php echo e(route('evaluaciones.create')); ?>" class="btn" style="background:#1971c2; border:1px solid #4dabf7; color:#fff; font-weight:600; border-radius:8px;">
                                 <i class="fas fa-plus-square mr-2"></i> Crear Nueva Evaluación
                             </a>
                         </div>
@@ -43,65 +44,65 @@
             </div>
         </div>
 
-        {{-- Tarjetas de resumen (small-box) para métricas clave --}}
+        
         <div class="row">
             <div class="col-lg-3 col-6">
                 <div class="small-box bg-info custom-small-box-blue shadow-md">
                     <div class="inner">
-                        <h3>{{ $studentCount }}</h3>
+                        <h3><?php echo e($studentCount); ?></h3>
                         <p>Total de Estudiantes</p>
                     </div>
                     <div class="icon">
                         <i class="ion ion-person-add"></i>
                     </div>
-                    <a href="{{ route('admin.estudiantes.index') }}" class="small-box-footer">Ver estudiantes <i class="fas fa-arrow-circle-right"></i></a>
+                    <a href="<?php echo e(route('admin.estudiantes.index')); ?>" class="small-box-footer">Ver estudiantes <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
             </div>
             <div class="col-lg-3 col-6">
                 <div class="small-box bg-success custom-small-box-green shadow-md">
                     <div class="inner">
-                        <h3>{{ $evaluacionesPublicadas }}</h3>
+                        <h3><?php echo e($evaluacionesPublicadas); ?></h3>
                         <p>Evaluaciones Publicadas</p>
                     </div>
                     <div class="icon">
                         <i class="ion ion-stats-bars"></i>
                     </div>
-                    <a href="{{ route('evaluaciones.index') }}" class="small-box-footer">Gestionar evaluaciones <i class="fas fa-arrow-circle-right"></i></a>
+                    <a href="<?php echo e(route('evaluaciones.index')); ?>" class="small-box-footer">Gestionar evaluaciones <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
             </div>
             <div class="col-lg-3 col-6">
                 <div class="small-box bg-warning custom-small-box-yellow shadow-md">
                     <div class="inner">
-                        <h3>{{ $evaluacionesCerradas }}</h3>
+                        <h3><?php echo e($evaluacionesCerradas); ?></h3>
                         <p>Evaluaciones Cerradas</p>
                     </div>
                     <div class="icon">
                         <i class="ion ion-pie-graph"></i>
                     </div>
-                    <a href="{{ route('evaluaciones.index') }}" class="small-box-footer">Ver historial <i class="fas fa-arrow-circle-right"></i></a>
+                    <a href="<?php echo e(route('evaluaciones.index')); ?>" class="small-box-footer">Ver historial <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
             </div>
             <div class="col-lg-3 col-6">
                 <div class="small-box bg-orange custom-small-box-orange shadow-md">
                     <div class="inner">
-                        <h3>{{ $totalDocentes }}</h3> {{-- Mostrar el total de docentes --}}
-                        <p>Total de Docentes</p> {{-- Texto actualizado --}}
+                        <h3><?php echo e($totalDocentes); ?></h3> 
+                        <p>Total de Docentes</p> 
                     </div>
                     <div class="icon">
-                        <i class="ion ion-person"></i> {{-- Cambiar el ícono si lo deseas, por ejemplo, a un ícono de persona o grupo --}}
+                        <i class="ion ion-person"></i> 
                     </div>
-                    <a href="{{ route('admin.docentes.index') }}" class="small-box-footer">Ver docentes <i class="fas fa-arrow-circle-right"></i></a> {{-- Enlace a la gestión de docentes --}}
+                    <a href="<?php echo e(route('admin.docentes.index')); ?>" class="small-box-footer">Ver docentes <i class="fas fa-arrow-circle-right"></i></a> 
                 </div>
             </div>
         </div>
 
-        {{-- Sección de Gráficos y Tablas dinámicas --}}
+        
         <div class="row">
             <section class="col-lg-7 connectedSortable">
-                {{-- Gráfico de Distribución de Habilidades (IRT Global) --}}
-                <div class="card custom-card-dark shadow-lg"> {{-- Cambiado a bg-white --}}
+                
+                <div class="card custom-card-dark shadow-lg"> 
                     <div class="card-header border-0">
-                        <h3 class="card-title text-white"> {{-- Texto negro --}}
+                        <h3 class="card-title text-white"> 
                             <i class="fas fa-chart-line mr-1 text-orange-400"></i>
                             Distribución de Habilidades (IRT Global)
                         </h3>
@@ -118,14 +119,14 @@
                         </div>
                     </div>
                     <div class="card-footer bg-transparent">
-                        <a href="{{ route('admin.reportes_irt.index') }}" class="btn btn-link text-orange-400">Ver Reportes IRT Completos <i class="fas fa-arrow-circle-right"></i></a>
+                        <a href="<?php echo e(route('admin.reportes_irt.index')); ?>" class="btn btn-link text-orange-400">Ver Reportes IRT Completos <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
 
-                {{-- Tabla Top 5 Ranking --}}
-                <div class="card custom-card-dark shadow-lg"> {{-- Cambiado a bg-white --}}
+                
+                <div class="card custom-card-dark shadow-lg"> 
                     <div class="card-header border-0">
-                        <h3 class="card-title text-white"> {{-- Texto negro --}}
+                        <h3 class="card-title text-white"> 
                             <i class="fas fa-trophy mr-1 text-orange-400"></i> Top 5 del Ranking (Período Actual)
                         </h3>
                         <div class="card-tools">
@@ -146,20 +147,20 @@
                                 </tr>
                             </thead>
                             <tbody class="text-white">
-                                @forelse($topRanking as $key => $item)
-                                    @php
+                                <?php $__empty_1 = true; $__currentLoopData = $topRanking; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_1 = false; ?>
+                                    <?php
                                         $ranking = $item->get('ranking');
                                         if ($ranking && !$ranking->relationLoaded('user')) {
                                             $ranking->load('user');
                                         }
-                                    @endphp
+                                    ?>
                                     <tr>
-                                        <td>{{ $key + 1 }}</td>
-                                        <td>{{ $ranking->user?->name ?? 'N/D' }} {{ $ranking->user?->app_usu ?? '' }}</td>
-                                        <td><span class="badge badge-success custom-badge-success">{{ number_format($ranking->puntaje_total, 2) }}</span></td>
-                                        <td>{{ number_format($ranking->theta_global, 2) }}</td>
+                                        <td><?php echo e($key + 1); ?></td>
+                                        <td><?php echo e($ranking->user?->name ?? 'N/D'); ?> <?php echo e($ranking->user?->app_usu ?? ''); ?></td>
+                                        <td><span class="badge badge-success custom-badge-success"><?php echo e(number_format($ranking->puntaje_total, 2)); ?></span></td>
+                                        <td><?php echo e(number_format($ranking->theta_global, 2)); ?></td>
                                         <td>
-                                            @php
+                                            <?php
                                                 $nivelColor = 'secondary';
                                                 $nivelTexto = 'N/D';
                                                 if ($ranking->theta_global > 1) {
@@ -169,26 +170,26 @@
                                                 } else {
                                                     $nivelColor = 'danger'; $nivelTexto = 'Bajo';
                                                 }
-                                            @endphp
-                                            <span class="badge badge-{{ $nivelColor }}">{{ $nivelTexto }}</span>
+                                            ?>
+                                            <span class="badge badge-<?php echo e($nivelColor); ?>"><?php echo e($nivelTexto); ?></span>
                                         </td>
                                     </tr>
-                                @empty
+                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>
                                     <tr>
                                         <td colspan="5" class="text-center text-muted">No hay datos de ranking para el período actual.</td>
                                     </tr>
-                                @endforelse
+                                <?php endif; ?>
                             </tbody>
                         </table>
                     </div>
                     <div class="card-footer bg-transparent text-center">
-                        <a href="{{ route('rankings.index') }}" class="btn btn-link text-orange-400">Ver Ranking Completo <i class="fas fa-arrow-circle-right"></i></a>
+                        <a href="<?php echo e(route('rankings.index')); ?>" class="btn btn-link text-orange-400">Ver Ranking Completo <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
             </section>
 
             <section class="col-lg-5 connectedSortable">
-                {{-- Gráfico Heatmap de Puntajes por Área --}}
+                
                 <div class="card bg-gradient-primary custom-gradient-primary shadow-lg">
                     <div class="card-header border-0">
                         <h3 class="card-title text-white">
@@ -212,15 +213,15 @@
                     <div class="card-footer bg-transparent">
                         <div class="d-flex justify-content-between text-white-50">
                             <span>Total por Área</span>
-                            <span>{{ $heatmap->sum('total') }}</span>
+                            <span><?php echo e($heatmap->sum('total')); ?></span>
                         </div>
                     </div>
                 </div>
 
-                {{-- Actividad Reciente del Sistema (Auditoría) --}}
-                <div class="card custom-card-dark shadow-lg"> {{-- Cambiado a bg-white --}}
+                
+                <div class="card custom-card-dark shadow-lg"> 
                     <div class="card-header border-0">
-                        <h3 class="card-title text-white"> {{-- Texto negro --}}
+                        <h3 class="card-title text-white"> 
                             <i class="fas fa-history mr-1 text-orange-400"></i> Actividad Reciente del Sistema
                         </h3>
                         <div class="card-tools">
@@ -231,10 +232,10 @@
                     </div>
                     <div class="card-body p-0">
                         <ul class="products-list product-list-in-card pl-2 pr-2">
-                            @forelse($recentActivities as $activity)
+                            <?php $__empty_1 = true; $__currentLoopData = $recentActivities; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $activity): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_1 = false; ?>
                                 <li class="item">
                                     <div class="product-img">
-                                        @php
+                                        <?php
                                             $icon = 'fa-info-circle';
                                             $color = 'text-info';
                                             if (str_contains($activity->accion_audit, 'login')) { $icon = 'fa-sign-in-alt'; $color = 'text-success'; }
@@ -243,45 +244,47 @@
                                             elseif (str_contains($activity->accion_audit, 'update')) { $icon = 'fa-edit'; $color = 'text-warning'; }
                                             elseif (str_contains($activity->accion_audit, 'delete')) { $icon = 'fa-trash'; $color = 'text-danger'; }
                                             elseif (str_contains($activity->accion_audit, 'evaluacion')) { $icon = 'fa-respuesta-checkered'; $color = 'text-purple'; }
-                                        @endphp
-                                        <i class="fas {{ $icon }} {{ $color }} fa-2x"></i>
+                                        ?>
+                                        <i class="fas <?php echo e($icon); ?> <?php echo e($color); ?> fa-2x"></i>
                                     </div>
                                     <div class="product-info">
                                         <a href="javascript:void(0)" class="product-title text-white">
-                                            {{ ucfirst($activity->accion_audit) }} - {{ $activity->entidad_audit }}
-                                            <span class="badge badge-warning float-right">{{ $activity->created_at->diffForHumans() }}</span>
+                                            <?php echo e(ucfirst($activity->accion_audit)); ?> - <?php echo e($activity->entidad_audit); ?>
+
+                                            <span class="badge badge-warning float-right"><?php echo e($activity->created_at->diffForHumans()); ?></span>
                                         </a>
                                         <span class="product-description text-secondary">
-                                            Usuario: {{ $activity->user->name ?? 'Sistema' }} - {{ Str::limit(json_encode($activity->payload_audit), 50) }}
+                                            Usuario: <?php echo e($activity->user->name ?? 'Sistema'); ?> - <?php echo e(Str::limit(json_encode($activity->payload_audit), 50)); ?>
+
                                         </span>
                                     </div>
                                 </li>
-                            @empty
+                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>
                                 <li class="item">
                                     <p class="text-center text-muted">No hay actividad reciente registrada.</p>
                                 </li>
-                            @endforelse
+                            <?php endif; ?>
                         </ul>
                     </div>
                     <div class="card-footer text-center bg-transparent">
-                        <a href="{{ route('admin.auditoria.index') }}" class="uppercase btn btn-link text-orange-400">Ver todo el registro de auditoría <i class="fas fa-arrow-circle-right"></i></a>
+                        <a href="<?php echo e(route('admin.auditoria.index')); ?>" class="uppercase btn btn-link text-orange-400">Ver todo el registro de auditoría <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
             </section>
         </div>
 
     </div><!-- /.container-fluid -->
-@stop
+<?php $__env->stopSection(); ?>
 
-@section('js')
-    {{-- Aquí irían los scripts para los gráficos (Chart.js recomendado) --}}
+<?php $__env->startSection('js'); ?>
+    
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
         $(function () {
             // Datos para el Gráfico de Distribución de Habilidades (IRT Global)
             // Ya el controlador AdminDashboardController pasa estos datos: $habilidadLabels, $habilidadDistribucion
-            const irtAbilityLabels = @json($habilidadLabels);
-            const irtAbilityDataValues = @json($habilidadDistribucion);
+            const irtAbilityLabels = <?php echo json_encode($habilidadLabels, 15, 512) ?>;
+            const irtAbilityDataValues = <?php echo json_encode($habilidadDistribucion, 15, 512) ?>;
 
             const irtAbilityData = {
                 labels: irtAbilityLabels,
@@ -329,8 +332,8 @@
 
             // Datos para el Gráfico Heatmap de Puntajes por Área
             // Los datos 'heatmap' ya están disponibles en el controlador: $heatmap
-            const categoryLabels = @json($heatmap->pluck('categoria'));
-            const categoryData = @json($heatmap->pluck('total'));
+            const categoryLabels = <?php echo json_encode($heatmap->pluck('categoria'), 15, 512) ?>;
+            const categoryData = <?php echo json_encode($heatmap->pluck('total'), 15, 512) ?>;
 
             // Definir una paleta de colores para el Heatmap de Áreas de evaluación (naranjas y tonos de gris)
             const categoryColors = [
@@ -375,10 +378,10 @@
             // Más inicializaciones de gráficos si los agregas
         });
     </script>
-@stop
+<?php $__env->stopSection(); ?>
 
-{{-- Estilos personalizados para la paleta de colores --}}
-@section('css')
+
+<?php $__env->startSection('css'); ?>
     <style>
         /* Variables de color de tu proyecto (actualizadas a la nueva paleta) */
         :root {
@@ -517,4 +520,6 @@
             color: var(--color-text-light); /* Color general de texto en canvas */
         }
     </style>
-@stop
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.dashboard', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?><?php /**PATH C:\laragon\www\synapse\resources\views/admin/dashboard/index.blade.php ENDPATH**/ ?>
