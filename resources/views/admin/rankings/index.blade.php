@@ -43,9 +43,9 @@
                         </div>
                         <div class="col-md-4">
                             <div class="form-group">
-                                <label for="skill_id" class="text-white-50">Categoría (Skill):</label>
+                                <label for="skill_id" class="text-white-50">Área (Skill):</label>
                                 <select name="skill_id" id="skill_id" class="form-control form-control-sm custom-select-dark">
-                                    <option value="">Todas</option> {{-- Opción para no filtrar por categoría --}}
+                                    <option value="">Todas</option> {{-- Opción para no filtrar por área --}}
                                     @foreach($skills as $skill)
                                         <option value="{{ $skill->id_cat }}" @selected(($filters['skill_id'] ?? null) == $skill->id_cat)>
                                             {{ $skill->nombre_cat }}

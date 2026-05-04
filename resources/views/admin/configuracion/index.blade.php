@@ -13,7 +13,7 @@
 @section('content')
     <div class="card">
         <div class="card-body">
-            <h1 class="h4">Categorías y dificultades</h1>
+            <h1 class="h4">Áreas de evaluación y dificultades</h1>
             <p class="text-muted">Esta pantalla será utilizada para administrar los catálogos principales.</p>
         </div>
     </div>

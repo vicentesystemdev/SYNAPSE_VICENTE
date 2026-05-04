@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Synapse CTF MVP - @yield('title', 'Menú Principal')</title>
+    <title>Synapse Evaluación lógico-matemática MVP - @yield('title', 'Menú Principal')</title>
     <!-- Opcional: Carga de una fuente moderna como Inter desde Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
@@ -514,7 +514,7 @@
             <div class="footer-content">
                 <div class="footer-left">
                     <a href="{{ route('dashboard') }}" class="footer-logo">SYNAPSE</a>
-                    <p class="mb-0">© {{ date('Y') }} Synapse CTF MVP. Todos los derechos reservados.</p>
+                    <p class="mb-0">© {{ date('Y') }} Synapse Evaluación lógico-matemática MVP. Todos los derechos reservados.</p>
                 </div>
                 <div class="footer-right">
                     <ul>

@@ -33,12 +33,12 @@
         <!-- Tarjeta: Configuración del Reto -->
         <div class="rounded-xl border border-white/5 bg-gray-900/40 backdrop-blur-md p-6 space-y-4 shadow-xl">
             <h3 class="text-sm font-semibold text-gray-200 border-b border-white/10 pb-2 mb-4">
-                Configuración del Reto (CTF)
+                Configuración del Reto (Evaluación lógico-matemática)
             </h3>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                    <label for="flag_hash_eval" class="block text-xs font-medium text-gray-400 mb-1">Flag (Respuesta)</label>
+                    <label for="flag_hash_eval" class="block text-xs font-medium text-gray-400 mb-1">Respuesta (Respuesta)</label>
                     <input type="text" name="flag_hash_eval" id="flag_hash_eval"
                         value="{{ old('flag_hash_eval', $evaluacion->flag_hash_eval ?? '') }}"
                         placeholder="synapse{...}"
@@ -91,7 +91,7 @@
             </h3>
 
             <div>
-                <label for="categoria_id" class="block text-xs font-medium text-gray-400 mb-1">Categoría</label>
+                <label for="categoria_id" class="block text-xs font-medium text-gray-400 mb-1">Área</label>
                 <select name="categoria_id" id="categoria_id"
                     class="block w-full rounded-lg border-gray-300 bg-white text-sm text-gray-900 focus:border-orange-500 focus:ring-orange-500 shadow-sm">
                     @foreach($categorias as $cat)
@@ -105,7 +105,7 @@
             </div>
 
             <div>
-                <label for="dificultad_id" class="block text-xs font-medium text-gray-400 mb-1">Dificultad</label>
+                <label for="dificultad_id" class="block text-xs font-medium text-gray-400 mb-1">Nivel de dificultad</label>
                 <select name="dificultad_id" id="dificultad_id"
                     class="block w-full rounded-lg border-gray-300 bg-white text-sm text-gray-900 focus:border-orange-500 focus:ring-orange-500 shadow-sm">
                     @foreach($dificultades as $dif)

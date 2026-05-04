@@ -327,7 +327,7 @@
 </ul>
 <h3>Selección Adaptativa</h3>
 <ul>
-    <li>El sistema elige el siguiente reto ideal según el historial del estudiante.</li>
+    <li>El sistema elige el siguiente ejercicio ideal según el historial del estudiante.</li>
 </ul>
         </section>
     </main>

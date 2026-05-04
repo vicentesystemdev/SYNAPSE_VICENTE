@@ -317,7 +317,7 @@
             <li>Correctitud</li>
             <li>Tiempo de respuesta</li>
             <li>Penalizaciones por repetición</li>
-            <li>Nivel dinámico del reto</li>
+            <li>Nivel dinámico del ejercicio</li>
         </ul>
     </li>
 </ul>
@@ -328,7 +328,7 @@
     <li>No manipular tráfico del sistema</li>
     <li>No usar herramientas automatizadas destructivas</li>
 </ul>
-<h3>Adaptación de Dificultad</h3>
+<h3>Adaptación de Nivel de dificultad</h3>
 <p>
     El sistema ajusta automáticamente la dificultad según desempeño.
 </p>

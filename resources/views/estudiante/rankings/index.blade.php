@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Ranking General - Synapse CTF</title>
+    <title>Ranking General - Synapse Evaluación lógico-matemática</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="{{ asset('css/estudiante_dashbord/style.css') }}" />
@@ -203,7 +203,7 @@
             <div class="section-container">
                 <div class="section-header">
                     <h2 class="section-title">Ranking general</h2>
-                    <p class="section-subtitle">Consulta tu posición en el período actual y tu desempeño por categoría.</p>
+                    <p class="section-subtitle">Consulta tu posición en el período actual y tu desempeño por área.</p>
                 </div>
 
                 <div class="card-container">
@@ -223,7 +223,7 @@
                                 </div>
 
                                 <div class="form-field">
-                                    <label for="skill_id" class="input-label">Categoría:</label>
+                                    <label for="skill_id" class="input-label">Área:</label>
                                     <select name="skill_id" id="skill_id" class="text-input">
                                         <option value="">Todas</option>
                                         @foreach($skills as $skill)

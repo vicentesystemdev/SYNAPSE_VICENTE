@@ -34,8 +34,8 @@
             </div>
             <p class="text-sm text-gray-600 font-mono">
                 ID: #{{ str_pad($evaluacion->id_eval, 3, '0', STR_PAD_LEFT) }} · 
-                Categoría: {{ $evaluacion->categoria->nombre_cat }} · 
-                Dificultad: {{ $evaluacion->dificultad->nombre_dif }}
+                Área: {{ $evaluacion->categoria->nombre_cat }} · 
+                Nivel de dificultad: {{ $evaluacion->dificultad->nombre_dif }}
             </p>
         </div>
 
@@ -78,7 +78,7 @@
                         <thead class="bg-gray-50">
                             <tr>
                                 <th class="px-6 py-3 text-left font-medium text-gray-500 uppercase tracking-wider">Estudiante</th>
-                                <th class="px-6 py-3 text-left font-medium text-gray-500 uppercase tracking-wider">Flag Enviada</th>
+                                <th class="px-6 py-3 text-left font-medium text-gray-500 uppercase tracking-wider">Respuesta Enviada</th>
                                 <th class="px-6 py-3 text-left font-medium text-gray-500 uppercase tracking-wider">Resultado</th>
                                 <th class="px-6 py-3 text-left font-medium text-gray-500 uppercase tracking-wider">Fecha</th>
                             </tr>
@@ -132,7 +132,7 @@
                 
                 <dl class="space-y-3 text-xs">
                     <div class="flex justify-between">
-                        <dt class="text-gray-500">Flag Correcta:</dt>
+                        <dt class="text-gray-500">Respuesta Correcta:</dt>
                         <dd class="font-mono font-medium text-gray-900">{{ $evaluacion->flag_hash_eval }}</dd>
                     </div>
                     <div class="flex justify-between">

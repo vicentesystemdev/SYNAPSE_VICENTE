@@ -12,7 +12,7 @@
             Nueva Evaluación
         </h1>
         <p class="text-sm text-gray-400">
-            Crea un nuevo desafío CTF para los estudiantes.
+            Crea un nuevo desafío Evaluación lógico-matemática para los estudiantes.
         </p>
     </div>
 @endsection

@@ -31,7 +31,7 @@
             <form method="GET" action="{{ route('docente.evaluaciones.index') }}" class="flex flex-wrap items-center gap-3">
                 <select name="categoria_id" onchange="this.form.submit()"
                     class="rounded-lg border border-white/10 bg-gray-800/80 px-3 py-2 text-xs text-gray-300 focus:ring-1 focus:ring-orange-400 focus:border-orange-500/50 transition selection:bg-orange-500/20">
-                    <option value="" class="bg-gray-800">Todas las categorías</option>
+                    <option value="" class="bg-gray-800">Todas las áreas</option>
                     @foreach ($categorias as $cat)
                         <option value="{{ $cat->id_cat }}" {{ request('categoria_id') == $cat->id_cat ? 'selected' : '' }} class="bg-gray-800">
                             {{ $cat->nombre_cat }}
@@ -61,7 +61,7 @@
                         <tr class="text-gray-400 uppercase tracking-wider font-semibold text-[11px]">
                             <th class="px-4 py-3 text-left">ID</th>
                             <th class="px-4 py-3 text-left">Título</th>
-                            <th class="px-4 py-3 text-left">Categoría</th>
+                            <th class="px-4 py-3 text-left">Área</th>
                             <th class="px-4 py-3 text-left">Nivel</th>
                             <th class="px-4 py-3 text-left">Estado</th>
                             <th class="px-4 py-3 text-right">Acciones</th>

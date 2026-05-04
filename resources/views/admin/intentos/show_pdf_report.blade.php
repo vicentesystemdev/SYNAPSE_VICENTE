@@ -39,7 +39,7 @@
                     <div class="data-row"><span class="data-label">Estudiante:</span> <span class="data-value">{{ $intento->user->name }} {{ $intento->user->app_usu }} {{ $intento->user->apm_usu }}</span></div>
                     <div class="data-row"><span class="data-label">Correo Estudiante:</span> <span class="data-value">{{ $intento->user->email }}</span></div>
                     <div class="data-row"><span class="data-label">Evaluación:</span> <span class="data-value">{{ $intento->evaluacion->titulo_eval }}</span></div>
-                    <div class="data-row"><span class="data-label">Categoría:</span> <span class="data-value">{{ $intento->evaluacion->categoria->nombre_cat }}</span></div>
+                    <div class="data-row"><span class="data-label">Área:</span> <span class="data-value">{{ $intento->evaluacion->categoria->nombre_cat }}</span></div>
                     <div class="data-row"><span class="data-label">Nro. de Intento:</span> <span class="data-value">{{ $intento->nro_intento_int }}</span></div>
                     <div class="data-row"><span class="data-label">Respuesta Enviada:</span> <span class="data-value">{{ $intento->respuesta_int }}</span></div>
                     <div class="data-row"><span class="data-label">Resultado:</span> <span class="data-value">

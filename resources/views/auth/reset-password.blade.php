@@ -450,7 +450,7 @@ form button:hover {
         <div class="sidebar" id="sidebar">
             <div class="sign" id="btn-Sign-In">
                 <img src="https://e7.pngegg.com/pngimages/779/61/png-clipart-logo-idea-cute-eagle-leaf-logo.png" alt="Sign In">
-                <span>Synapse CTF</span>
+                <span>Synapse Evaluación lógico-matemática</span>
             </div>
         </div>
     </div>

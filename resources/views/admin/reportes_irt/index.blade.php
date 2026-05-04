@@ -50,9 +50,9 @@
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="category_selector" class="text-white">Seleccionar Categoría para Matriz de Markov:</label> {{-- Texto label blanco --}}
+                            <label for="category_selector" class="text-white">Seleccionar Área para Matriz de Markov:</label> {{-- Texto label blanco --}}
                             <select id="category_selector" class="form-control custom-select-dark"> {{-- Eliminado form-control-sm --}}
-                                <option value="">--- Seleccione una categoría ---</option>
+                                <option value="">--- Seleccione una área ---</option>
                                 @foreach($categorias as $categoria)
                                     <option value="{{ $categoria->id_cat }}">{{ $categoria->nombre_cat }}</option>
                                 @endforeach
@@ -91,12 +91,12 @@
                                 <dt class="col-sm-4 text-white-50">Nivel Global:</dt>
                                 <dd class="col-sm-8"><span class="badge" id="student_nivel_global"></span></dd>
                             </dl>
-                            <h5 class="mt-4 text-orange-primary">Habilidad y Rendimiento por Categoría:</h5> {{-- Color de texto naranja --}}
+                            <h5 class="mt-4 text-orange-primary">Habilidad y Rendimiento por Área:</h5> {{-- Color de texto naranja --}}
                             <div class="table-responsive">
                                 <table class="table table-dark table-striped table-valign-middle">
                                     <thead>
                                         <tr>
-                                            <th>Categoría</th>
+                                            <th>Área</th>
                                             <th>Theta</th>
                                             <th>Nivel</th>
                                             <th>EMA</th>
@@ -132,13 +132,13 @@
                 </div>
             </div>
 
-            {{-- NUEVO: Recuadro para el Gráfico de Radar de Habilidad por Categoría --}}
+            {{-- NUEVO: Recuadro para el Gráfico de Radar de Habilidad por Área --}}
             <div class="row mt-4">
                 <div class="col-12">
                     <div class="card shadow-lg">
                         <div class="card-header">
                             <h3 class="card-title">
-                                <i class="fas fa-chart-area mr-2"></i> Distribución de habilidad en las Categorías
+                                <i class="fas fa-chart-area mr-2"></i> Distribución de habilidad en las Áreas de evaluación
                             </h3>
                             <div class="card-tools">
                                 <button type="button" class="btn btn-tool" data-card-widget="collapse">
@@ -147,7 +147,7 @@
                             </div>
                         </div>
                         <div class="card-body">
-                            <p class="text-white-50 text-center mb-4">Visualización de la habilidad del estudiante en las categorías clave.</p>
+                            <p class="text-white-50 text-center mb-4">Visualización de la habilidad del estudiante en las áreas clave.</p>
                             <div class="chart-responsive">
                                 <canvas id="habilidadRadarChart" height="300"></canvas>
                             </div>
@@ -162,17 +162,17 @@
                     <div class="card shadow-lg">
                         <div class="card-header">
                             <h3 class="card-title">
-                                <i class="fas fa-chart-line mr-2"></i> Crecimiento y Decaimiento de Habilidad en la Categoría Seleccionada
+                                <i class="fas fa-chart-line mr-2"></i> Crecimiento y Decaimiento de Habilidad en la Área Seleccionada
                             </h3>
                             <div class="card-tools">
-                                {{-- Se elimina el selector de categoría de aquí, usará el principal --}}
+                                {{-- Se elimina el selector de área de aquí, usará el principal --}}
                                 <button type="button" class="btn btn-tool" data-card-widget="collapse">
                                     <i class="fas fa-minus"></i>
                                 </button>
                             </div>
                         </div>
                         <div class="card-body">
-                            <p class="text-white-50 text-center mb-4">Muestra cómo la habilidad (Theta) y el rendimiento (EMA) del estudiante evolucionan prueba tras prueba en la categoría seleccionada.</p>
+                            <p class="text-white-50 text-center mb-4">Muestra cómo la habilidad (Theta) y el rendimiento (EMA) del estudiante evolucionan prueba tras prueba en la área seleccionada.</p>
                             <div class="chart-responsive">
                                 <canvas id="growthDecayChart" height="350"></canvas>
                             </div>
@@ -209,7 +209,7 @@
                     <div class="card shadow-lg"> {{-- Eliminado custom-card-dark --}}
                         <div class="card-header"> {{-- Eliminado d-flex justify-content-between align-items-center --}}
                     <h3 class="card-title">
-                                <i class="fas fa-project-diagram mr-2"></i> Matriz de Transición de Markov (Global / por Categoría)
+                                <i class="fas fa-project-diagram mr-2"></i> Matriz de Transición de Markov (Global / por Área)
                     </h3>
                     <div class="card-tools">
                                 <button type="button" class="btn btn-tool" data-card-widget="collapse">
@@ -230,7 +230,7 @@
                                 </tr>
                             </thead>
                                     <tbody id="markov_matrix_table_body">
-                                        <tr><td colspan="4" class="text-center text-white-50">Seleccione una categoría para ver la matriz.</td></tr>
+                                        <tr><td colspan="4" class="text-center text-white-50">Seleccione una área para ver la matriz.</td></tr>
                             </tbody>
                         </table>
                     </div>
@@ -397,7 +397,7 @@
             // Función para cargar la matriz de Markov
             function loadMarkovMatrix(categoryId) {
                 if (!categoryId) {
-                    markovMatrixTableBody.html('<tr><td colspan="4" class="text-center text-white-50">Seleccione una categoría para ver la matriz.</td></tr>');
+                    markovMatrixTableBody.html('<tr><td colspan="4" class="text-center text-white-50">Seleccione una área para ver la matriz.</td></tr>');
                     return;
                 }
 
@@ -421,7 +421,7 @@
                                 markovMatrixTableBody.append(rowHtml);
                             });
                         } else {
-                            markovMatrixTableBody.html('<tr><td colspan="4" class="text-center text-white-50">No hay suficientes datos de transiciones para esta categoría.</td></tr>');
+                            markovMatrixTableBody.html('<tr><td colspan="4" class="text-center text-white-50">No hay suficientes datos de transiciones para esta área.</td></tr>');
                         }
                     },
                     error: function(xhr) {
@@ -517,7 +517,7 @@
                 skillPerformanceTableBody.html('<tr><td colspan="5" class="text-center text-white-50">Seleccione un estudiante para ver el detalle.</td></tr>');
                 recommendedEvaluationsList.html('<li class="list-group-item bg-dark text-white-50">Seleccione un estudiante para ver las recomendaciones.</li>');
                 recommendationExplanation.text('La lógica de la recomendación se mostrará aquí.');
-                markovMatrixTableBody.html('<tr><td colspan="4" class="text-center text-white-50">Seleccione una categoría para ver la matriz.</td></tr>');
+                markovMatrixTableBody.html('<tr><td colspan="4" class="text-center text-white-50">Seleccione una área para ver la matriz.</td></tr>');
 
                 if (habilidadChartInstance) {
                     habilidadChartInstance.destroy();
@@ -548,19 +548,19 @@
                     }
                 });
 
-                // Cargar la matriz de Markov para la primera categoría al cargar la página
+                // Cargar la matriz de Markov para la primera área al cargar la página
                 const firstCategoryId = categorySelector.find('option:eq(1)').val();
                 if (firstCategoryId) {
-                    categorySelector.val(firstCategoryId); // Selecciona la primera categoría en el dropdown
+                    categorySelector.val(firstCategoryId); // Selecciona la primera área en el dropdown
                     loadMarkovMatrix(firstCategoryId);
                 } else {
-                    markovMatrixTableBody.html('<tr><td colspan="4" class="text-center text-white-50">No hay categorías disponibles para mostrar la matriz.</td></tr>');
+                    markovMatrixTableBody.html('<tr><td colspan="4" class="text-center text-white-50">No hay áreas disponibles para mostrar la matriz.</td></tr>');
                 }
 
                 // Inicializar Chart.js para el gráfico de radar con datos vacíos
                 const radarCtx = document.getElementById('habilidadRadarChart').getContext('2d');
                 const initialRadarData = {
-                    labels: ['WEB', 'CRYPTO', 'FORENSE', 'STENOGRAFIA', 'DEMO'], // Etiquetas para las categorías
+                    labels: ['WEB', 'CRYPTO', 'FORENSE', 'STENOGRAFIA', 'DEMO'], // Etiquetas para las áreas
                     datasets: [{
                         label: 'Habilidad (Theta)',
                         backgroundColor: 'rgba(255, 140, 0, 0.2)', // Fondo naranja transparente
@@ -751,8 +751,8 @@
                     alert('Por favor, seleccione un estudiante.');
                     return;
                 }
-                if (!selectedCategoryId) { // NUEVO: Asegurarse de que se seleccione una categoría también
-                    alert('Por favor, seleccione una categoría.');
+                if (!selectedCategoryId) { // NUEVO: Asegurarse de que se seleccione una área también
+                    alert('Por favor, seleccione una área.');
                     return;
                 }
                 
@@ -795,7 +795,7 @@
                                 `);
                             });
                         } else {
-                            skillPerformanceTableBody.html('<tr><td colspan="5" class="text-center text-white-50">No hay datos de habilidad por categoría para este estudiante.</td></tr>');
+                            skillPerformanceTableBody.html('<tr><td colspan="5" class="text-center text-white-50">No hay datos de habilidad por área para este estudiante.</td></tr>');
                         }
 
                         recommendedEvaluationsList.empty();
@@ -803,7 +803,7 @@
                             $.each(response.recomendaciones, function(index, rec) {
                                 recommendedEvaluationsList.append(`
                                     <li class="list-group-item bg-dark text-white">
-                                        <strong>${rec.titulo}</strong> (Categoría: ${rec.categoria}, Dificultad: ${rec.dificultad})<br>
+                                        <strong>${rec.titulo}</strong> (Área: ${rec.categoria}, Nivel de dificultad: ${rec.dificultad})<br>
                                         <small class="text-white-50">Razón: ${rec.razon}</small>
                                     </li>
                                 `);
@@ -814,7 +814,7 @@
                             recommendationExplanation.text('No se pudieron generar recomendaciones para este estudiante en este momento.');
                         }
 
-                        // Actualizar gráfico de radar con datos de habilidad por categoría
+                        // Actualizar gráfico de radar con datos de habilidad por área
                         const radarLabels = ['WEB', 'CRIPTOGRAFIA', 'FORENSE', 'ESTENOGRAFIA', 'DEMO'];
                         const radarData = [];
                         
@@ -824,7 +824,7 @@
                         // Convertir theta_por_categoria a un mapa para acceso más fácil por nombre normalizado
                         const thetaByCategoryName = {};
                         $.each(response.habilidad.theta_por_categoria, function(catId, data) {
-                            if (data.nombre) { // Asegurarse de que el nombre de la categoría existe
+                            if (data.nombre) { // Asegurarse de que el nombre de la área existe
                                 thetaByCategoryName[data.nombre.toUpperCase()] = data.theta;
                             }
                         });
@@ -873,7 +873,7 @@
 
                         demonstrationResults.show();
 
-                        // NUEVO: Cargar el gráfico de crecimiento/decaimiento para la categoría principal seleccionada
+                        // NUEVO: Cargar el gráfico de crecimiento/decaimiento para la área principal seleccionada
                         loadGrowthDecayChart(selectedStudentId, selectedCategoryId);
                     },
                     error: function(xhr) {

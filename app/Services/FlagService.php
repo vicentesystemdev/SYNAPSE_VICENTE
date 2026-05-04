@@ -14,12 +14,13 @@ class FlagService
     {
         $trimmed = trim($submitted);
         
-        // Validar formato: synapse{md5} donde md5 es hexadecimal de 32 caracteres
+        // Validar formato original: synapse{md5}
         if (preg_match('/^synapse\{([a-f0-9]{32})\}$/i', $trimmed, $matches)) {
             return strtolower($matches[1]);
         }
         
-        return null;
+        // Para respuestas matemáticas o texto plano, generamos el MD5 de la respuesta enviada
+        return md5($trimmed);
     }
 
     /**

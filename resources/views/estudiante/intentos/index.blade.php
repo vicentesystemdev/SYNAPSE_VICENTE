@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Historial de Intentos - Synapse CTF</title>
-    <meta property="og:title" content="Historial de Intentos - Synapse CTF" />
+    <title>Historial de Intentos - Synapse Evaluación lógico-matemática</title>
+    <meta property="og:title" content="Historial de Intentos - Synapse Evaluación lógico-matemática" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="utf-8" />
     <meta property="twitter:card" content="summary_large_image" />
@@ -557,7 +557,7 @@
           Historial de intentos
         </h1>
         <p class="text-sm text-slate-400">
-          Revisa tus últimos resultados y el progreso en cada evaluación CTF.
+          Revisa tus últimos resultados y el progreso en cada evaluación Evaluación lógico-matemática.
         </p>
       </div>
 
@@ -583,8 +583,8 @@
             <tr class="text-xs font-semibold uppercase tracking-wide text-slate-400">
               <th scope="col" class="px-4 py-3 text-left font-mono">#</th>
               <th scope="col" class="px-4 py-3 text-left font-mono">Fecha</th>
-              <th scope="col" class="px-4 py-3 text-left font-mono">Categoría</th>
-              <th scope="col" class="px-4 py-3 text-left font-mono">Reto</th>
+              <th scope="col" class="px-4 py-3 text-left font-mono">Área</th>
+              <th scope="col" class="px-4 py-3 text-left font-mono">Ejercicio</th>
               <th scope="col" class="px-4 py-3 text-left font-mono">Resultado</th>
               <th scope="col" class="px-4 py-3 text-left font-mono">Tiempo</th>
               <th scope="col" class="px-4 py-3 text-right font-mono">Acción</th>

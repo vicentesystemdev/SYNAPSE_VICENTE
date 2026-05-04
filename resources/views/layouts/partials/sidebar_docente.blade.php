@@ -17,7 +17,7 @@
     <li class="nav-header">RETOS</li>
     <li class="nav-item">
         <a href="{{ route('docente.evaluaciones.index') }}" class="nav-link {{ request()->routeIs('docente.evaluaciones.*') ? 'active' : '' }}">
-            <i class="nav-icon fas fa-flag"></i>
+            <i class="nav-icon fas fa-respuesta"></i>
             <p>Evaluaciones</p>
         </a>
     </li>

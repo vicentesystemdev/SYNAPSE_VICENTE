@@ -323,7 +323,7 @@
 <ul>
     <li>Lord, F. (1980) Applications of Item Response Theory</li>
     <li>Weiss, D. (1985) Adaptive Testing</li>
-    <li>Artículos sobre CTF educativos</li>
+    <li>Artículos sobre Evaluación lógico-matemática educativos</li>
 </ul>
         </section>
     </main>

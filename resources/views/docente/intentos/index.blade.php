@@ -69,7 +69,7 @@
                             <tr>
                                 <th>ID Intento</th>
                                 <th>Estudiante</th>
-                                <th>Categoría Evaluación</th>
+                                <th>Área Evaluación</th>
                                 <th>Nro Intento</th>
                                 <th>Respuesta</th>
                                 <th>Correcto</th>

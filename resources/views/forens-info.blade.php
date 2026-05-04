@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Análisis Forense Digital</title>
+    <title>Lógica matemática - INTELECTA</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="{{ asset('css/estudiante_dashbord/style.css') }}" />
@@ -267,102 +267,17 @@
     <main id="main-content" class="main-content">
         <section class="section-spacing section-container">
             <div class="section-header">
-                <h2 class="section-title glitch" data-text="Análisis Forense Digital">
-                    Análisis Forense Digital
+                <h2 class="section-title glitch" data-text="Lógica matemática">
+                    Lógica matemática
                 </h2>
                 <p class="section-subtitle">
-                    Reconstruye eventos, examina evidencias y aprende a interpretar artefactos reales.
+                    Tablas de verdad, proposiciones e inferencia.
                 </p>
             </div>
-
-            <div class="content-grid">
-                <!-- Sección 1: Logs y eventos del sistema -->
-                <section class="info-section info-with-image-left">
-                    <div class="info-image-wrapper">
-                        <img src="{{ asset('images/1Forense.jpg') }}" alt="Logs y eventos del sistema" class="info-image" loading="lazy" />
-                    </div>
-                    <div class="info-content">
-                        <h3 class="info-title">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M14.5 10c-.8-1.7-2.6-2.5-4.4-2S7 9 7 9s1.4.6 2.4 1.5c1 .9 2.1 1.5 3.1 1.5h1.8c1.7 0 3-1.3 3-3s-1.3-3-3-3H9L7 3" />
-                                <path d="M22 6h-2c-.5 0-1 .2-1.3.6L14 12l2.7 5.4c.3.4.8.6 1.3.6h2c.5 0 1-.2 1.3-.6L22 12l-2.7-5.4C21 6.2 21.5 6 22 6z" />
-                                <path d="M3 21h-2c-.5 0-1-.2-1.3-.6L.2 15l2.7-5.4c.3-.4.8-.6 1.3-.6h2c.5 0 1 .2 1.3.6L7 15l-2.7 5.4C6 20.8 5.5 21 5 21z" />
-                            </svg> Logs y eventos del sistema
-                        </h3>
-                        <p class="info-body"> Los registros de actividad y logs del sistema operativo, aplicaciones y
-                            dispositivos de red son una mina de oro. Aprender a interpretar estos datos es fundamental
-                            para reconstruir líneas de tiempo y entender lo que sucedió durante un incidente. </p>
-                    </div>
-                </section>
-                <!-- Sección 2: PCAP y análisis de tráfico -->
-                <section class="info-section info-with-image-right">
-                    <div class="info-image-wrapper">
-                        <img src="{{ asset('images/2Forense.jpg') }}" alt="Análisis de tráfico de red (PCAP)" class="info-image" loading="lazy" />
-                    </div>
-                    <div class="info-content">
-                        <h3 class="info-title">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M17 14V10c0-1.1-.9-2-2-2H9c-1.1 0-2 .9-2 2v4" />
-                                <path d="M22 10h-3l-2 3-2-3H2" />
-                            </svg> PCAP y análisis de tráfico
-                        </h3>
-                        <p class="info-body"> Los archivos PCAP (Packet CAPture) contienen una instantánea del tráfico
-                            de red. Aprender a leer streams TCP, reconstruir comunicaciones y extraer archivos transferidos
-                            es esencial para entender ataques y movimientos laterales. </p>
-                    </div>
-                </section>
-                <!-- Sección 3: Carving y recuperación -->
-                <section class="info-section info-with-image-left">
-                    <div class="info-image-wrapper">
-                        <img src="{{ asset('images/3Forense.jpg') }}" alt="Recuperación de datos (Carving)" class="info-image" loading="lazy" />
-                    </div>
-                    <div class="info-content">
-                        <h3 class="info-title">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M21 12c0-4.418-3.582-8-8-8H3v16h10c4.418 0 8-3.582 8-8z" />
-                            </svg> Carving y recuperación
-                        </h3>
-                        <p class="info-body"> El file carving es la técnica de extraer archivos de un disco o imagen forense
-                            basándose en sus firmas, incluso si están fragmentados o eliminados. Es una herramienta
-                            poderosa para recuperar evidencia. </p>
-                    </div>
-                </section>
-                <!-- Sección 4: Artefactos y evidencia digital -->
-                <section class="info-section info-with-image-right">
-                    <div class="info-image-wrapper">
-                        <img src="{{ asset('images/4Forense.jpg') }}" alt="Artefactos de evidencia digital" class="info-image" loading="lazy" />
-                    </div>
-                    <div class="info-content">
-                        <h3 class="info-title">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M15 9V5c0-1.1-.9-2-2-2H6c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h6c1.1 0 2-.9 2-2v-4m0-4l4 4m0-4l-4 4" />
-                            </svg> Artefactos y evidencia digital
-                        </h3>
-                        <p class="info-body"> Galletas (cookies), archivos temporales, metadatos de documentos y firmas
-                            internas de archivos son solo algunos ejemplos de artefactos digitales que pueden contener
-                            información valiosa para una investigación forense. </p>
-                    </div>
-                </section>
-                <!-- Sección 5: Por qué FORENS es clave en Synapse CTF -->
-                <section class="info-section info-with-image-left">
-                    <div class="info-image-wrapper">
-                        <img src="{{ asset('images/CTF.webp') }}" alt="Importancia de la forense en CTF" class="info-image" loading="lazy" />
-                    </div>
-                    <div class="info-content">
-                        <h3 class="info-title">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-                                <polyline points="14 2 14 8 20 8" />
-                                <line x1="16" y1="13" x2="8" y2="13" />
-                                <line x1="16" y1="17" x2="8" y2="17" />
-                                <polyline points="10 9 9 9 8 9" />
-                            </svg> Por qué FORENS es clave en Synapse CTF
-                        </h3>
-                        <p class="info-body"> La categoría <strong>FORENS</strong> te entrena en habilidades analíticas
-                            orientadas a la respuesta a incidentes. Desarrollarás una mentalidad crítica para examinar
-                            evidencias y reconstruir ataques, fundamental en ciberseguridad. </p>
-                    </div>
-                </section>
+            <div class="content-grid" style="padding: 2rem; color: var(--color-on-surface);">
+                <p>En esta área de evaluación, los estudiantes pondrán a prueba sus conocimientos fundamentales. Los ejercicios están diseñados para evaluar la capacidad de análisis y resolución de problemas exactos, preparándolos para desafíos universitarios.</p>
+                <br>
+                <p><strong>Recomendaciones:</strong> Lee cuidadosamente cada enunciado, aplica las fórmulas correspondientes y asegúrate de enviar la respuesta exacta (ej. "5", "2x", "falso").</p>
             </div>
         </section>
     </main>

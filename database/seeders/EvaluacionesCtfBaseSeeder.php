@@ -16,10 +16,10 @@ class EvaluacionesCtfBaseSeeder extends Seeder
     {
         // Obtener categorías por código
         $categorias = [
-            'CRYPTO' => Categoria::where('codigo_cat', 'CRYPTO')->first(),
-            'STEGO' => Categoria::where('codigo_cat', 'STEGO')->first(),
-            'FORENS' => Categoria::where('codigo_cat', 'FORENS')->first(),
-            'WEB' => Categoria::where('codigo_cat', 'WEB')->first(),
+            'ALGEBRA' => Categoria::where('codigo_cat', 'ALGEBRA')->first(),
+            'CALCULO' => Categoria::where('codigo_cat', 'CALCULO')->first(),
+            'LOGICA' => Categoria::where('codigo_cat', 'LOGICA')->first(),
+            'RAZON' => Categoria::where('codigo_cat', 'RAZON')->first(),
         ];
 
         // Obtener dificultades por orden
@@ -40,46 +40,36 @@ class EvaluacionesCtfBaseSeeder extends Seeder
             5 => 'Experto'
         ];
 
-        // Array de evaluaciones: [título, dificultad_orden, fuente, url, descripción]
+        // Array de evaluaciones: [título, dificultad_orden, fuente, url, descripción, respuesta_correcta]
         $items = [
-            // --- CRIPTO ---
-            ['Cripto: Bases', 1, 'Parte 3 (DOCX)', null, 'Reto de bases de cifrado.'],
-            ['Cripto: Emperator Romano', 2, 'Parte 3 (DOCX)', null, 'Cifrado César: fhvdu_uxohc'],
-            ['Cripto: Rotamos si rotamos no', 3, 'Parte 3 (DOCX)', null, 'Patrón de rotaciones.'],
-            ['Cripto: Castillo Perdido (.NET)', 4, 'Parte 3 (DOCX)', 'https://drive.google.com/file/d/1e_yHPwpKuT1BhGmIe8drs2xIxfxqopsO/view', '.NET reversing ligero.'],
-            ['Cripto: Cazafantasmas (audio)', 4, 'Parte 3 (DOCX)', 'https://drive.google.com/file/d/1DgJJsXC7CDmdZFs8ysaXzrt1L3EYpeQN/view', 'Audio con voces invertidas.'],
+            // --- ALGEBRA ---
+            ['Álgebra: Ecuación lineal básica', 1, 'Banco de ejercicios', null, 'Resolver: 2x + 5 = 15', '5'],
+            ['Álgebra: Factorización', 2, 'Banco de ejercicios', null, 'Factorizar: x^2 - 9', '(x-3)(x+3)'],
+            ['Álgebra: Sistema de ecuaciones', 3, 'Banco de ejercicios', null, 'Si x + y = 10 y x - y = 2, ¿cuál es el valor de x?', '6'],
 
-            // --- STEGO ---
-            ['Stego: Latin', 1, 'Parte 3 (DOCX)', null, 'Texto con pista latín.'],
-            ['Stego: Paisaje (EXIF)', 2, 'Parte 3 (DOCX)', null, 'Marca de cámara por metadatos.'],
-            ['Stego: Explotación de stenografía', 2, 'Parte 3 (DOCX)', null, 'Flag escondida en "la bomba".'],
-            ['Stego: Iconografía galletaria', 4, 'Parte 3 (DOCX)', 'https://drive.google.com/file/d/1HjPX7olD4PMkJLnsbCNHAdk3Ga7zhv4y/view', 'Sprites/íconos sin fondo.'],
-            ['Stego: Ricardo en apuros (recovery)', 3, 'Parte 3 (DOCX)', 'https://drive.google.com/file/d/1SRETFrXChYwGgAHTKp8Gc-gjgNSRft8L/view', 'Recuperar imagen perdida.'],
+            // --- CALCULO ---
+            ['Cálculo: Derivada simple', 1, 'Banco de ejercicios', null, 'Calcular la derivada de x^2', '2x'],
+            ['Cálculo: Límite básico', 2, 'Banco de ejercicios', null, 'Calcular el límite de (x^2-1)/(x-1) cuando x tiende a 1', '2'],
+            ['Cálculo: Integral indefinida', 3, 'Banco de ejercicios', null, '¿Cuál es la integral de 2x?', 'x^2+c'],
 
-            // --- FORENSE ---
-            ['Forense: Captura de tráfico', 1, 'Parte 3 (DOCX)', 'https://drive.google.com/file/d/1tyBFiO6QLmU25nCMz7KvQO6dGjG1xM6e/view', 'PCAP inicial.'],
-            ['Forense: Pasajes a Qatar', 2, 'Parte 3 (DOCX)', 'https://drive.google.com/file/d/1rGUl6zkXCphcceLrg2Sg2830_MNNnQxN/view', 'Contar transacciones/tipos cripto.'],
-            ['Forense: Decapitado', 4, 'Parte 3 (DOCX)', 'https://drive.google.com/file/d/1o1KKnuRCV-UHSsYaMzakPZ_GEMh2Y3nt/view', 'Cabeceras/firmas corruptas.'],
-            ['Forense: Ping me.', 3, 'Parte 3 (DOCX)', 'https://drive.google.com/file/d/1EgcYLaJCo-iWQbfJsYAPgALdsQI2FQDy/view', 'Tráfico saliente sospechoso.'],
-            ['Forense: Discos-Horrocruxes', 4, 'Parte 3 (DOCX)', 'https://drive.google.com/file/d/1jwWL0Nf2GLoYGhoChA3laVcd2x9F5-hh/view', '2 discos Linux (filesystem).'],
+            // --- LOGICA ---
+            ['Lógica: Conjunción', 1, 'Banco de ejercicios', null, 'Si p es verdadero y q es falso, calcular p ∧ q (escribe verdadero o falso)', 'falso'],
+            ['Lógica: Implicación', 2, 'Banco de ejercicios', null, '¿Cuál es el valor de verdad de "Si 2+2=5, entonces el cielo es verde"?', 'verdadero'],
 
-            // --- WEB ---
-            ['Web: Debes oír todo lo que te dicen', 1, 'Preguntas CRIPTO y WEB (DOCX)', 'http://200.9.165.32:8091/', 'Reglas y detalles básicos.'],
-            ['Web: Robot', 1, 'Preguntas CRIPTO y WEB (DOCX)', 'http://200.9.165.32:8817/', 'Descubrimiento robots.txt.'],
-            ['Web: Jason necesita un Web Token', 4, 'Preguntas CRIPTO y WEB (DOCX)', 'http://200.9.165.32:3000/', 'JWT /login y /administracion.'],
-            ['Web: Galletitas', 2, 'Preguntas CRIPTO y WEB (DOCX)', 'http://200.9.165.32:8655/', 'Manejo de cookies.'],
-            ['Web: Descuido desafortunado', 3, 'Preguntas CRIPTO y WEB (DOCX)', 'http://200.9.165.32:8202', 'Exposición de información.'],
+            // --- RAZONAMIENTO ---
+            ['Razonamiento: Serie numérica', 1, 'Banco de ejercicios', null, 'Completar la serie: 2, 4, 8, 16, __', '32'],
+            ['Razonamiento: Edades', 2, 'Banco de ejercicios', null, 'Si hace 5 años tenía 15 años, ¿cuántos años tendré en 5 años?', '25'],
         ];
 
         // Mapeo de prefijo a categoría
         $catMap = [
-            'Cripto' => 'CRYPTO',
-            'Stego' => 'STEGO',
-            'Forense' => 'FORENS',
-            'Web' => 'WEB',
+            'Álgebra' => 'ALGEBRA',
+            'Cálculo' => 'CALCULO',
+            'Lógica' => 'LOGICA',
+            'Razonamiento' => 'RAZON',
         ];
 
-        foreach ($items as $index => [$title, $difOrder, $src, $url, $desc]) {
+        foreach ($items as $index => [$title, $difOrder, $src, $url, $desc, $respuesta]) {
             // Identificar categoría por prefijo del título
             $catKey = null;
             foreach ($catMap as $prefix => $catCode) {
@@ -111,17 +101,18 @@ class EvaluacionesCtfBaseSeeder extends Seeder
                 'periodo_id' => $periodo?->id_per,
                 'docente_user_id' => $docente?->id,
                 'puntaje_base_eval' => 100.00,
-                'estado_eval' => 1, // 1 = Borrador
-                'flag_hash_eval' => null, // Se completará después
-                'solution_md5' => null, // El docente lo completa
+                'estado_eval' => 2, // 2 = Publicada (para probar rápido)
+                'flag_hash_eval' => md5($respuesta), // Guardamos el hash de la respuesta
+                'solution_md5' => null, 
                 'metadata_eval' => json_encode([
                     'nivel_label' => $levelLabel[$difOrder] ?? 'N/A',
                     'external_url' => $url,
-                    'flag_format' => 'synapse{md5}',
+                    'flag_format' => 'exact_match',
                     'fuente' => $src,
+                    'respuesta_plana' => $respuesta // solo para debug del admin/docente en seeder
                 ]),
-                'fecha_inicio_eval' => null, // Se configurará cuando se publique
-                'fecha_fin_eval' => null,
+                'fecha_inicio_eval' => now(), 
+                'fecha_fin_eval' => now()->addMonths(6),
             ]);
         }
 

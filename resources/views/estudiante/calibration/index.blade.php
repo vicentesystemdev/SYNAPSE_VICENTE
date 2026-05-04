@@ -20,7 +20,7 @@
                         Has completado <span class="text-white font-bold text-2xl">{{ $totalIntentos }}</span> de 5 pruebas
                     </h2>
                     <p class="text-gray-400 text-sm">
-                        Necesitamos analizar tu rendimiento en 5 retos iniciales para que el motor de inteligencia artificial (IRT) pueda asignarte un nivel adecuado.
+                        Necesitamos analizar tu rendimiento en 5 ejercicios iniciales para que el motor de inteligencia artificial (IRT) pueda asignarte un nivel adecuado.
                     </p>
                 </div>
 

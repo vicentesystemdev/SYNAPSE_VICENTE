@@ -20,7 +20,7 @@
                 <div class="card bg-gradient-dark custom-gradient-bg border-0 shadow-lg"> {{-- Clase custom-gradient-bg para el color --}}
                     <div class="card-header border-0 d-flex justify-content-between align-items-center">
                         <h3 class="card-title text-white">
-                            <i class="fas fa-chart-pie mr-2 text-orange-400"></i> Visión General del Sistema Synapse CTF
+                            <i class="fas fa-chart-pie mr-2 text-orange-400"></i> Visión General del Sistema Synapse Evaluación lógico-matemática
                         </h3>
                         <div class="card-tools">
                             <span class="badge badge-warning custom-badge-warning text-dark">{{ $periodoActual->nombre_per ?? 'Sin período' }}</span>
@@ -197,11 +197,11 @@
             </section>
 
             <section class="col-lg-5 connectedSortable">
-                {{-- Gráfico Heatmap de Puntajes por Categoría --}}
+                {{-- Gráfico Heatmap de Puntajes por Área --}}
                 <div class="card bg-gradient-primary custom-gradient-primary shadow-lg"> {{-- Clase custom-gradient-primary para el color --}}
                     <div class="card-header border-0">
                         <h3 class="card-title text-white">
-                            <i class="fas fa-grip-lines-vertical mr-1 text-orange-400"></i> Heatmap de Puntajes por Categoría
+                            <i class="fas fa-grip-lines-vertical mr-1 text-orange-400"></i> Heatmap de Puntajes por Área
                         </h3>
                         <div class="card-tools">
                             <button type="button" class="btn btn-primary btn-sm daterange" title="Date range">
@@ -213,14 +213,14 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <p class="text-white-50">Visualiza la distribución de puntajes acumulados por categoría en el período actual.</p>
+                        <p class="text-white-50">Visualiza la distribución de puntajes acumulados por área en el período actual.</p>
                         <div class="chart-responsive">
                             <canvas id="categoryHeatmapChart" height="200"></canvas>
                         </div>
                     </div>
                     <div class="card-footer bg-transparent">
                         <div class="d-flex justify-content-between text-white-50">
-                            <span>Total por Categoría</span>
+                            <span>Total por Área</span>
                             <span>{{ $heatmap->sum('total') }}</span> {{-- Muestra el total global del heatmap --}}
                         </div>
                     </div>
@@ -286,12 +286,12 @@
                 options: irtAbilityOptions
             });
 
-            // Datos para el Gráfico Heatmap de Puntajes por Categoría
+            // Datos para el Gráfico Heatmap de Puntajes por Área
             // Los datos 'heatmap' ya están disponibles en el controlador: $heatmap
             const categoryLabels = @json($heatmap->pluck('categoria'));
             const categoryData = @json($heatmap->pluck('total'));
 
-            // Definir una paleta de colores para el Heatmap de Categorías (naranjas y tonos de gris)
+            // Definir una paleta de colores para el Heatmap de Áreas de evaluación (naranjas y tonos de gris)
             const categoryColors = [
                 '#FF5722', // Naranja primario
                 '#FF8A3D', // Naranja claro

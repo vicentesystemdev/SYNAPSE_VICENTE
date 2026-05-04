@@ -25,10 +25,10 @@ class CatalogoBasicoSeeder extends Seeder
         $colUpdated   = $catCols->first(fn($c) => in_array($c, ['updated_at','actualizado_en','actualizado']));
 
         $categorias = [
-            ['code'=>'WEB',    'name'=>'web'],
-            ['code'=>'CRYPTO', 'name'=>'criptografia'],
-            ['code'=>'FORENS', 'name'=>'forense'],
-            ['code'=>'STEGO',  'name'=>'estenografia'],
+            ['code'=>'ALGEBRA',    'name'=>'Álgebra'],
+            ['code'=>'CALCULO', 'name'=>'Cálculo básico'],
+            ['code'=>'LOGICA', 'name'=>'Lógica matemática'],
+            ['code'=>'RAZON',  'name'=>'Razonamiento numérico'],
         ];
 
         foreach ($categorias as $c) {

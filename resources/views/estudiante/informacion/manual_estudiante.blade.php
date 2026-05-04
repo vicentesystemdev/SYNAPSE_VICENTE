@@ -314,11 +314,11 @@
             </h2>
             <h3>Cómo Navegar los Retos</h3>
 <p>
-    Cada categoría ofrece desafíos prácticos diseñados para evaluar tu nivel técnico. Puedes acceder a ellos desde el menú principal.
+    Cada área ofrece desafíos prácticos diseñados para evaluar tu nivel técnico. Puedes acceder a ellos desde el menú principal.
 </p>
-<h3>Cómo Funciona la Dificultad</h3>
+<h3>Cómo Funciona la Nivel de dificultad</h3>
 <p>
-    Synapse CTF no asigna dificultad estática.
+    Synapse Evaluación lógico-matemática no asigna dificultad estática.
 </p>
 <ul>
     <li>Tu desempeño modifica tu nivel en tiempo real.</li>
@@ -334,7 +334,7 @@
 <ul>
     <li>Leer siempre el enunciado</li>
     <li>Analizar el archivo/entorno antes de intentar</li>
-    <li>Explorar herramientas básicas según categoría</li>
+    <li>Explorar herramientas básicas según área</li>
     <li>Evita compartir flags</li>
 </ul>
         </section>

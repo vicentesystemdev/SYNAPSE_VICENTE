@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Perfil de Usuario - Synapse CTF</title>
-    <meta property="og:title" content="Synapse CTF — La Evolución de las Evaluaciones en Ciberseguridad" />
+    <title>Perfil de Usuario - Synapse Evaluación lógico-matemática</title>
+    <meta property="og:title" content="Synapse Evaluación lógico-matemática — La Evolución de las Evaluaciones en Ciberseguridad" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="utf-8" />
     <meta property="twitter:card" content="summary_large_image" />

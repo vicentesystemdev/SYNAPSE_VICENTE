@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Synapse CTF — La Evolución de las Evaluaciones en Ciberseguridad</title>
-    <meta property="og:title" content="Synapse CTF — La Evolución de las Evaluaciones en Ciberseguridad" />
+    <title>Synapse Evaluación lógico-matemática — La Evolución de las Evaluaciones en Ciberseguridad</title>
+    <meta property="og:title" content="Synapse Evaluación lógico-matemática — La Evolución de las Evaluaciones en Ciberseguridad" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="utf-8" />
     <meta property="twitter:card" content="summary_large_image" />
@@ -552,9 +552,9 @@
 @php
     $categoria = optional($evaluacion->categoria);
     $dificultad = optional($evaluacion->dificultad);
-    $categoriaLabel = strtoupper($categoria->codigo_cat ?? $categoria->nombre_cat ?? 'CTF');
+    $categoriaLabel = strtoupper($categoria->codigo_cat ?? $categoria->nombre_cat ?? 'Evaluación lógico-matemática');
     $nivelValor = $dificultad->orden_dif ?? $evaluacion->dificultad_id ?? '3';
-    $nivelNombre = $dificultad->nombre_dif ?? 'Dificultad media';
+    $nivelNombre = $dificultad->nombre_dif ?? 'Nivel de dificultad media';
     
     // Verificar si ya completó
     $userId = Auth::id();
@@ -581,7 +581,7 @@
   <div class="mx-auto max-w-6xl space-y-10">
     <header class="space-y-2">
       <h1 class="text-3xl font-extrabold tracking-tight text-white">
-        {{ $evaluacion->titulo_eval ?? 'Reto CTF' }}
+        {{ $evaluacion->titulo_eval ?? 'Reto Evaluación lógico-matemática' }}
       </h1>
 
       <div class="flex flex-wrap items-center gap-3 text-xs">
@@ -653,7 +653,7 @@
             <!-- Formulario normal -->
           <div class="rounded-lg border border-slate-800 bg-slate-950/60 p-4">
             <p class="font-mono text-[13px] text-slate-100 leading-relaxed">
-                {{ $evaluacion->descripcion_eval ?? 'Analiza los recursos proporcionados y encuentra la flag correcta.' }}
+                {{ $evaluacion->descripcion_eval ?? 'Analiza los recursos proporcionados y encuentra la respuesta correcta.' }}
             </p>
             
             @if($evaluacion->archivo_adjunto)
@@ -668,7 +668,7 @@
           </div>
 
           <p class="font-mono text-xs text-emerald-300">
-            &gt; ingresa tu flag con formato <span class="text-emerald-200">synapse{...}</span>
+            &gt; ingresa tu respuesta con formato <span class="text-emerald-200">synapse{...}</span>
             <span class="animate-pulse">_</span>
           </p>
 
@@ -680,12 +680,12 @@
 
             @if ($errors->any())
                 <div class="rounded-lg border border-rose-500/50 bg-rose-500/10 px-4 py-2 text-xs text-rose-200 font-mono">
-                    {{ $errors->first('flag') }}
+                    {{ $errors->first('respuesta') }}
                 </div>
             @endif
 
 
-          <form action="{{ route('estudiante.intentos.store', $evaluacion->id_eval ?? $evaluacion->id) }}" method="POST" class="space-y-4" id="flag-form">
+          <form action="{{ route('estudiante.intentos.store', $evaluacion->id_eval ?? $evaluacion->id) }}" method="POST" class="space-y-4" id="respuesta-form">
             @csrf
             <!-- Campo oculto para tracking de tiempo -->
             <input type="hidden" name="tiempo_inicio" id="tiempo-inicio" value="">
@@ -694,10 +694,10 @@
             <div class="space-y-2">
               <input
                 type="text"
-                name="flag"
+                name="respuesta"
                 placeholder="synapse{...}"
                   class="w-full rounded-xl border border-slate-700 bg-slate-900 px-4 py-3 font-mono text-sm text-slate-200 placeholder-slate-500 shadow-inner focus:border-emerald-400 focus:ring-emerald-400/30 focus:outline-none transition"
-                  value="{{ old('flag') }}" />
+                  value="{{ old('respuesta') }}" />
 
               <p class="text-[11px] font-mono text-slate-500">
                 Formato requerido: <span class="text-slate-300">synapse{md5}</span>
@@ -706,7 +706,7 @@
 
             <button type="submit"
                 class="w-full rounded-xl bg-emerald-500 px-6 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/30 hover:bg-emerald-400 active:scale-[0.97] transition">
-              Enviar flag
+              Enviar respuesta
             </button>
           </form>
 
@@ -735,7 +735,7 @@
               document.getElementById('tiempo-inicio').value = tiempoInicio;
               
               // Calcular latencia al enviar el formulario
-              const form = document.getElementById('flag-form');
+              const form = document.getElementById('respuesta-form');
               if (form) {
                 form.addEventListener('submit', function() {
                   const tiempoFin = Date.now();
@@ -770,7 +770,7 @@
                 </li>
             @empty
                 <li class="rounded-lg border border-dashed border-slate-800 bg-slate-900/40 px-3 py-4 text-center text-[11px] text-slate-500 font-mono">
-                  Aún no registras intentos para este reto.
+                  Aún no registras intentos para este ejercicio.
                 </li>
             @endforelse
           </ul>
@@ -778,7 +778,7 @@
 
         <div class="rounded-2xl border border-slate-800 bg-slate-950/80 p-5 shadow-lg">
           <h2 class="text-sm font-semibold text-slate-100 tracking-wide mb-3">
-            Tips del reto
+            Tips del ejercicio
           </h2>
 
           <ul class="space-y-2 text-xs text-slate-400">
@@ -794,14 +794,14 @@
 
             <li class="flex items-start gap-2">
               <span class="h-1.5 w-1.5 rounded-full bg-emerald-400 mt-1"></span>
-              La flag siempre empieza con synapse{...}.
+              La respuesta siempre empieza con synapse{...}.
             </li>
           </ul>
         </div>
 
         <div class="space-y-1 text-xs text-slate-500 font-mono">
           <a href="{{ route('estudiante.evaluaciones.show', $evaluacion->id_eval ?? $evaluacion->id) }}" class="hover:text-slate-300 transition">
-            &gt; Ver detalles del reto
+            &gt; Ver detalles del ejercicio
           </a>
           <br>
           <a href="{{ route('estudiante.evaluaciones.index') }}" class="hover:text-slate-300 transition">

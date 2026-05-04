@@ -31,9 +31,9 @@ class IntentoController extends Controller
     public function storeDesdeEstudiante(Request $request, Evaluacion $evaluacion): RedirectResponse
     {
         $validated = $request->validate([
-            'flag' => ['required', 'string', 'regex:/^synapse\{.+\}$/i'],
+            'flag' => ['required', 'string'],
         ], [
-            'flag.regex' => 'La flag debe tener el formato synapse{...}.',
+            'flag.required' => 'La respuesta es obligatoria.',
         ]);
 
         $flagUser = trim($validated['flag']);
@@ -72,12 +72,12 @@ class IntentoController extends Controller
         if ($esCorrecto) {
             return redirect()
                 ->route('estudiante.evaluaciones.index')
-                ->with('status', '¡Flag correcta! Has completado esta evaluación.');
+                ->with('status', '¡Respuesta correcta! Has completado este ejercicio.');
         }
 
         // Si es incorrecto, volver a la vista de realizar
         session()->flash('status', 'incorrecta');
-        session()->flash('mensaje', 'Flag incorrecta, intenta nuevamente.');
+        session()->flash('mensaje', 'Respuesta incorrecta, intenta nuevamente.');
 
         return redirect()->route('estudiante.evaluaciones.realizar', $evaluacion->id_eval);
     }

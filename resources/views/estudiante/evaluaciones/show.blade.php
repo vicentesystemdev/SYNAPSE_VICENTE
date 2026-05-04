@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Synapse CTF — La Evolución de las Evaluaciones en Ciberseguridad</title>
-    <meta property="og:title" content="Synapse CTF — La Evolución de las Evaluaciones en Ciberseguridad" />
+    <title>Synapse Evaluación lógico-matemática — La Evolución de las Evaluaciones en Ciberseguridad</title>
+    <meta property="og:title" content="Synapse Evaluación lógico-matemática — La Evolución de las Evaluaciones en Ciberseguridad" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="utf-8" />
     <meta property="twitter:card" content="summary_large_image" />
@@ -552,9 +552,9 @@
 @php
     $categoria = optional($evaluacion->categoria);
     $dificultad = optional($evaluacion->dificultad);
-    $categoriaLabel = strtoupper($categoria->codigo_cat ?? $categoria->nombre_cat ?? 'CTF');
+    $categoriaLabel = strtoupper($categoria->codigo_cat ?? $categoria->nombre_cat ?? 'Evaluación lógico-matemática');
     $nivelValor = $dificultad->orden_dif ?? $evaluacion->dificultad_id ?? '3';
-    $nivelNombre = $dificultad->nombre_dif ?? 'Dificultad media';
+    $nivelNombre = $dificultad->nombre_dif ?? 'Nivel de dificultad media';
     $metadata = $evaluacion->metadata_eval ?? [];
     $archivos = $metadata['archivos'] ?? [];
 @endphp
@@ -564,7 +564,7 @@
     <div class="flex items-center justify-between gap-4">
       <div class="space-y-1">
         <p class="text-xs font-semibold tracking-[0.3em] text-emerald-400 uppercase">
-          Synapse CTF · Evaluación
+          Synapse Evaluación lógico-matemática · Evaluación
         </p>
         <h1 class="text-3xl font-extrabold tracking-tight text-white">
           {{ $evaluacion->titulo_eval ?? 'Título de la evaluación / reto' }}
@@ -623,14 +623,14 @@
               </p>
 
               <p class="font-mono text-[11px] text-slate-400">
-                Ejemplo: Se ha detectado tráfico sospechoso en el servidor de la organización. Analiza los artefactos proporcionados y encuentra la flag con formato <span class="text-emerald-300">synapse{...}</span>.
+                Ejemplo: Se ha detectado tráfico sospechoso en el servidor de la organización. Analiza los artefactos proporcionados y encuentra la respuesta con formato <span class="text-emerald-300">synapse{...}</span>.
               </p>
             </div>
 
             <div class="grid gap-3 text-[11px] text-slate-400 md:grid-cols-3">
               <div class="space-y-1">
                 <p class="font-mono text-slate-500 uppercase tracking-wide">
-                  Categoría
+                  Área
                 </p>
                 <p class="font-mono text-emerald-300">
                   {{ $categoriaLabel }}
@@ -639,7 +639,7 @@
 
               <div class="space-y-1">
                 <p class="font-mono text-slate-500 uppercase tracking-wide">
-                  Dificultad estimada
+                  Nivel de dificultad estimada
                 </p>
                 <p class="font-mono text-amber-300">
                   Nivel {{ $nivelValor }} · {{ $nivelNombre }}
@@ -665,7 +665,7 @@
             Resumen de la evaluación
           </h2>
           <p class="mt-2 text-xs text-slate-400">
-            Esta evaluación forma parte de tu ruta adaptativa. Completarla ayudará a refinar la estimación de tu nivel en esta categoría.
+            Esta evaluación forma parte de tu ruta adaptativa. Completarla ayudará a refinar la estimación de tu nivel en esta área.
           </p>
 
           <dl class="mt-4 space-y-2 text-xs text-slate-300">
@@ -686,7 +686,7 @@
 
         <div class="rounded-2xl border border-slate-800 bg-slate-950/80 p-5 shadow-lg">
           <h2 class="text-sm font-semibold text-slate-100 tracking-wide flex items-center gap-2">
-            Recursos del reto
+            Recursos del ejercicio
             <span class="text-[10px] font-normal text-slate-500">(descargables)</span>
           </h2>
 

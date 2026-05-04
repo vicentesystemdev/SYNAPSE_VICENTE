@@ -69,7 +69,7 @@
                             <tr>
                                 <th>ID Intento</th>
                                 <th>Estudiante</th>
-                                <th>Categoría Evaluación</th> {{-- Texto del encabezado cambiado --}}
+                                <th>Área Evaluación</th> {{-- Texto del encabezado cambiado --}}
                                 <th>Nro Intento</th>
                                 <th>Respuesta</th>
                                 <th>Correcto</th>
@@ -83,7 +83,7 @@
                                 <tr>
                                     <td>{{ $intento->id_int }}</td>
                                     <td>{{ $intento->user->name }} {{ $intento->user->app_usu }}</td>
-                                    <td>{{ $intento->evaluacion->categoria->nombre_cat ?? 'N/A' }}</td> {{-- Acceder a la categoría de la evaluación --}}
+                                    <td>{{ $intento->evaluacion->categoria->nombre_cat ?? 'N/A' }}</td> {{-- Acceder a la área de la evaluación --}}
                                     <td>{{ $intento->nro_intento_int }}</td>
                                     <td>{{ $intento->respuesta_flag_int }}</td>
                                     <td>

@@ -470,7 +470,7 @@
     <aside class="main-sidebar elevation-4">
         <!-- Brand Logo -->
         <a href="/" class="brand-link">
-            <span class="brand-text --emerald-green">SYNAPSE CTF</span>
+            <span class="brand-text --emerald-green">SYNAPSE Evaluación lógico-matemática</span>
         </a>
 
         <!-- Sidebar -->

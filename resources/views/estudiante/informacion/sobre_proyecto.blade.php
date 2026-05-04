@@ -312,13 +312,13 @@
             <h2 class="section-title glitch" data-text="Sobre el Proyecto">
                 Sobre el Proyecto
             </h2>
-            <h3>Qué es Synapse CTF</h3>
+            <h3>Qué es Synapse Evaluación lógico-matemática</h3>
 <p>
     Una plataforma de evaluación adaptativa orientada a estudiantes de ciberseguridad.
 </p>
 <h3>Enfoque</h3>
 <p>
-    Basado en retos reales, métricas cuantitativas y rutas de aprendizaje personalizadas.
+    Basado en ejercicios reales, métricas cuantitativas y rutas de aprendizaje personalizadas.
 </p>
 <h3>Objetivo Principal</h3>
 <p>

@@ -131,7 +131,7 @@
                   </div>
                   <div class="footer-nav-section">
                     <div class="footer-nav-column">
-                      <h3 class="footer-nav-title">Categorías CTF</h3>
+                      <h3 class="footer-nav-title">Áreas de evaluación</h3>
                       <ul class="footer-nav-list">
                         <li class="footer-nav-item">
                           <a href="{{ route('estudiante.web.info') }}">
@@ -204,7 +204,7 @@
                       </ul>
                     </div>
                     <div class="footer-nav-column">
-                      <h3 class="footer-nav-title">Synapse CTF</h3>
+                      <h3 class="footer-nav-title">Synapse Evaluación lógico-matemática</h3>
                       <ul class="footer-nav-list">
                         <li class="footer-nav-item">
                           <a href="{{ route('estudiante.informacion.sobre_proyecto') }}">

@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Synapse CTF — La Evolución de las Evaluaciones en Ciberseguridad</title>
-    <meta property="og:title" content="Synapse CTF — La Evolución de las Evaluaciones en Ciberseguridad" />
+    <title>Synapse Evaluación lógico-matemática — La Evolución de las Evaluaciones en Ciberseguridad</title>
+    <meta property="og:title" content="Synapse Evaluación lógico-matemática — La Evolución de las Evaluaciones en Ciberseguridad" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="utf-8" />
     <meta property="twitter:card" content="summary_large_image" />
@@ -561,7 +561,7 @@
               <div class="hero-card">
                 <div class="hero-left">
                   <h1 class="home-hero-title hero-title">
-                    Synapse CTF — La Evolución de las Evaluaciones en Ciberseguridad
+                    Synapse Evaluación lógico-matemática — La Evolución de las Evaluaciones en Ciberseguridad
                   </h1>
                   <p class="home-hero-subtitle hero-subtitle">
                     Retos prácticos que se adaptan a tu nivel. Pruebas personalizadas que miden habilidad real, no solo puntuación.
@@ -647,7 +647,7 @@
             <div class="carousel-header">
               <h2 class="section-title">Cursos Destacados</h2>
               <p class="section-subtitle">
-                Sumérgete en las cuatro disciplinas clave que forman el corazón de las competiciones CTF. Cada categoría está diseñada para explorar un conjunto de habilidades utilizado por analistas, pentesters y profesionales del sector.
+                Sumérgete en las cuatro disciplinas clave que forman el corazón de las competiciones Evaluación lógico-matemática. Cada área está diseñada para explorar un conjunto de habilidades utilizado por analistas, pentesters y profesionales del sector.
               </p>
             </div>
             <div role="list" class="coverflow">
@@ -781,9 +781,9 @@
           >
             <div class="section-container">
               <div class="section-header">
-                <h2 class="section-title">¿Qué es un CTF?</h2>
+                <h2 class="section-title">¿Qué es un Evaluación lógico-matemática?</h2>
                 <p class="section-subtitle">
-                  Un CTF (Capture The Flag) es un formato internacional de retos de ciberseguridad donde el participante debe encontrar una flag oculta, demostrando su capacidad técnica. En Synapse CTF, cada flag utiliza el estándar:
+                  Un Evaluación lógico-matemática (Evaluación lógico-matemática) es un formato internacional de ejercicios de ciberseguridad donde el participante debe encontrar una respuesta oculta, demostrando su capacidad técnica. En Synapse Evaluación lógico-matemática, cada respuesta utiliza el estándar:
 
                   synapse{md5}
 
@@ -818,9 +818,9 @@
                     </div>
                     <div class="card-content">
                       <span class="card-label">01</span>
-                      <h3 id="overview-web" class="card-title">Retos Disponibles</h3>
+                      <h3 id="overview-web" class="card-title">Ejercicios Disponibles</h3>
                       <p class="card-body">
-                        Accede a pruebas personalizadas que se ajustan a tu rendimiento: el sistema analiza aciertos, latencias y patrones para ofrecer el siguiente reto que realmente te ayuda a mejorar.
+                        Accede a pruebas personalizadas que se ajustan a tu rendimiento: el sistema analiza aciertos, latencias y patrones para ofrecer el siguiente ejercicio que realmente te ayuda a mejorar.
                       </p>
                     </div>
                   </article>
@@ -847,7 +847,7 @@
                     </div>
                     <div class="card-content">
                       <span class="card-label">02</span>
-                      <h3 id="overview-crypto" class="card-title">Progreso en CTF</h3>
+                      <h3 id="overview-crypto" class="card-title">Progreso en Evaluación lógico-matemática</h3>
                       <p class="card-body">
                         Tu nivel se estima científicamente (IRT 2PL, Markov, EMA). Synapse traduce tu rendimiento en recomendaciones para que avances con sentido.
                       </p>
@@ -917,10 +917,10 @@
                     <div class="card-content">
                       <span class="card-label">04</span>
                       <h3 id="overview-esteg" class="card-title">
-                        ¿Qué es Synapse CTF?
+                        ¿Qué es Synapse Evaluación lógico-matemática?
                       </h3>
                       <p class="card-body">
-                        Plataforma de evaluación formativa basada en pruebas reales. Aprende haciendo y mejora con rutas personalizadas por categoría.
+                        Plataforma de evaluación formativa basada en pruebas reales. Aprende haciendo y mejora con rutas personalizadas por área.
                       </p>
                     </div>
                   </article>
@@ -940,11 +940,11 @@
                   Cómo funciona el sistema
                 </h2>
                 <p class="section-subtitle">
-                  El motor adaptativo observa tu desempeño en tiempo real. Cada flag encontrada, cada error, cada segundo invertido afecta tu camino. Si dominas un nivel, subes. Si te frustras, ajusta.
+                  El motor adaptativo observa tu desempeño en tiempo real. Cada respuesta encontrada, cada error, cada segundo invertido afecta tu camino. Si dominas un nivel, subes. Si te frustras, ajusta.
 
                   El sistema combina múltiples modelos matemáticos que trabajan al mismo tiempo para ofrecerte una experiencia personalizada:
 
-                  IRT 2PL: Determina tu habilidad técnica real (theta) en cada categoría.
+                  IRT 2PL: Determina tu habilidad técnica real (theta) en cada área.
 
                   Markov: Predice tu transición de nivel para asignar el siguiente reto.
 
@@ -970,9 +970,9 @@
                   />
                   <div class="lead-content">
                     <span class="lead-meta">Misión del sistema</span>
-                    <h3 class="lead-title">Empoderar a estudiantes para enfrentar retos reales del mundo digital.</h3>
+                    <h3 class="lead-title">Empoderar a estudiantes para enfrentar ejercicios reales del mundo digital.</h3>
                     <p class="lead-body">
-                      Synapse CTF transforma conocimiento en habilidad práctica. Aquí se aprende probando: fallas, refuerzos y progreso medible. Únete: resuelve pruebas reales, mejora tu perfil y compite con propósito.
+                      Synapse Evaluación lógico-matemática transforma conocimiento en habilidad práctica. Aquí se aprende probando: fallas, refuerzos y progreso medible. Únete: resuelve pruebas reales, mejora tu perfil y compite con propósito.
                     </p>
                     <p class="lead-body">
                       Aprender no es recordar: es poder reproducir la solución bajo presión. Atrévete, falla, refuerza, mejora.
@@ -1015,7 +1015,7 @@
                         Integridad garantizada
                     </h3>
                     <p class="update-body">
-                        La plataforma está construida bajo principios de seguridad aplicados en entornos reales. Cada reto pasa por auditorías internas y pruebas automatizadas que garantizan autenticidad, integridad y protección de los datos. Implementamos prácticas modernas adoptadas por equipos profesionales de ciberseguridad en Bolivia y Latinoamérica.
+                        La plataforma está construida bajo principios de seguridad aplicados en entornos reales. Cada ejercicio pasa por auditorías internas y pruebas automatizadas que garantizan autenticidad, integridad y protección de los datos. Implementamos prácticas modernas adoptadas por equipos profesionales de ciberseguridad en Bolivia y Latinoamérica.
                     </p>
                     </div>
                   </article>
@@ -1047,7 +1047,7 @@
                         Rutas inteligentes que evolucionan contigo
                     </h3>
                     <p class="card-body">
-                        Synapse CTF no solo mide resultados: interpreta tu proceso. Cada intento, acierto o error alimenta el motor adaptativo. El sistema construye rutas personalizadas para reforzar debilidades, potenciar fortalezas y preparar al estudiante para escenarios reales de análisis web, forense, stego y criptografía.
+                        Synapse Evaluación lógico-matemática no solo mide resultados: interpreta tu proceso. Cada intento, acierto o error alimenta el motor adaptativo. El sistema construye rutas personalizadas para reforzar debilidades, potenciar fortalezas y preparar al estudiante para escenarios reales de análisis web, forense, stego y criptografía.
                     </p>
                     </div>
                   </article>
@@ -1160,7 +1160,7 @@
                     </span>
                       <h3 class="update-title">Construyamos juntos una cultura de ciberseguridad</h3>
                     <p class="card-body">
-                        Únete a una red creciente de estudiantes, docentes y entusiastas de la seguridad informática. Comparte soluciones, desarrolla pensamiento crítico y colabora en retos semanales que valoran ingenio, creatividad y buenas prácticas.
+                        Únete a una red creciente de estudiantes, docentes y entusiastas de la seguridad informática. Comparte soluciones, desarrolla pensamiento crítico y colabora en ejercicios semanales que valoran ingenio, creatividad y buenas prácticas.
                     </p>
                     </div>
                   </article>
@@ -1192,7 +1192,7 @@
                         Tecnología que evoluciona contigo
                     </h3>
                     <p class="card-body">
-                        Synapse CTF integra visualizaciones claras de progreso, métricas en tiempo real, paneles interactivos y una arquitectura diseñada para acompañar cada fase de tu aprendizaje. La plataforma crece con nuevas funciones, nuevos retos y herramientas que fortalecen las competencias técnicas del usuario.
+                        Synapse Evaluación lógico-matemática integra visualizaciones claras de progreso, métricas en tiempo real, paneles interactivos y una arquitectura diseñada para acompañar cada fase de tu aprendizaje. La plataforma crece con nuevas funciones, nuevos ejercicios y herramientas que fortalecen las competencias técnicas del usuario.
                     </p>
                     </div>
                   </article>

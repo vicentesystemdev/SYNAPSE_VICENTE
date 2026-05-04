@@ -82,9 +82,9 @@
                                     <table class="min-w-full divide-y divide-gray-200">
                                         <thead class="bg-gray-50">
                                             <tr>
-                                                <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">Categoría</th>
+                                                <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">Área</th>
                                                 <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">Evaluación</th>
-                                                <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">Dificultad</th>
+                                                <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">Nivel de dificultad</th>
                                                 <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">Theta Cat.</th>
                                                 <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">Razón</th>
                                             </tr>
@@ -130,15 +130,15 @@
                         @else
                             <div class="mt-4 p-4 bg-yellow-50 rounded-lg">
                                 <p class="text-sm text-yellow-800">
-                                    ⚠️ No hay evaluaciones recomendadas disponibles. El estudiante necesita más intentos para calcular theta en las categorías.
+                                    ⚠️ No hay evaluaciones recomendadas disponibles. El estudiante necesita más intentos para calcular theta en las áreas.
                                 </p>
                             </div>
                         @endif
 
-                        <!-- Detalle de Theta por Categoría -->
+                        <!-- Detalle de Theta por Área -->
                         @if($ejemplo['habilidad'] && $ejemplo['habilidad']->theta_por_cat)
                             <div class="mt-6">
-                                <h4 class="text-md font-semibold text-gray-700 mb-3">Theta por Categoría</h4>
+                                <h4 class="text-md font-semibold text-gray-700 mb-3">Theta por Área</h4>
                                 <div class="grid grid-cols-4 gap-3">
                                     @foreach($ejemplo['habilidad']->theta_por_cat as $catId => $theta)
                                         @php($categoria = \App\Models\Categoria::find($catId))
@@ -188,9 +188,9 @@
                     <p>
                         <strong>Asignación Adaptativa:</strong> Las evaluaciones se asignan según el nivel del estudiante:
                         <ul class="list-disc list-inside ml-4 mt-1">
-                            <li>Nivel Bajo → Dificultad Fácil/Baja</li>
-                            <li>Nivel Medio → Dificultad Media</li>
-                            <li>Nivel Alto → Dificultad Alta/Difícil</li>
+                            <li>Nivel Bajo → Nivel de dificultad Fácil/Baja</li>
+                            <li>Nivel Medio → Nivel de dificultad Media</li>
+                            <li>Nivel Alto → Nivel de dificultad Alta/Difícil</li>
                         </ul>
                     </p>
                     <p>

@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Synapse CTF — La Evolución de las Evaluaciones en Ciberseguridad</title>
-    <meta property="og:title" content="Synapse CTF — La Evolución de las Evaluaciones en Ciberseguridad" />
+    <title>Synapse Evaluación lógico-matemática — La Evolución de las Evaluaciones en Ciberseguridad</title>
+    <meta property="og:title" content="Synapse Evaluación lógico-matemática — La Evolución de las Evaluaciones en Ciberseguridad" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="utf-8" />
     <meta property="twitter:card" content="summary_large_image" />
@@ -560,7 +560,7 @@ $nivelLabels = [
 // Asegurar que existe el array de niveles (por si no se pasó desde el controlador)
 $nivelesPorCategoria = $nivelesPorCategoria ?? [];
 
-// Calcular niveles para cada categoría (evitar problemas de sintaxis)
+// Calcular niveles para cada área (evitar problemas de sintaxis)
 $nivelWeb = $nivelesPorCategoria['WEB'] ?? 'medio';
 $nivelCrypto = $nivelesPorCategoria['CRYPTO'] ?? 'medio';
 $nivelStego = $nivelesPorCategoria['STEGO'] ?? 'medio';
@@ -586,17 +586,17 @@ $nivelForens = $nivelesPorCategoria['FORENS'] ?? 'medio';
         <!-- Texto -->
         <div class="space-y-4">
           <p class="text-xs font-semibold tracking-[0.35em] text-indigo-300 uppercase">
-            Synapse CTF
+            Synapse Evaluación lógico-matemática
           </p>
 
           <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-white">
-            Practica como en un torneo CTF real.
+            Practica como en un torneo Evaluación lógico-matemática real.
           </h1>
 
           <p class="text-sm md:text-base text-slate-300 max-w-md">
             Activa la <span class="font-semibold text-indigo-200">ruta adaptativa recomendada</span>:
-            Synapse analiza tu desempeño, elige categoría, ajusta dificultad
-            y te envía directo al siguiente reto ideal para ti.
+            Synapse analiza tu desempeño, elige área, ajusta dificultad
+            y te envía directo al siguiente ejercicio ideal para ti.
           </p>
 
           <div class="flex flex-col gap-3 pt-2 sm:flex-row sm:items-center">
@@ -607,7 +607,7 @@ $nivelForens = $nivelesPorCategoria['FORENS'] ?? 'medio';
 
             <a href="{{ route('estudiante.evaluaciones.categorias') }}"
               class="inline-flex justify-center rounded-xl border border-slate-600 px-5 py-3 text-sm font-medium text-slate-100 hover:border-slate-300 hover:bg-slate-900/70 active:scale-[0.97] transition-all duration-300 ease-out">
-              Ver categorías de práctica
+              Ver áreas de práctica
             </a>
           </div>
         </div>
@@ -622,7 +622,7 @@ $nivelForens = $nivelesPorCategoria['FORENS'] ?? 'medio';
             class="relative h-full w-full overflow-hidden rounded-2xl border border-slate-700/80 bg-slate-900/80 shadow-2xl transform-gpu transition-all duration-500 ease-out hover:-translate-y-1 hover:shadow-[0_0_45px_rgba(129,140,248,0.7)]">
             <img
               src="{{ asset('images/hero/adaptativo.png') }}"
-              alt="Ilustración de retos CTF"
+              alt="Ilustración de ejercicios Evaluación lógico-matemática"
               class="h-full w-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-500" />
 
             <div
@@ -645,9 +645,9 @@ $nivelForens = $nivelesPorCategoria['FORENS'] ?? 'medio';
     <!-- SECCIÓN CATEGORÍAS -->
     <section class="space-y-4">
       <div class="text-center md:text-left">
-        <h2 class="text-2xl font-bold text-white">Practicar por categoría</h2>
+        <h2 class="text-2xl font-bold text-white">Practicar por área</h2>
         <p class="text-sm text-slate-400 max-w-xl">
-          Enfócate en el tipo de reto que quieras mejorar. La dificultad seguirá siendo adaptativa dentro de cada categoría.
+          Enfócate en el tipo de ejercicio que quieras mejorar. La dificultad seguirá siendo adaptativa dentro de cada área.
         </p>
       </div>
 
@@ -667,7 +667,7 @@ $nivelForens = $nivelesPorCategoria['FORENS'] ?? 'medio';
 
           <div class="p-6 space-y-3">
             <span class="inline-block text-[11px] font-semibold px-2 py-1 bg-slate-800 text-slate-300 rounded uppercase tracking-wide">
-              Categoría
+              Área
             </span>
 
             <h3 class="text-lg font-semibold text-white tracking-tight">WEB</h3>
@@ -703,13 +703,13 @@ $nivelForens = $nivelesPorCategoria['FORENS'] ?? 'medio';
 
           <div class="p-6 space-y-3">
             <span class="inline-block text-[11px] font-semibold px-2 py-1 bg-slate-800 text-slate-300 rounded uppercase tracking-wide">
-              Categoría
+              Área
             </span>
 
             <h3 class="text-lg font-semibold text-white tracking-tight">CRYPTO</h3>
 
             <p class="text-sm text-slate-400">
-              Desafíos de cifrados, hashes, claves y análisis criptográfico aplicado a escenarios CTF.
+              Desafíos de cifrados, hashes, claves y análisis criptográfico aplicado a escenarios Evaluación lógico-matemática.
             </p>
 
             <span
@@ -739,13 +739,13 @@ $nivelForens = $nivelesPorCategoria['FORENS'] ?? 'medio';
 
           <div class="p-6 space-y-3">
             <span class="inline-block text-[11px] font-semibold px-2 py-1 bg-slate-800 text-slate-300 rounded uppercase tracking-wide">
-              Categoría
+              Área
             </span>
 
             <h3 class="text-lg font-semibold text-white tracking-tight">STEGO</h3>
 
             <p class="text-sm text-slate-400">
-              Mensajes ocultos en imágenes, audio y archivos. Aprende a detectarlos y extraer la flag.
+              Mensajes ocultos en imágenes, audio y archivos. Aprende a detectarlos y extraer la respuesta.
             </p>
 
             <span
@@ -775,13 +775,13 @@ $nivelForens = $nivelesPorCategoria['FORENS'] ?? 'medio';
 
           <div class="p-6 space-y-3">
             <span class="inline-block text-[11px] font-semibold px-2 py-1 bg-slate-800 text-slate-300 rounded uppercase tracking-wide">
-              Categoría
+              Área
             </span>
 
             <h3 class="text-lg font-semibold text-white tracking-tight">FORENS</h3>
 
             <p class="text-sm text-slate-400">
-              Análisis de discos, capturas de red y metadatos para reconstruir qué ocurrió y encontrar la flag.
+              Análisis de discos, capturas de red y metadatos para reconstruir qué ocurrió y encontrar la respuesta.
             </p>
 
             <span

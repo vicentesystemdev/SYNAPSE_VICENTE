@@ -1,6 +1,6 @@
-# Guía de despliegue en Laragon 8 (Windows)
+# INTELECTA - Prototipo funcional de evaluación lógico-matemática
 
-Esta guía resume cómo levantar **Synapse CTF MVP** en tu entorno de **Laragon 8** sin adivinar configuraciones.
+Sistema web adaptado para registrar evaluaciones, gestionar ejercicios, procesar respuestas, mostrar resultados y visualizar indicadores académicos mediante dashboards.
 
 ## 1) ¿Qué necesitas instalar?
 

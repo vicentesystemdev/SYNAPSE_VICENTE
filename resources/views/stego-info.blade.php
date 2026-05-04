@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Esteganografía y Análisis Oculto</title>
+    <title>Cálculo básico - INTELECTA</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="{{ asset('css/estudiante_dashbord/style.css') }}" />
@@ -267,87 +267,17 @@
     <main id="main-content" class="main-content">
         <section class="section-spacing section-container">
             <div class="section-header">
-                <h2 class="section-title glitch" data-text="Esteganografía y Análisis Oculto">
-                    Esteganografía y Análisis Oculto
+                <h2 class="section-title glitch" data-text="Cálculo básico">
+                    Cálculo básico
                 </h2>
                 <p class="section-subtitle">
-                    Observa más allá de la superficie. Aprende a encontrar información escondida en imágenes y archivos.
+                    Límites, derivadas e integrales.
                 </p>
             </div>
-
-            <div class="content-grid">
-                <!-- Sección 1: Metadatos y EXIF -->
-                <section class="info-section info-with-image-left">
-                    <div class="info-image-wrapper">
-                        <img src="{{ asset('images/1Stego.png') }}" alt="Metadatos y EXIF" class="info-image" loading="lazy" />
-                    </div>
-                    <div class="info-content">
-                        <h3 class="info-title">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M15.5 2H8.5L2 8.5V15.5L8.5 22H15.5L22 15.5V8.5L15.5 2z" />
-                                <path d="M8 12L16 12" />
-                                <path d="M12 8L12 16" />
-                            </svg> Metadatos y EXIF
-                        </h3>
-                        <p class="info-body"> Los metadatos de archivos, especialmente EXIF en imágenes, pueden ocultar
-                            información crucial: desde coordenadas GPS hasta detalles de la cámara o software de
-                            manipulación. Aprende a extraerlos y analizarlos. </p>
-                    </div>
-                </section>
-                <!-- Sección 2: LSB y capas ocultas -->
-                <section class="info-section info-with-image-right">
-                    <div class="info-image-wrapper">
-                        <img src="{{ asset('images/2Stego.webp') }}" alt="Técnicas LSB en esteganografía" class="info-image" loading="lazy" />
-                    </div>
-                    <div class="info-content">
-                        <h3 class="info-title">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M12 2L2 7l10 5 10-5-10-5z" />
-                                <path d="M2 17l10 5 10-5M2 12l10 5 10-5" />
-                            </svg> LSB y capas ocultas
-                        </h3>
-                        <p class="info-body"> La técnica del Bit Menos Significativo (LSB) permite ocultar datos
-                            directamente en los bits de color de una imagen. Aprender a diferenciar el ruido natural del
-                            manipulado y a extraer capas es vital. </p>
-                    </div>
-                </section>
-                <!-- Sección 3: Extracción visual y detección -->
-                <section class="info-section info-with-image-left">
-                    <div class="info-image-wrapper">
-                        <img src="{{ asset('images/3Stego.png') }}" alt="Análisis visual y detección de esteganografía" class="info-image" loading="lazy" />
-                    </div>
-                    <div class="info-content">
-                        <h3 class="info-title">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
-                                <circle cx="12" cy="12" r="3" />
-                            </svg> Extracción visual y detección
-                        </h3>
-                        <p class="info-body"> El uso de histogramas, el análisis de canales de color individuales (RGB)
-                            y la inspección por capas pueden revelar anomalías que indican la presencia de información
-                            oculta. </p>
-                    </div>
-                </section>
-                <!-- Sección 4: Cómo Synapse CTF usa STEGO para entrenarte -->
-                <section class="info-section info-with-image-right">
-                    <div class="info-image-wrapper">
-                        <img src="{{ asset('images/CTF.webp') }}" alt="Esteganografía en competencias CTF" class="info-image" loading="lazy" />
-                    </div>
-                    <div class="info-content">
-                        <h3 class="info-title">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-                                <polyline points="14 2 14 8 20 8" />
-                                <line x1="16" y1="13" x2="8" y2="13" />
-                                <line x1="16" y1="17" x2="8" y2="17" />
-                                <polyline points="10 9 9 9 8 9" />
-                            </svg> Cómo Synapse CTF usa STEGO para entrenarte
-                        </h3>
-                        <p class="info-body"> Esta categoría está diseñada para desarrollar tu observación, paciencia y
-                            capacidad de análisis técnico de archivos, habilidades cruciales en la investigación de
-                            incidentes y el descubrimiento de amenazas persistentes avanzadas. </p>
-                    </div>
-                </section>
+            <div class="content-grid" style="padding: 2rem; color: var(--color-on-surface);">
+                <p>En esta área de evaluación, los estudiantes pondrán a prueba sus conocimientos fundamentales. Los ejercicios están diseñados para evaluar la capacidad de análisis y resolución de problemas exactos, preparándolos para desafíos universitarios.</p>
+                <br>
+                <p><strong>Recomendaciones:</strong> Lee cuidadosamente cada enunciado, aplica las fórmulas correspondientes y asegúrate de enviar la respuesta exacta (ej. "5", "2x", "falso").</p>
             </div>
         </section>
     </main>

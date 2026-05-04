@@ -312,7 +312,7 @@
             <h2 class="section-title glitch" data-text="Preguntas Frecuentes">
                 Preguntas Frecuentes
             </h2>
-            <h3>¿Qué es Synapse CTF?</h3>
+            <h3>¿Qué es Synapse Evaluación lógico-matemática?</h3>
 <p>
     Un sistema adaptativo de evaluación en ciberseguridad.
 </p>
@@ -324,7 +324,7 @@
 <p>
     Mediante IRT y cadenas de Markov.
 </p>
-<h3>¿Qué categorías existen?</h3>
+<h3>¿Qué áreas existen?</h3>
 <p>
     WEB, CRYPTO, STEGO, FORENS.
 </p>
@@ -340,7 +340,7 @@
 <p>
     El sistema utiliza buenas prácticas de seguridad y hashing.
 </p>
-<h3>¿Cómo funciona la flag?</h3>
+<h3>¿Cómo funciona la respuesta?</h3>
 <p>
     Siempre en el formato: <code>synapse{md5}</code>.
 </p>

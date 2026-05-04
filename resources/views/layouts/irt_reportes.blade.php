@@ -549,7 +549,7 @@
         <aside class="main-sidebar elevation-4">
             <!-- Brand Logo -->
             <a href="{{ route('admin.dashboard') }}" class="brand-link">
-                <span class="brand-text font-weight-light">Synapse CTF</span>
+                <span class="brand-text font-weight-light">Synapse Evaluación lógico-matemática</span>
             </a>
 
             <!-- Sidebar -->

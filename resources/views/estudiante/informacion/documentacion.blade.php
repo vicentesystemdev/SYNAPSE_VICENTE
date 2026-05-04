@@ -311,13 +311,13 @@
                 Documentación
             </h2>
             <p>
-    Synapse CTF es una plataforma de evaluación adaptativa diseñada para medir competencias en ciberseguridad mediante retos prácticos. El sistema integra técnicas modernas como IRT 2PL, cadenas de Markov y análisis de rendimiento para ajustar automáticamente la dificultad.
+    Synapse Evaluación lógico-matemática es una plataforma de evaluación adaptativa diseñada para medir competencias en ciberseguridad mediante ejercicios prácticos. El sistema integra técnicas modernas como IRT 2PL, cadenas de Markov y análisis de rendimiento para ajustar automáticamente la dificultad.
 </p>
 <h3>Arquitectura del Sistema</h3>
 <ul>
     <li>Backend: Laravel 11</li>
     <li>Motor adaptativo propio</li>
-    <li>Base de datos estructurada por categorías (WEB, CRYPTO, STEGO, FORENS)</li>
+    <li>Base de datos estructurada por áreas (WEB, CRYPTO, STEGO, FORENS)</li>
     <li>Módulos de intentos, evaluaciones y scoring en tiempo real</li>
 </ul>
 <h3>Flujo de Evaluación</h3>
@@ -333,9 +333,9 @@
     </li>
     <li>Actualización de θ</li>
     <li>Markov determina su nivel actual</li>
-    <li>Se selecciona el próximo reto de dificultad apropiada</li>
+    <li>Se selecciona el próximo ejercicio de dificultad apropiada</li>
 </ul>
-<h3>Categorías del Sistema</h3>
+<h3>Áreas de evaluación del Sistema</h3>
 <ul>
     <li>Seguridad Web</li>
     <li>Criptografía</li>

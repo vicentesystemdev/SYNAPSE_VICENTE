@@ -39,7 +39,7 @@
                                 <b>Evaluación:</b> <span class="float-right">{{ $intento->evaluacion->titulo_eval }}</span>
                             </li>
                             <li class="list-group-item">
-                                <b>Categoría:</b> <span class="float-right">{{ $intento->evaluacion->categoria->nombre_cat ?? 'N/A' }}</span>
+                                <b>Área:</b> <span class="float-right">{{ $intento->evaluacion->categoria->nombre_cat ?? 'N/A' }}</span>
                             </li>
                             <li class="list-group-item">
                                 <b>Nro. de Intento:</b> <span class="float-right">{{ $intento->nro_intento_int }}</span>

@@ -332,7 +332,7 @@
 <h3>Reportes Disponibles</h3>
 <ul>
     <li>Rankings</li>
-    <li>Análisis por categoría</li>
+    <li>Análisis por área</li>
     <li>Reportes IRT</li>
     <li>Exportaciones</li>
 </ul>

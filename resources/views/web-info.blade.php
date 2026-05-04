@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Seguridad Web: Fundamentos y Análisis Práctico</title>
+    <title>Razonamiento numérico - INTELECTA</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="{{ asset('css/estudiante_dashbord/style.css') }}" />
@@ -267,91 +267,20 @@
         <main id="main-content" class="main-content">
         <section class="section-spacing section-container">
             <div class="section-header">
-                <h2 class="section-title glitch" data-text="Seguridad Web: Fundamentos y Análisis Práctico">
-                    Seguridad Web: Fundamentos y Análisis Práctico
+                <h2 class="section-title glitch" data-text="Razonamiento numérico">
+                    Razonamiento numérico
                 </h2>
                 <p class="section-subtitle">
-                    Comprende cómo se construyen, se atacan y se defienden las aplicaciones modernas.
-                  </p>
-                </div>
-            <div class="content-grid">
-                <!-- Sección 1: Rutas expuestas -->
-                <section class="info-section info-with-image-left">
-                    <div class="info-image-wrapper">
-                        <img src="{{ asset('images/1Web.jpg') }}" alt="Redes y código seguro" class="info-image" loading="lazy" />
-              </div>
-                    <div class="info-content">
-                        <h3 class="info-title">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M9 12l2 2l4-4m6 2a9 9 0 11-18 0a9 9 0 0118 0z" />
-                            </svg> Rutas expuestas y parámetros inseguros
-                        </h3>
-                        <p class="info-body"> Una aplicación mal configurada puede exponer endpoints sensibles como
-                            <code>/admin</code>, IDs secuenciales (<code>?user_id=123</code>), o permitir inyección en
-                            parámetros GET/POST. Esto facilita ataques de enumeración y escalada de privilegios. </p>
+                    Series, secuencias y problemas de planteo.
+                </p>
             </div>
-          </section>
-                <!-- Sección 2: Inspección manual -->
-                <section class="info-section info-with-image-right">
-                    <div class="info-image-wrapper">
-                        <img src="{{ asset('images/2Web.jpg') }}" alt="Herramientas de desarrollo del navegador" class="info-image" loading="lazy" />
-              </div>
-                    <div class="info-content">
-                        <h3 class="info-title">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
-                                <circle cx="12" cy="12" r="3" />
-                            </svg> Inspección manual y análisis con navegador
-                        </h3>
-                        <p class="info-body"> Usa las DevTools: revisa el código fuente, la pestaña <em>Network</em> para
-                            peticiones ocultas, headers sensibles, cookies sin <code>HttpOnly</code> o <code>Secure</code>,
-                            y respuestas con información de servidor (como <code>X-Powered-By</code>). </p>
+            <div class="content-grid" style="padding: 2rem; color: var(--color-on-surface);">
+                <p>En esta área de evaluación, los estudiantes pondrán a prueba sus conocimientos fundamentales. Los ejercicios están diseñados para evaluar la capacidad de análisis y resolución de problemas exactos, preparándolos para desafíos universitarios.</p>
+                <br>
+                <p><strong>Recomendaciones:</strong> Lee cuidadosamente cada enunciado, aplica las fórmulas correspondientes y asegúrate de enviar la respuesta exacta (ej. "5", "2x", "falso").</p>
             </div>
-          </section>
-                <!-- Sección 3: Fallos comunes -->
-                <section class="info-section info-with-image-left">
-                    <div class="info-image-wrapper">
-                        <img src="{{ asset('images/3Web.png') }}" alt="Terminal con código vulnerable" class="info-image" loading="lazy" />
-              </div>
-                    <div class="info-content">
-                        <h3 class="info-title">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <circle cx="12" cy="12" r="10" />
-                                <line x1="12" y1="8" x2="12" y2="12" />
-                                <line x1="12" y1="16" x2="12.01" y2="16" />
-                            </svg> Fallos comunes en aplicaciones reales
-                        </h3>
-                        <ul class="info-list">
-                            <li>ID Enumeration (IDs predecibles)</li>
-                            <li>Exposición de rutas internas (e.g., <code>/backup.zip</code>)</li>
-                            <li>Falta de sanitización  XSS o inyecciones</li>
-                            <li>Archivos sensibles accesibles (e.g., <code>.env</code>, <code>config.php~</code>)</li>
-                        </ul>
-            </div>
-          </section>
-                <!-- Sección 4: Synapse CTF -->
-                <section class="info-section info-with-image-right">
-                    <div class="info-image-wrapper">
-                        <img src="{{ asset('images/CTF.webp') }}" alt="Competencia de CTF ciberseguridad" class="info-image" loading="lazy" />
-              </div>
-                    <div class="info-content">
-                        <h3 class="info-title">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-                                <polyline points="14 2 14 8 20 8" />
-                                <line x1="16" y1="13" x2="8" y2="13" />
-                                <line x1="16" y1="17" x2="8" y2="17" />
-                                <polyline points="10 9 9 9 8 9" />
-                            </svg> Importancia dentro de Synapse CTF
-                        </h3>
-                        <p class="info-body"> Los retos <strong>WEB</strong> entrenan pensamiento crítico, análisis de flujo
-                            HTTP, manipulación de parámetros y reconocimiento de patrones de vulnerabilidad  habilidades
-                            esenciales para pentesters y desarrolladores seguros. </p>
-            </div>
-          </section>
-            </div>
-          </section>
-        </main>
+        </section>
+    </main>
 
     <footer-wrapper class="footer-wrapper">
           <!--Footer component-->
@@ -485,7 +414,7 @@
                   </div>
                   <div class="footer-nav-section">
                     <div class="footer-nav-column">
-                      <h3 class="footer-nav-title">Categorías CTF</h3>
+                      <h3 class="footer-nav-title">Áreas de evaluación</h3>
                       <ul class="footer-nav-list">
                         <li class="footer-nav-item">
                           <a href="{{ route('estudiante.web.info') }}">
@@ -558,7 +487,7 @@
                       </ul>
                     </div>
                     <div class="footer-nav-column">
-                      <h3 class="footer-nav-title">Synapse CTF</h3>
+                      <h3 class="footer-nav-title">Synapse Evaluación lógico-matemática</h3>
                       <ul class="footer-nav-list">
                         <li class="footer-nav-item">
                           <a href="{{ route('estudiante.informacion.sobre_proyecto') }}">

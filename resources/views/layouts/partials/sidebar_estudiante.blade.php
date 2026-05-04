@@ -6,7 +6,7 @@
 </li>
 <li class="nav-item">
     <a href="{{ route('evaluaciones.index') }}" class="nav-link {{ request()->routeIs('evaluaciones.*') ? 'active' : '' }}">
-        <i class="nav-icon fas fa-flag"></i>
+        <i class="nav-icon fas fa-respuesta"></i>
         <p>Evaluaciones</p>
     </a>
 </li>
