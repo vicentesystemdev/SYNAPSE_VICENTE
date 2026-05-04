@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Estudiante</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* Body y fondo */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0a192f; /* Azul marino oscuro */
+            margin: 0;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-image: url('https://images.unsplash.com/photo-1617016327123-eedfaed18ca1'); /* Imagen de fondo */
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Barra superior */
+        .head {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            padding: 20px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .head .logo a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 2.5em;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        /* Barra de navegación */
+        .navbar {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.1em;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            background-color: #00bcd4; /* Azul celeste */
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .navbar .logout-form button {
+            background-color: transparent;
+            color: #fff;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        /* Contenedor del dashboard */
+        .dashboard-container {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            max-width: 900px;
+            text-align: center;
+            margin: 40px auto;
+            flex-grow: 1;
+        }
+
+        .dashboard-container h2 {
+            margin-bottom: 20px;
+            color: rgb(255, 119, 0); /* Naranja brillante */
+            font-size: 3em;
+        }
+
+        .dashboard-container p {
+            margin-bottom: 15px;
+            font-size: 1.5em;
+            line-height: 1.6;
+            color: #eee;
+        }
+
+        /* Botones principales */
+        .dashboard-btn {
+            background-color: #00bcd4;
+            color: #fff;
+            padding: 20px 50px;
+            border-radius: 10px;
+            font-size: 1.5em;
+            margin-top: 20px;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .dashboard-btn:hover {
+            background-color: #00a3b7;
+            transform: translateY(-5px);
+        }
+
+        /* Estilo de tarjeta para CTF */
+        .frame-item {
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            width: 300px;
+            margin: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .frame-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .frame-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .frame-item h3 {
+            color: rgb(255, 119, 0); /* Naranja brillante */
+        }
+
+        .frame-item p {
+            margin-bottom: 15px;
+        }
+
+        .read-more-button {
+            background-color: transparent;
+            color: rgb(255, 119, 0);
+            border: 1px solid rgb(255, 119, 0);
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        .read-more-button:hover {
+            background-color: rgb(255, 119, 0);
+            color: #fff;
+            border-color: rgb(255, 119, 0);
+        }
+
+        /* Sección de CTF */
+        .test-block {
+            background-color: #fff;
+            border-left: 4px solid rgb(255, 119, 0);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            color: #333;
+        }
+
+        .test-block h4 {
+            color: rgb(255, 119, 0);
+            margin-bottom: 10px;
+            font-size: 1.5em;
+        }
+
+        .test-block p {
+            color: #666;
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        /* Responsividad */
+        @media (max-width: 768px) {
+            .head {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .navbar {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .dashboard-container {
+                width: 90%;
+                padding: 30px;
+            }
+
+            .dashboard-btn {
+                padding: 15px 40px;
+                font-size: 1.2em;
+            }
+
+            .frame-item {
+                width: 100%;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="head">
+        <div class="logo">
+            <a href="#">Synapse CTF</a>
+        </div>
+        <nav class="navbar">
+            <a href="#">Ir a Pruebas</a>
+            <a href="#">Ver Reportes</a>
+            <a href="#">Dashboard CTF</a>
+            <form action="{{ route('logout') }}" method="POST" class="logout-form">
+                @csrf
+                <button type="submit" class="navbar-item">Cerrar Sesión</button>
+            </form>
+        </nav>
+    </div>
+
+    <div class="dashboard-container">
+        <h2>Bienvenido, {{ Auth::user()->name }}</h2>
+        <p>Aquí puedes ver tu progreso y acceder a las diferentes secciones relacionadas con CTF.</p>
+
+        <!-- Botones principales -->
+        <a href="#" class="dashboard-btn">Ir a Pruebas CTF</a>
+        <a href="#" class="dashboard-btn">Ver Reportes CTF</a>
+        <a href="#" class="dashboard-btn">Dashboard CTF</a>
+
+        <h3>Sección de CTF</h3>
+        <div class="frames-container">
+            <div class="frame-item">
+                <img src="https://via.placeholder.com/300x200" alt="Imagen 1" class="frame-image">
+                <h3>Prueba CTF 1</h3>
+                <p>Descripción corta de la prueba CTF que se está mostrando aquí.</p>
+                <button class="read-more-button">Leer más</button>
+            </div>
+
+            <div class="frame-item">
+                <img src="https://via.placeholder.com/300x200" alt="Imagen 2" class="frame-image">
+                <h3>Prueba CTF 2</h3>
+                <p>Otra prueba CTF, con un poco más de descripción sobre el contenido.</p>
+                <button class="read-more-button">Leer más</button>
+            </div>
+        </div>
+
+        <div class="test-block">
+            <h4>Próxima Prueba de CTF:</h4>
+            <p>Descripción de la próxima prueba de CTF que los usuarios podrán tomar.</p>
+        </div>
+    </div>
+</body>
+</html>
