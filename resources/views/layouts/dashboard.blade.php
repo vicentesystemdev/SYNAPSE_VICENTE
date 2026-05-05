@@ -33,6 +33,8 @@
                 --color-on-surface: #212529;
                 --color-on-surface-light: #495057;
                 --color-border: rgba(59, 91, 219, 0.18);
+                --color-celeste-dark: #0c4a6e;    /* Celeste oscuro profundo */
+
 
                 /* Compatibilidad hacia atrás */
                 --neon-blue: var(--color-primary);
@@ -48,7 +50,7 @@
             body {
                 font-family: 'Rajdhani', sans-serif;
                 background-color: transparent;
-                color: var(--neon-white);
+                color: var(--color-on-surface);
                 line-height: 1.6;
                 margin: 0;
                 padding: 0;
@@ -302,7 +304,7 @@
             /* Minimalist Table Text */
             .table {
                 font-size: 0.9rem;
-                color: var(--neon-white); /* Texto de tabla neón blanco */
+                color: var(--color-on-surface); /* Texto de tabla oscuro para legibilidad */
             }
             .table th {
                 font-weight: 600;
@@ -314,7 +316,7 @@
             }
             .table td {
                 vertical-align: middle;
-                color: var(--neon-white); /* Texto de celda neón blanco */
+                color: var(--color-on-surface); /* Texto de celda oscuro */
             }
 
             /* Content Header */

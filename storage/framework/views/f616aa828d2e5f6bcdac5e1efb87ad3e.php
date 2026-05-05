@@ -1,8 +1,8 @@
-@extends('layouts.dashboard')
 
-@section('title', 'Reportes IRT Avanzados')
 
-@section('content_header')
+<?php $__env->startSection('title', 'Reportes IRT Avanzados'); ?>
+
+<?php $__env->startSection('content_header'); ?>
     <div class="row mb-2">
       <div class="col-sm-6">
         <h1 class="m-0 text-white" style="text-shadow: 1px 1px 3px rgba(0,0,0,0.3);">
@@ -10,18 +10,18 @@
         </h1>
       </div>
     </div>
-@stop
+<?php $__env->stopSection(); ?>
 
-@section('sidebar_menu')
-    @include('layouts.partials.sidebar_admin')
-@endsection
+<?php $__env->startSection('sidebar_menu'); ?>
+    <?php echo $__env->make('layouts.partials.sidebar_admin', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+<?php $__env->stopSection(); ?>
 
-@section('content')
+<?php $__env->startSection('content'); ?>
     <div class="container-fluid">
-        {{-- Controles de Selección --}}
+        
         <div class="card shadow-lg mb-4 custom-card-dark">
-            <div class="card-header"> {{-- Eliminado border-0 y d-flex, ya se aplica en el layout --}}
-                <h3 class="card-title"><i class="fas fa-microscope mr-2"></i> Demostración Interactiva IRT</h3> {{-- Icono y texto ya con estilos del layout --}}
+            <div class="card-header"> 
+                <h3 class="card-title"><i class="fas fa-microscope mr-2"></i> Demostración Interactiva IRT</h3> 
                 <div class="card-tools">
                     <button type="button" class="btn btn-tool" data-card-widget="collapse">
                         <i class="fas fa-minus"></i>
@@ -41,57 +41,57 @@
                                     </button>
                                 </div>
                             </div>
-                            {{-- Lista de sugerencias de autocompletado --}}
+                            
                             <div id="student_suggestions_container" class="list-group position-absolute w-100 z-index-1000 mt-1" style="display: none; max-height: 200px; overflow-y: auto;">
-                                {{-- Las sugerencias se insertarán aquí --}}
+                                
                             </div>
-                            <input type="hidden" id="selected_student_id" value=""> {{-- Campo oculto para guardar el ID del estudiante seleccionado --}}
+                            <input type="hidden" id="selected_student_id" value=""> 
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="category_selector" class="text-white">Seleccionar Área para Matriz de Markov:</label> {{-- Texto label blanco --}}
-                            <select id="category_selector" class="form-control custom-select-dark"> {{-- Eliminado form-control-sm --}}
+                            <label for="category_selector" class="text-white">Seleccionar Área para Matriz de Markov:</label> 
+                            <select id="category_selector" class="form-control custom-select-dark"> 
                                 <option value="">--- Seleccione una área ---</option>
-                                @foreach($categorias as $categoria)
-                                    <option value="{{ $categoria->id_cat }}">{{ $categoria->nombre_cat }}</option>
-                                @endforeach
+                                <?php $__currentLoopData = $categorias; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $categoria): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                    <option value="<?php echo e($categoria->id_cat); ?>"><?php echo e($categoria->nombre_cat); ?></option>
+                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                             </select>
                         </div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-12 text-center mt-4"> {{-- Ajustado margen superior --}}
+                    <div class="col-12 text-center mt-4"> 
                         <button id="load_data_btn" class="btn btn-primary custom-btn-teal"><i class="fas fa-sync-alt mr-2"></i> Cargar Datos del Estudiante</button>
                     </div>
                 </div>
             </div>
         </div>
 
-        {{-- Resultados de la Demostración --}}
+        
         <div id="demonstration_results" style="display:none;">
             <div class="row">
-                {{-- Tarjeta de Datos del Estudiante --}}
+                
                 <div class="col-md-6">
-                    <div class="card shadow-lg"> {{-- Eliminado card-primary card-outline custom-card-dark --}}
+                    <div class="card shadow-lg"> 
                         <div class="card-header">
                             <h3 class="card-title"><i class="fas fa-user-graduate mr-2"></i> Datos del Estudiante Seleccionado</h3>
                         </div>
                         <div class="card-body">
-                            <dl class="row mb-4"> {{-- Añadido margen inferior --}}
+                            <dl class="row mb-4"> 
                                 <dt class="col-sm-4 text-white-50">Nombre:</dt>
-                                <dd class="col-sm-8 text-white" id="student_name"></dd> {{-- Texto blanco --}}
+                                <dd class="col-sm-8 text-white" id="student_name"></dd> 
 
                                 <dt class="col-sm-4 text-white-50">Email:</dt>
-                                <dd class="col-sm-8 text-white" id="student_email"></dd> {{-- Texto blanco --}}
+                                <dd class="col-sm-8 text-white" id="student_email"></dd> 
 
                                 <dt class="col-sm-4 text-white-50">Theta Global:</dt>
-                                <dd class="col-sm-8 text-white" id="student_theta_global"></dd> {{-- Texto blanco --}}
+                                <dd class="col-sm-8 text-white" id="student_theta_global"></dd> 
 
                                 <dt class="col-sm-4 text-white-50">Nivel Global:</dt>
                                 <dd class="col-sm-8"><span class="badge" id="student_nivel_global"></span></dd>
                             </dl>
-                            <h5 class="mt-4 text-orange-primary">Habilidad y Rendimiento por Área:</h5> {{-- Color de texto naranja --}}
+                            <h5 class="mt-4 text-orange-primary">Habilidad y Rendimiento por Área:</h5> 
                             <div class="table-responsive">
                                 <table class="table table-dark table-striped table-valign-middle">
                                     <thead>
@@ -112,27 +112,27 @@
                     </div>
                 </div>
 
-                {{-- Tarjeta de Recomendación y Explicación --}}
+                
                 <div class="col-md-6">
-                    <div class="card shadow-lg custom-card-dark"> {{-- Eliminado card-info card-outline custom-card-dark --}}
+                    <div class="card shadow-lg custom-card-dark"> 
                         <div class="card-header">
                             <h3 class="card-title"><i class="fas fa-lightbulb mr-2"></i> Recomendación Adaptativa</h3>
                         </div>
                         <div class="card-body">
-                            <h5 class="text-orange-primary">Evaluaciones Recomendadas Por SYNAPSE:</h5> {{-- Color de texto naranja --}}
-                            <ul id="recommended_evaluations_list" class="list-group list-group-flush"> {{-- Eliminado bg-dark --}}
+                            <h5 class="text-orange-primary">Evaluaciones Recomendadas Por SYNAPSE:</h5> 
+                            <ul id="recommended_evaluations_list" class="list-group list-group-flush"> 
                                 <li class="list-group-item bg-dark text-white-50">Seleccione un estudiante para ver las recomendaciones.</li>
                             </ul>
-                            <h5 class="mt-4 text-orange-primary">Recomendación de SYNAPSE:</h5> {{-- CAMBIADO: Título a "Explicación del Sistema" --}}
-                            <div class="info-panel"> {{-- NUEVO: Contenedor para el info panel --}}
-                                <p id="recommendation_explanation" class="text-white-50">Las evaluaciones recomendadas se basan en tu nivel de habilidad actual, rendimiento histórico y probabilidades de transición en cadenas de Markov. El objetivo es maximizar la información obtenida sobre tu habilidad.</p> {{-- Párrafo movido dentro del info-panel --}}
+                            <h5 class="mt-4 text-orange-primary">Recomendación de SYNAPSE:</h5> 
+                            <div class="info-panel"> 
+                                <p id="recommendation_explanation" class="text-white-50">Las evaluaciones recomendadas se basan en tu nivel de habilidad actual, rendimiento histórico y probabilidades de transición en cadenas de Markov. El objetivo es maximizar la información obtenida sobre tu habilidad.</p> 
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            {{-- NUEVO: Recuadro para el Gráfico de Radar de Habilidad por Área --}}
+            
             <div class="row mt-4">
                 <div class="col-12">
                     <div class="card shadow-lg custom-card-dark">
@@ -156,7 +156,7 @@
                 </div>
             </div>
 
-            {{-- Restaurado: Recuadro para el Gráfico de Crecimiento y Decaimiento Exponencial --}}
+            
             <div class="row mt-4">
                 <div class="col-12">
                     <div class="card shadow-lg custom-card-dark">
@@ -165,7 +165,7 @@
                                 <i class="fas fa-chart-line mr-2"></i> Crecimiento y Decaimiento de Habilidad en la Área Seleccionada
                             </h3>
                             <div class="card-tools">
-                                {{-- Se elimina el selector de área de aquí, usará el principal --}}
+                                
                                 <button type="button" class="btn btn-tool" data-card-widget="collapse">
                                     <i class="fas fa-minus"></i>
                                 </button>
@@ -181,10 +181,10 @@
                 </div>
             </div>
 
-            <div class="row mt-4"> {{-- Esta era la fila de los gráficos, se mantiene y se ajusta el margen --}}
-                {{-- Gráfico de Distribución de Habilidades (theta global) --}}
+            <div class="row mt-4"> 
+                
                 <section class="col-lg-6">
-                    <div class="card shadow-lg custom-card-dark"> {{-- Eliminado custom-card-dark --}}
+                    <div class="card shadow-lg custom-card-dark"> 
                 <div class="card-header">
                     <h3 class="card-title">
                                 <i class="fas fa-chart-bar mr-2"></i> Distribución de Nivel de Habilidad (Global)
@@ -196,7 +196,7 @@
                     </div>
                 </div>
                 <div class="card-body">
-                            <p class="text-white-50 text-center mb-4">Concentración de estudiantes por niveles de habilidad (Bajo, Medio, Alto).</p> {{-- Ajustado margen inferior --}}
+                            <p class="text-white-50 text-center mb-4">Concentración de estudiantes por niveles de habilidad (Bajo, Medio, Alto).</p> 
                     <div class="chart-responsive">
                         <canvas id="habilidadIrtChart" height="250"></canvas>
                     </div>
@@ -204,10 +204,10 @@
             </div>
         </section>
 
-                {{-- Tabla de Matriz de Transición de Markov --}}
+                
         <section class="col-lg-6">
-                    <div class="card shadow-lg custom-card-dark"> {{-- Eliminado custom-card-dark --}}
-                        <div class="card-header"> {{-- Eliminado d-flex justify-content-between align-items-center --}}
+                    <div class="card shadow-lg custom-card-dark"> 
+                        <div class="card-header"> 
                     <h3 class="card-title">
                                 <i class="fas fa-project-diagram mr-2"></i> Matriz de Transición de Markov (Global / por Área)
                     </h3>
@@ -218,7 +218,7 @@
                     </div>
                 </div>
                 <div class="card-body">
-                            <p class="text-white-50 text-center mb-4">Probabilidades de transición entre los niveles de habilidad de los estudiantes.</p> {{-- Ajustado margen inferior --}}
+                            <p class="text-white-50 text-center mb-4">Probabilidades de transición entre los niveles de habilidad de los estudiantes.</p> 
                     <div class="table-responsive">
                         <table class="table table-dark table-striped table-valign-middle">
                             <thead>
@@ -240,9 +240,9 @@
             </div>
         </div>
     </div>
-@stop
+<?php $__env->stopSection(); ?>
 
-@section('css')
+<?php $__env->startSection('css'); ?>
     <style>
          /* Reusing variables or defining local overrides for Report components */
         :root {
@@ -346,9 +346,9 @@
              color: var(--color-orange-primary);
         }
     </style>
-@stop
+<?php $__env->stopSection(); ?>
 
-@section('js')
+<?php $__env->startSection('js'); ?>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
@@ -414,7 +414,7 @@
                 }
 
                 $.ajax({
-                    url: '{{ route('admin.reportes_irt.getMarkovMatrix') }}',
+                    url: '<?php echo e(route('admin.reportes_irt.getMarkovMatrix')); ?>',
                     method: 'GET',
                     data: { categoria_id: categoryId },
                     success: function(response) {
@@ -456,7 +456,7 @@
                 }
 
                 $.ajax({
-                    url: '{{ route('admin.reportes_irt.getGrowthDecayHistory') }}',
+                    url: '<?php echo e(route('admin.reportes_irt.getGrowthDecayHistory')); ?>',
                     method: 'GET',
                     data: { user_id: userId, categoria_id: categoryId },
                     success: function(response) {
@@ -550,7 +550,7 @@
             function loadGlobalChartsAndMatrices() {
                 // Cargar la distribución global de habilidad
                 $.ajax({
-                    url: '{{ route('admin.reportes_irt.getGlobalHabilidadDistribution') }}',
+                    url: '<?php echo e(route('admin.reportes_irt.getGlobalHabilidadDistribution')); ?>',
                     method: 'GET',
                     success: function(response) {
                         updateHabilidadChart(response.dataCounts);
@@ -692,7 +692,7 @@
                 }
 
                 $.ajax({
-                    url: '{{ route('admin.reportes_irt.searchStudents') }}',
+                    url: '<?php echo e(route('admin.reportes_irt.searchStudents')); ?>',
                     method: 'GET',
                     data: { search: searchTerm },
                     success: function(response) {
@@ -783,7 +783,7 @@
 
                 // Cargar datos del estudiante
                 $.ajax({
-                    url: '{{ route('admin.reportes_irt.getStudentData') }}',
+                    url: '<?php echo e(route('admin.reportes_irt.getStudentData')); ?>',
                     method: 'GET',
                     data: { user_id: selectedStudentId },
                     success: function(response) {
@@ -958,4 +958,6 @@
             // Esto asegura que se intenta cargar al inicio.
         });
     </script>
-@stop
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.dashboard', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?><?php /**PATH C:\laragon\www\synapse\resources\views/admin/reportes_irt/index.blade.php ENDPATH**/ ?>

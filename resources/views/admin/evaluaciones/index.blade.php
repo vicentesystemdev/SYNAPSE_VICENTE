@@ -27,7 +27,7 @@
 @section('content')
     <div class="space-y-6">
         <!-- FILTROS -->
-        <div class="rounded-xl border border-white/5 bg-gray-900/40 backdrop-blur-md px-4 py-4 shadow-xl space-y-4">
+        <div class="rounded-xl border border-white/10 bg-gray-900/85 backdrop-blur-md px-4 py-4 shadow-xl space-y-4">
             <form method="GET" action="{{ route('evaluaciones.index') }}" class="flex flex-wrap items-center gap-3">
                 <select name="categoria_id" onchange="this.form.submit()"
                     class="rounded-lg border border-white/10 bg-gray-800/80 px-3 py-2 text-xs text-gray-300 focus:ring-1 focus:ring-orange-400 focus:border-orange-500/50 transition selection:bg-orange-500/20">
@@ -54,11 +54,11 @@
         </div>
 
         <!-- TABLA PRINCIPAL -->
-        <div class="rounded-xl border border-white/5 bg-gray-900/60 backdrop-blur-md shadow-xl overflow-hidden">
+        <div class="rounded-xl border border-white/10 bg-gray-900/95 backdrop-blur-md shadow-xl overflow-hidden">
             <div class="overflow-x-auto">
                 <table class="min-w-full divide-y divide-white/5 text-xs">
                     <thead class="bg-white/5">
-                        <tr class="text-gray-400 uppercase tracking-wider font-semibold text-[11px]">
+                        <tr class="text-gray-300 uppercase tracking-wider font-semibold text-[11px]">
                             <th class="px-4 py-3 text-left">ID</th>
                             <th class="px-4 py-3 text-left">Título</th>
                             <th class="px-4 py-3 text-left">Área</th>
@@ -96,7 +96,7 @@
                                 <td class="px-4 py-3 text-gray-400">
                                     {{ $evaluacion->dificultad->nombre_dif ?? 'N/D' }}
                                 </td>
-                                <td class="px-4 py-3 text-gray-500">
+                                <td class="px-4 py-3 text-gray-300">
                                     {{ $evaluacion->docente->name ?? 'N/D' }}
                                 </td>
                                 <td class="px-4 py-3">
@@ -142,3 +142,12 @@
     </div>
 @endsection
 
+@section('css')
+<style>
+    .content-wrapper {
+        background-color: var(--color-celeste-dark) !important;
+        background-image: radial-gradient(circle at top right, rgba(59, 130, 246, 0.1), transparent),
+                          radial-gradient(circle at bottom left, rgba(59, 130, 246, 0.05), transparent);
+    }
+</style>
+@endsection

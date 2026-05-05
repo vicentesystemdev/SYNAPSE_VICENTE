@@ -19,7 +19,7 @@
 @section('content')
     <div class="container-fluid">
         {{-- Controles de Selección --}}
-        <div class="card shadow-lg mb-4"> {{-- Eliminado bg-dark y custom-card-dark, ya se aplica en el layout --}}
+        <div class="card shadow-lg mb-4 custom-card-dark">
             <div class="card-header"> {{-- Eliminado border-0 y d-flex, ya se aplica en el layout --}}
                 <h3 class="card-title"><i class="fas fa-microscope mr-2"></i> Demostración Interactiva IRT</h3> {{-- Icono y texto ya con estilos del layout --}}
                 <div class="card-tools">
@@ -114,7 +114,7 @@
 
                 {{-- Tarjeta de Recomendación y Explicación --}}
                 <div class="col-md-6">
-                    <div class="card shadow-lg"> {{-- Eliminado card-info card-outline custom-card-dark --}}
+                    <div class="card shadow-lg custom-card-dark"> {{-- Eliminado card-info card-outline custom-card-dark --}}
                         <div class="card-header">
                             <h3 class="card-title"><i class="fas fa-lightbulb mr-2"></i> Recomendación Adaptativa</h3>
                         </div>
@@ -135,7 +135,7 @@
             {{-- NUEVO: Recuadro para el Gráfico de Radar de Habilidad por Área --}}
             <div class="row mt-4">
                 <div class="col-12">
-                    <div class="card shadow-lg">
+                    <div class="card shadow-lg custom-card-dark">
                         <div class="card-header">
                             <h3 class="card-title">
                                 <i class="fas fa-chart-area mr-2"></i> Distribución de habilidad en las Áreas de evaluación
@@ -159,7 +159,7 @@
             {{-- Restaurado: Recuadro para el Gráfico de Crecimiento y Decaimiento Exponencial --}}
             <div class="row mt-4">
                 <div class="col-12">
-                    <div class="card shadow-lg">
+                    <div class="card shadow-lg custom-card-dark">
                         <div class="card-header">
                             <h3 class="card-title">
                                 <i class="fas fa-chart-line mr-2"></i> Crecimiento y Decaimiento de Habilidad en la Área Seleccionada
@@ -184,7 +184,7 @@
             <div class="row mt-4"> {{-- Esta era la fila de los gráficos, se mantiene y se ajusta el margen --}}
                 {{-- Gráfico de Distribución de Habilidades (theta global) --}}
                 <section class="col-lg-6">
-                    <div class="card shadow-lg"> {{-- Eliminado custom-card-dark --}}
+                    <div class="card shadow-lg custom-card-dark"> {{-- Eliminado custom-card-dark --}}
                 <div class="card-header">
                     <h3 class="card-title">
                                 <i class="fas fa-chart-bar mr-2"></i> Distribución de Nivel de Habilidad (Global)
@@ -206,7 +206,7 @@
 
                 {{-- Tabla de Matriz de Transición de Markov --}}
         <section class="col-lg-6">
-                    <div class="card shadow-lg"> {{-- Eliminado custom-card-dark --}}
+                    <div class="card shadow-lg custom-card-dark"> {{-- Eliminado custom-card-dark --}}
                         <div class="card-header"> {{-- Eliminado d-flex justify-content-between align-items-center --}}
                     <h3 class="card-title">
                                 <i class="fas fa-project-diagram mr-2"></i> Matriz de Transición de Markov (Global / por Área)
@@ -252,6 +252,18 @@
             --color-light-gray: #C9D1D9;
             --color-medium-gray: #21262D;
             --color-dark-gray: #161B22;
+            --color-celeste-dark-local: #0c4a6e;
+        }
+
+        .content-wrapper {
+            background-color: var(--color-celeste-dark-local) !important;
+            background-image: radial-gradient(circle at top right, rgba(59, 130, 246, 0.1), transparent),
+                              radial-gradient(circle at bottom left, rgba(59, 130, 246, 0.05), transparent);
+        }
+
+        .custom-card-dark {
+            background-color: rgba(12, 74, 110, 0.85) !important; /* Usando el mismo tono celeste oscuro */
+            border: 1px solid rgba(255, 255, 255, 0.1) !important;
         }
 
         /* Adjust specific elements for the dashboard theme */
